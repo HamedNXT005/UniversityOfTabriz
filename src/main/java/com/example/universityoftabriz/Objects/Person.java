@@ -12,7 +12,6 @@ public abstract class Person {
     protected Long id;
     protected String user_name;
     protected String password;
-    protected String faculty;
     protected String name_f;
     protected String name_l;
     protected String national_code;
@@ -34,14 +33,6 @@ public abstract class Person {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
     }
 
     public String getName_f() {

@@ -6,6 +6,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "info_students")
 public class Student extends Person{
+    private String faculty;
     private String major;
     private int semesters_passed;
     private int units_passed;
@@ -80,6 +81,13 @@ public class Student extends Person{
 
     public void setGpa_semester(float gpa_semester) {
         this.gpa_semester = gpa_semester;
+    }
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
     }
 
     @Override
