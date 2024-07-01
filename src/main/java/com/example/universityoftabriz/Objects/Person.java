@@ -81,4 +81,12 @@ public abstract class Person {
     public void setAccess(boolean access) {
         this.access = access;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

@@ -13,22 +13,8 @@ public class ResourcesService {
     @Autowired
     private ResourcesRepository resourcesRepository;
 
-    public void updateBudget(Long id, long budget, Logger logger) {
-        Optional<Resources> resourceOptional = resourcesRepository.findById(id);
-        if (resourceOptional.isPresent()) {
-            Resources resource = resourceOptional.get();
-            resource.setTotal_budget(budget);
+    public void updateResource(Resources resource, Logger logger) {
             resourcesRepository.save(resource);
-            logger.info("New budget set successfully.");
-        } else {
-            logger.error("Resource with id: {} not found.",id);
-            throw new RuntimeException("Resource with id: " + id + " not found.");
-        }
-    }
-
-    public void updateBudget(Resources resource, long budget, Logger logger) {
-            resource.setTotal_budget(budget);
-            resourcesRepository.save(resource);
-            logger.info("New budget set successfully.");
+            logger.info("Resource with id: {} updated successfully.",resource.getId());
     }
 }

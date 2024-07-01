@@ -34,14 +34,6 @@ public class Student extends Person{
 
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getMajor() {
         return major;
     }
