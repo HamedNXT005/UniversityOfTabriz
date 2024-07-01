@@ -13,7 +13,6 @@ public class ComputerHistoryOfPassedCourses extends HistoryOfPassedCourses{
         this.grade = grade;
         this.status = status;
     }
-
     public ComputerHistoryOfPassedCourses() {
 
     }

@@ -21,7 +21,6 @@ public class ComputerDefinedCourses extends DefinedCourses{
         this.exam_date = exam_date;
         this.capacity = capacity;
     }
-
     public ComputerDefinedCourses() {
 
     }

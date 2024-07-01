@@ -14,7 +14,6 @@ public class ChemistryHistoryOfPassedCourses extends HistoryOfPassedCourses{
         this.grade = grade;
         this.status = status;
     }
-
     public ChemistryHistoryOfPassedCourses() {
 
     }

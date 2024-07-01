@@ -13,7 +13,6 @@ public class MechanicHistoryOfPassedCourses extends HistoryOfPassedCourses{
         this.grade = grade;
         this.status = status;
     }
-
     public MechanicHistoryOfPassedCourses() {
 
     }

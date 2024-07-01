@@ -13,7 +13,6 @@ public class ElectricHistoryOfPassedCourses extends HistoryOfPassedCourses{
         this.grade = grade;
         this.status = status;
     }
-
     public ElectricHistoryOfPassedCourses() {
 
     }

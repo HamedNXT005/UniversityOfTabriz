@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MechanicPreCoursesPlanRepository extends JpaRepository<MechanicPreCoursesPlan, Long> {
 
+
 }

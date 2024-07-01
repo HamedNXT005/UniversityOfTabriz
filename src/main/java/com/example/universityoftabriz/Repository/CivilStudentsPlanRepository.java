@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CivilStudentsPlanRepository extends JpaRepository<CivilStudentsPlan, Long> {
 
+
 }

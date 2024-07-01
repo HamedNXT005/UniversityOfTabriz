@@ -14,7 +14,6 @@ public abstract class HistoryOfPassedCourses {
     protected Long course_id;
     protected float grade;
     protected boolean status;
-
     public Long getId() {
         return id;
     }

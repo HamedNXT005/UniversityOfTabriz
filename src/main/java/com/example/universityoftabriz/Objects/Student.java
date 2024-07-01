@@ -12,7 +12,6 @@ public class Student extends Person{
     private int units_passed;
     private float gpa_total;
     private float gpa_semester;
-
     public Student(Long id, String major, int semesters_passed, int units_passed, float gpa_total, float gpa_semester, String user_name, String password, String faculty, String name_f, String name_l, String national_code, String phone_n, String photo, boolean access) {
         this.id = id;
         this.major = major;

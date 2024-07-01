@@ -17,7 +17,6 @@ public abstract class Salary {
     protected Date year_ed;
     protected int semester;
     protected Long salary;
-
     public Long getId() {
         return id;
     }

@@ -16,7 +16,6 @@ public class Resources {
     private Long total_budget;
     private Long rate_sc;
     private Long rate_normal;
-
     public Resources(Long id, Date year_ed, int semester, Long total_budget, Long rate_sc, Long rate_normal) {
         this.id = id;
         this.year_ed = year_ed;

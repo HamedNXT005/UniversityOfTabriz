@@ -18,7 +18,6 @@ public class HistorySalary extends Salary{
         this.salary = salary;
         this.peyment_date = peyment_date;
     }
-
     public HistorySalary() {
 
     }

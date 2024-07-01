@@ -8,4 +8,5 @@ import org.springframework.stereotype.Service;
 public class ChemistryHistoryOfPassedCoursesService {
     @Autowired
     private ChemistryHistoryOfPassedCoursesRepository chemistryHistoryOfPassedCoursesRepository;
+
 }

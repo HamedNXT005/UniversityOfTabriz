@@ -8,4 +8,5 @@ import org.springframework.stereotype.Service;
 public class ResourcesService {
     @Autowired
     private ResourcesRepository resourcesRepository;
+
 }

@@ -12,7 +12,6 @@ public class CivilStudentsPlan extends StudentPlan{
         this.course_id = course_id;
         this.grade = grade;
     }
-
     public CivilStudentsPlan() {
 
     }

@@ -16,7 +16,6 @@ public class TeachersSalary extends Salary{
         this.semester = semester;
         this.salary = salary;
     }
-
     public TeachersSalary() {
 
     }

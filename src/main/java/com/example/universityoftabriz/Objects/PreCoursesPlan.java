@@ -18,7 +18,6 @@ public abstract class PreCoursesPlan {
     protected Long teacher_id;
     protected int class_n;
     protected Date exam_date;
-
     public Long getId() {
         return id;
     }

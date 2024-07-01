@@ -9,7 +9,6 @@ public class Teacher extends Person{
     private String status;
     private String faculty;
 
-
     public Teacher(Long id, String user_name, String password, String faculty, String name_f, String name_l, String national_code, String phone_n,String status ,String photo, boolean access) {
         this.id = id;
         this.user_name = user_name;

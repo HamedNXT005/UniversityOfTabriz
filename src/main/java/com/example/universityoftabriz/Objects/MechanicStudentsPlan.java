@@ -16,7 +16,6 @@ public class MechanicStudentsPlan extends StudentPlan{
     public MechanicStudentsPlan() {
 
     }
-
     @Override
     public String toString() {
         return "MechanicStudentsPlan{" +

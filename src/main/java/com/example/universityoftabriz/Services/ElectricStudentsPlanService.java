@@ -8,4 +8,5 @@ import org.springframework.stereotype.Service;
 public class ElectricStudentsPlanService {
     @Autowired
     private ElectricStudentsPlanRepository electricStudentsPlanRepository;
+
 }

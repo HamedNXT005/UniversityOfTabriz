@@ -22,7 +22,6 @@ public abstract class DefinedCourses {
     protected int class_n;
     protected Date exam_date;
     protected int capacity;
-
     public Long getId() {
         return id;
     }

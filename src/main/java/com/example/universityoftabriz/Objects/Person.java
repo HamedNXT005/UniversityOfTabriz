@@ -18,7 +18,6 @@ public abstract class Person {
     protected String phone_n;
     protected  String photo;
     protected boolean access;
-
     public String getUser_name() {
         return user_name;
     }

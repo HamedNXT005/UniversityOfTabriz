@@ -9,7 +9,6 @@ import jakarta.persistence.Table;
 public class Employee extends Person{
     private String department;
     private String role;
-
     public Employee(Long id, String user_name, String password, String name_f, String name_l, String national_code, String phone_n, String photo, boolean access,String department, String role) {
         this.id = id;
         this.user_name = user_name;

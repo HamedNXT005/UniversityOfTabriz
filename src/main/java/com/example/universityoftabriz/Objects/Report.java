@@ -21,7 +21,6 @@ public abstract class Report {
     protected String absents;
     protected Date date_of_submition;
     protected Time time_of_submition;
-
     public Long getId() {
         return id;
     }

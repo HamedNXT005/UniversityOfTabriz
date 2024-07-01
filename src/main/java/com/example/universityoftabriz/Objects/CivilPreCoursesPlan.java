@@ -15,7 +15,6 @@ public class CivilPreCoursesPlan extends PreCoursesPlan{
         this.class_n = class_n;
         this.exam_date = exam_date;
     }
-
     public CivilPreCoursesPlan() {
 
     }

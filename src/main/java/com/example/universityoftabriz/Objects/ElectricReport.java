@@ -18,7 +18,6 @@ public class ElectricReport extends Report{
         this.date_of_submition = date_of_submition;
         this.time_of_submition = time_of_submition;
     }
-
     public ElectricReport() {
 
     }

@@ -21,7 +21,6 @@ public class ChemistryDefinedCourses extends DefinedCourses{
         this.exam_date = exam_date;
         this.capacity = capacity;
     }
-
     public ChemistryDefinedCourses() {
 
     }

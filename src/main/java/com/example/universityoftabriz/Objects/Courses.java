@@ -23,7 +23,6 @@ public class Courses {
         this.unit_n = unit_n;
         this.requirement = requirement;
     }
-
     public Courses() {
 
     }

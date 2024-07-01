@@ -14,7 +14,6 @@ public class CivilHistoryOfPassedCourses extends HistoryOfPassedCourses{
         this.grade = grade;
         this.status = status;
     }
-
     public CivilHistoryOfPassedCourses() {
 
     }

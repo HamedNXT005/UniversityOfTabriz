@@ -13,7 +13,6 @@ public abstract class StudentPlan {
     protected Long student_id;
     protected Long course_id;
     protected float grade;
-
     public Long getId() {
         return id;
     }

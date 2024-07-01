@@ -17,7 +17,6 @@ public class SemesterPhase {
         this.phase_name = phase_name;
         this.status = status;
     }
-
     public SemesterPhase() {
 
     }
