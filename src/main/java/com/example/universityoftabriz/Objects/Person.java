@@ -1,29 +1,31 @@
 package com.example.universityoftabriz.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Person {
     @Id
     protected Long id;
-    protected String user_name;
+    @Column(name = "user_name")
+    protected String userName;
     protected String password;
-    protected String name_f;
-    protected String name_l;
-    protected String national_code;
-    protected String phone_n;
+    @Column(name = "name_f")
+    protected String nameF;
+    @Column(name = "name_l")
+    protected String nameL;
+    @Column(name = "national_code")
+    protected String nationalCode;
+    @Column(name = "phone_n")
+    protected String phoneN;
     protected  String photo;
     protected boolean access;
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -34,36 +36,36 @@ public abstract class Person {
         this.password = password;
     }
 
-    public String getName_f() {
-        return name_f;
+    public String getNameF() {
+        return nameF;
     }
 
-    public void setName_f(String name_f) {
-        this.name_f = name_f;
+    public void setNameF(String nameF) {
+        this.nameF = nameF;
     }
 
-    public String getName_l() {
-        return name_l;
+    public String getNameL() {
+        return nameL;
     }
 
-    public void setName_l(String name_l) {
-        this.name_l = name_l;
+    public void setNameL(String nameL) {
+        this.nameL = nameL;
     }
 
-    public String getNational_code() {
-        return national_code;
+    public String getNationalCode() {
+        return nationalCode;
     }
 
-    public void setNational_code(String national_code) {
-        this.national_code = national_code;
+    public void setNationalCode(String nationalCode) {
+        this.nationalCode = nationalCode;
     }
 
-    public String getPhone_n() {
-        return phone_n;
+    public String getPhoneN() {
+        return phoneN;
     }
 
-    public void setPhone_n(String phone_n) {
-        this.phone_n = phone_n;
+    public void setPhoneN(String phoneN) {
+        this.phoneN = phoneN;
     }
 
     public String getPhoto() {

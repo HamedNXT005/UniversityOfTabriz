@@ -6,59 +6,87 @@
     <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
     <script th:src="@{/JS/Login.js}"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-container {
-            background: #fff;
-            width: 300px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
             box-sizing: border-box;
         }
 
-        button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/Img/background.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        .login-box {
+            width: 500px;
+            height: 450px;
+            padding: 40px;
+            position: relative;
+            background-color: rgba(255 , 255 , 255 , 0.2);
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .circle-image {
+            width: 100px;
+            height: 100px;
+            margin: -30px auto 20px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .textbox {
+            position: relative;
+            margin-bottom: 30px;
+
+        }
+
+        .textbox input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            background-color: rgba(255 , 255 , 255 , 0.5);
+        }
+
+        .btn {
+            width: 100%;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
         }
     </style>
 
 </head>
 <body>
- <div class="login-container">
-    <h1>University Login</h1>
-    <label for="username">Username:</label>
-    <input type="text" id="username" placeholder="Enter your username">
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="Enter your password">
-
-    <button id="loginBtn">Login</button>
- </div>
+<body>
+<div class="background-image"></div>
+<div class="login-box">
+    <img th:src="@{/Img/images.jpg}" alt="circle image" class="circle-image">
+    <h1 class="logo">Your Logo</h1>
+    <form action="#" method="POST">
+        <div class="textbox">
+            <input type="text" placeholder="Username" name="username" required>
+        </div>
+        <div class="textbox">
+            <input type="password" placeholder="Password" name="password" required>
+        </div>
+        <input type="submit" class="btn" value="Login">
+    </form>
+</div>
 </body>
 </html>

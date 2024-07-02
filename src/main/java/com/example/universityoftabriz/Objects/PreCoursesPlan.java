@@ -1,11 +1,7 @@
 package com.example.universityoftabriz.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 @Entity
@@ -13,11 +9,14 @@ import java.util.Date;
 public abstract class PreCoursesPlan {
     @Id
     protected Long id;
-
-    protected Long course_id;
-    protected Long teacher_id;
-    protected int class_n;
-    protected Date exam_date;
+    @Column(name = "course_id")
+    protected Long courseId;
+    @Column(name = "teacher_id")
+    protected Long teacherId;
+    @Column(name = "class_n")
+    protected int classN;
+    @Column(name = "exam_date")
+    protected Date examDate;
     public Long getId() {
         return id;
     }
@@ -26,35 +25,35 @@ public abstract class PreCoursesPlan {
         this.id = id;
     }
 
-    public Long getCourse_id() {
-        return course_id;
+    public Long getCourseId() {
+        return courseId;
     }
 
-    public void setCourse_id(Long course_id) {
-        this.course_id = course_id;
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
     }
 
-    public Long getTeacher_id() {
-        return teacher_id;
+    public Long getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeacher_id(Long teacher_id) {
-        this.teacher_id = teacher_id;
+    public void setTeacherId(Long teacherId) {
+        this.teacherId = teacherId;
     }
 
-    public int getClass_n() {
-        return class_n;
+    public int getClassN() {
+        return classN;
     }
 
-    public void setClass_n(int class_n) {
-        this.class_n = class_n;
+    public void setClassN(int classN) {
+        this.classN = classN;
     }
 
-    public Date getExam_date() {
-        return exam_date;
+    public Date getExamDate() {
+        return examDate;
     }
 
-    public void setExam_date(Date exam_date) {
-        this.exam_date = exam_date;
+    public void setExamDate(Date examDate) {
+        this.examDate = examDate;
     }
 }

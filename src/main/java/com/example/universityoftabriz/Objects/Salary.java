@@ -11,7 +11,9 @@ public abstract class Salary {
     protected Long id;
     @Column (name = "user_id")
     protected Long userId;
-    protected int hours_taught;
+
+    @Column(name = "hours_taught")
+    protected int hoursTaught;
     @Column (name = "year_ed")
     protected Date yearEd;
     protected int semester;
@@ -32,12 +34,12 @@ public abstract class Salary {
         this.userId = userId;
     }
 
-    public int getHours_taught() {
-        return hours_taught;
+    public int getHoursTaught() {
+        return hoursTaught;
     }
 
-    public void setHours_taught(int hours_taught) {
-        this.hours_taught = hours_taught;
+    public void setHoursTaught(int hoursTaught) {
+        this.hoursTaught = hoursTaught;
     }
 
     public Date getYearEd() {

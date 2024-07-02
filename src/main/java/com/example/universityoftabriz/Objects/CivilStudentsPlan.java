@@ -6,10 +6,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "civil_students_plan")
 public class CivilStudentsPlan extends StudentPlan{
-    public CivilStudentsPlan(Long id, Long student_id, Long course_id, float grade) {
+    public CivilStudentsPlan(Long id, Long studentId, Long courseId, float grade) {
         this.id = id;
-        this.studentId = student_id;
-        this.courseId = course_id;
+        this.studentId = studentId;
+        this.courseId = courseId;
         this.grade = grade;
     }
     public CivilStudentsPlan() {
@@ -20,8 +20,8 @@ public class CivilStudentsPlan extends StudentPlan{
     public String toString() {
         return "CivilStudentsPlan{" +
                 "id=" + id +
-                ", student_id=" + studentId +
-                ", course_id=" + courseId +
+                ", studentId=" + studentId +
+                ", courseId=" + courseId +
                 ", grade=" + grade +
                 '}';
     }
