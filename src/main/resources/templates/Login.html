@@ -11,7 +11,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: Arial, sans-serif;
             background-image: url('/Img/background.jpg');
@@ -22,7 +21,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .login-box {
             width: 500px;
             height: 450px;
@@ -32,34 +30,30 @@
             border: 1px solid #ccc;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
+            border-radius: 25px;
         }
-
         .circle-image {
             width: 100px;
             height: 100px;
             margin: -30px auto 20px;
             border-radius: 50%;
         }
-
         .logo {
-            font-size: 24px;
+            font-size: 32px;
             margin-bottom: 30px;
         }
-
         .textbox {
             position: relative;
             margin-bottom: 30px;
-
         }
-
         .textbox input {
             width: 100%;
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             background-color: rgba(255 , 255 , 255 , 0.5);
+            border-radius: 15px;
         }
-
         .btn {
             width: 100%;
             background: #007bff;
@@ -68,25 +62,25 @@
             padding: 10px;
             cursor: pointer;
             font-size: 16px;
+            border-radius: 15px;
         }
     </style>
-
 </head>
+
 <body>
 <body>
-<div class="background-image"></div>
-<div class="login-box">
+ <div class="login-box">
     <img th:src="@{/Img/images.jpg}" alt="circle image" class="circle-image">
-    <h1 class="logo">Your Logo</h1>
-    <form action="#" method="POST">
+     <h1 class="logo"><cite>University Of Tabriz</cite></h1>
+    <form>
         <div class="textbox">
             <input type="text" placeholder="Username" name="username" required>
         </div>
         <div class="textbox">
             <input type="password" placeholder="Password" name="password" required>
         </div>
-        <input type="submit" class="btn" value="Login">
+        <input type="submit" class="btn" value="Login" onclick="">
     </form>
-</div>
+ </div>
 </body>
 </html>
