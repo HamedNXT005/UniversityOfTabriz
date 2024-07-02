@@ -6,10 +6,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "electric_history_of_passed_courses")
 public class ElectricHistoryOfPassedCourses extends HistoryOfPassedCourses{
-    public ElectricHistoryOfPassedCourses(Long id, Long student_id, Long course_id, float grade, boolean status) {
+    public ElectricHistoryOfPassedCourses(Long id, Long studentId, Long courseId, float grade, boolean status) {
         this.id = id;
-        this.student_id = student_id;
-        this.course_id = course_id;
+        this.studentId = studentId;
+        this.courseId = courseId;
         this.grade = grade;
         this.status = status;
     }
@@ -21,8 +21,8 @@ public class ElectricHistoryOfPassedCourses extends HistoryOfPassedCourses{
     public String toString() {
         return "ElectricHistoryOfPassedCourses{" +
                 "id=" + id +
-                ", student_id=" + student_id +
-                ", course_id=" + course_id +
+                ", studentId=" + studentId +
+                ", courseId=" + courseId +
                 ", grade=" + grade +
                 ", status=" + status +
                 '}';

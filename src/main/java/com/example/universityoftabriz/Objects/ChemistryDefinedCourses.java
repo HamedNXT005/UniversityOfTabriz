@@ -9,16 +9,16 @@ import java.util.Date;
 @Entity
 @Table(name = "chemistry_defined_courses")
 public class ChemistryDefinedCourses extends DefinedCourses{
-    public ChemistryDefinedCourses(Long id, Long teacher_id, Long course_id, Date primary_day, Time time_of_primary_day, Date secondary_day, Time time_of_secondary_day, int class_n, Date exam_date, int capacity) {
+    public ChemistryDefinedCourses(Long id, Long teacherId, Long courseId, Date primaryDay, Time timeOfPrimaryDay, Date secondaryDay, Time timeOfSecondaryDay, int classN, Date examDate, int capacity) {
         this.id = id;
-        this.teacher_id = teacher_id;
-        this.course_id = course_id;
-        this.primary_day = primary_day;
-        this.time_of_primary_day = time_of_primary_day;
-        this.secondary_day = secondary_day;
-        this.time_of_secondary_day = time_of_secondary_day;
-        this.class_n = class_n;
-        this.exam_date = exam_date;
+        this.teacherId = teacherId;
+        this.courseId = courseId;
+        this.primaryDay = primaryDay;
+        this.timeOfPrimaryDay = timeOfPrimaryDay;
+        this.secondaryDay = secondaryDay;
+        this.timeOfSecondaryDay = timeOfSecondaryDay;
+        this.classN = classN;
+        this.examDate = examDate;
         this.capacity = capacity;
     }
     public ChemistryDefinedCourses() {
@@ -29,14 +29,14 @@ public class ChemistryDefinedCourses extends DefinedCourses{
     public String toString() {
         return "ChemistryDefinedCourses{" +
                 "id=" + id +
-                ", teacher_id=" + teacher_id +
-                ", course_id=" + course_id +
-                ", primary_day=" + primary_day +
-                ", time_of_primary_day=" + time_of_primary_day +
-                ", secondary_day=" + secondary_day +
-                ", time_of_secondary_day=" + time_of_secondary_day +
-                ", class_n=" + class_n +
-                ", exam_date=" + exam_date +
+                ", teacherId=" + teacherId +
+                ", courseId=" + courseId +
+                ", primaryDay=" + primaryDay +
+                ", timeOfPrimaryDay=" + timeOfPrimaryDay +
+                ", secondaryDay=" + secondaryDay +
+                ", timeOfSecondaryDay=" + timeOfSecondaryDay +
+                ", classN=" + classN +
+                ", examDate=" + examDate +
                 ", capacity=" + capacity +
                 '}';
     }

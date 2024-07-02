@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -9,12 +10,13 @@ import jakarta.persistence.Table;
 public class SemesterPhase {
     @Id
     private Long id;
-    private String phase_name;
+    @Column(name = "phase_name")
+    private String phaseName;
     private boolean status;
 
-    public SemesterPhase(Long id, String phase_name, boolean status) {
+    public SemesterPhase(Long id, String phaseName, boolean status) {
         this.id = id;
-        this.phase_name = phase_name;
+        this.phaseName = phaseName;
         this.status = status;
     }
     public SemesterPhase() {
@@ -29,12 +31,12 @@ public class SemesterPhase {
         this.id = id;
     }
 
-    public String getPhase_name() {
-        return phase_name;
+    public String getPhaseName() {
+        return phaseName;
     }
 
-    public void setPhase_name(String phase_name) {
-        this.phase_name = phase_name;
+    public void setPhaseName(String phaseName) {
+        this.phaseName = phaseName;
     }
 
     public boolean isStatus() {
@@ -49,7 +51,7 @@ public class SemesterPhase {
     public String toString() {
         return "SemesterPhase{" +
                 "id=" + id +
-                ", phase_name='" + phase_name + '\'' +
+                ", phaseName='" + phaseName + '\'' +
                 ", status=" + status +
                 '}';
     }

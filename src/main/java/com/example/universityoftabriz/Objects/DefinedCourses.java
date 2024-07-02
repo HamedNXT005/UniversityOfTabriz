@@ -1,9 +1,6 @@
 package com.example.universityoftabriz.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 
 import java.sql.Time;
 import java.util.Date;
@@ -13,14 +10,22 @@ import java.util.Date;
 public abstract class DefinedCourses {
     @Id
     protected Long id;
-    protected Long teacher_id;
-    protected Long course_id;
-    protected Date primary_day;
-    protected Time time_of_primary_day;
-    protected Date secondary_day;
-    protected Time time_of_secondary_day;
-    protected int class_n;
-    protected Date exam_date;
+    @Column(name = "teacher_id")
+    protected Long teacherId;
+    @Column(name = "course_id")
+    protected Long courseId;
+    @Column(name = "primary_day")
+    protected Date primaryDay;
+    @Column(name = "time_of_primary_day")
+    protected Time timeOfPrimaryDay;
+    @Column(name = "secondary_day")
+    protected Date secondaryDay;
+    @Column(name = "time_of_secondary_day")
+    protected Time timeOfSecondaryDay;
+    @Column(name = "class_n")
+    protected int classN;
+    @Column(name = "exam_date")
+    protected Date examDate;
     protected int capacity;
     public Long getId() {
         return id;
@@ -30,68 +35,68 @@ public abstract class DefinedCourses {
         this.id = id;
     }
 
-    public Long getTeacher_id() {
-        return teacher_id;
+    public Long getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeacher_id(Long teacher_id) {
-        this.teacher_id = teacher_id;
+    public void setTeacherId(Long teacherId) {
+        this.teacherId = teacherId;
     }
 
-    public Long getCourse_id() {
-        return course_id;
+    public Long getCourseId() {
+        return courseId;
     }
 
-    public void setCourse_id(Long course_id) {
-        this.course_id = course_id;
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
     }
 
-    public Date getPrimary_day() {
-        return primary_day;
+    public Date getPrimaryDay() {
+        return primaryDay;
     }
 
-    public void setPrimary_day(Date primary_day) {
-        this.primary_day = primary_day;
+    public void setPrimaryDay(Date primaryDay) {
+        this.primaryDay = primaryDay;
     }
 
-    public Time getTime_of_primary_day() {
-        return time_of_primary_day;
+    public Time getTimeOfPrimaryDay() {
+        return timeOfPrimaryDay;
     }
 
-    public void setTime_of_primary_day(Time time_of_primary_day) {
-        this.time_of_primary_day = time_of_primary_day;
+    public void setTimeOfPrimaryDay(Time timeOfPrimaryDay) {
+        this.timeOfPrimaryDay = timeOfPrimaryDay;
     }
 
-    public Date getSecondary_day() {
-        return secondary_day;
+    public Date getSecondaryDay() {
+        return secondaryDay;
     }
 
-    public void setSecondary_day(Date secondary_day) {
-        this.secondary_day = secondary_day;
+    public void setSecondaryDay(Date secondaryDay) {
+        this.secondaryDay = secondaryDay;
     }
 
-    public Time getTime_of_secondary_day() {
-        return time_of_secondary_day;
+    public Time getTimeOfSecondaryDay() {
+        return timeOfSecondaryDay;
     }
 
-    public void setTime_of_secondary_day(Time time_of_secondary_day) {
-        this.time_of_secondary_day = time_of_secondary_day;
+    public void setTimeOfSecondaryDay(Time timeOfSecondaryDay) {
+        this.timeOfSecondaryDay = timeOfSecondaryDay;
     }
 
-    public int getClass_n() {
-        return class_n;
+    public int getClassN() {
+        return classN;
     }
 
-    public void setClass_n(int class_n) {
-        this.class_n = class_n;
+    public void setClassN(int classN) {
+        this.classN = classN;
     }
 
-    public Date getExam_date() {
-        return exam_date;
+    public Date getExamDate() {
+        return examDate;
     }
 
-    public void setExam_date(Date exam_date) {
-        this.exam_date = exam_date;
+    public void setExamDate(Date examDate) {
+        this.examDate = examDate;
     }
 
     public int getCapacity() {

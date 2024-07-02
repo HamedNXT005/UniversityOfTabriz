@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -12,15 +13,17 @@ public class Courses {
     private String name;
     private String faculty;
     private String major;
-    private int unit_n;
+
+    @Column(name = "unit_n")
+    private int unitN;
     private long requirement;
 
-    public Courses(Long id, String name, String faculty, String major, int unit_n, long requirement) {
+    public Courses(Long id, String name, String faculty, String major, int unitN, long requirement) {
         this.id = id;
         this.name = name;
         this.faculty = faculty;
         this.major = major;
-        this.unit_n = unit_n;
+        this.unitN = unitN;
         this.requirement = requirement;
     }
     public Courses() {
@@ -59,12 +62,12 @@ public class Courses {
         this.major = major;
     }
 
-    public int getUnit_n() {
-        return unit_n;
+    public int getUnitN() {
+        return unitN;
     }
 
-    public void setUnit_n(int unit_n) {
-        this.unit_n = unit_n;
+    public void setUnitN(int unitN) {
+        this.unitN = unitN;
     }
 
     public long getRequirement() {
@@ -82,7 +85,7 @@ public class Courses {
                 ", name='" + name + '\'' +
                 ", faculty='" + faculty + '\'' +
                 ", major='" + major + '\'' +
-                ", unit_n=" + unit_n +
+                ", unitN=" + unitN +
                 ", requirement=" + requirement +
                 '}';
     }

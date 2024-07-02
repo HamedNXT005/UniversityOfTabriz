@@ -27,4 +27,23 @@ public class StudentService {
         logger.info("Student with id: {} updated successfully.",student.getId());
     }
 
+    public List<Student> getStudentsByFaculty(String faculty){
+        return studentRepository.findByFaculty(faculty);
+    }
+
+    public List<Student> getStudentsByMajor(String major){
+        return studentRepository.findByMajor(major);
+    }
+
+    public Optional<Student> getStudentByNameFAndNameL(String nameF, String nameL){
+        return studentRepository.findByNameFAndNameL(nameF, nameL);
+    }
+
+    public Optional<Student> getStudentByNationalCode(String nationalCode){
+        return studentRepository.findByNationalCode(nationalCode);
+    }
+
+    public List<Student> getStudentsByGpaTotalGreaterThan(float gpaTotal){
+        return studentRepository.findByGpaTotalGreaterThan(gpaTotal);
+    }
 }

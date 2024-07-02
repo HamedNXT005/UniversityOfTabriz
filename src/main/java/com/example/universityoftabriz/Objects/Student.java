@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -8,24 +9,28 @@ import jakarta.persistence.Table;
 public class Student extends Person{
     private String faculty;
     private String major;
-    private int semesters_passed;
-    private int units_passed;
-    private float gpa_total;
-    private float gpa_semester;
-    public Student(Long id, String major, int semesters_passed, int units_passed, float gpa_total, float gpa_semester, String user_name, String password, String faculty, String name_f, String name_l, String national_code, String phone_n, String photo, boolean access) {
+    @Column(name = "semesters_passed")
+    private int semestersPassed;
+    @Column(name = "units_passed")
+    private int unitsPassed;
+    @Column(name = "gpa_total")
+    private float gpaTotal;
+    @Column(name = "gpa_semester")
+    private float gpaSemester;
+    public Student(Long id, String major, int semestersPassed, int unitsPassed, float gpaTotal, float gpaSemester, String userName, String password, String faculty, String nameF, String nameL, String nationalCode, String phoneN, String photo, boolean access) {
         this.id = id;
         this.major = major;
-        this.semesters_passed = semesters_passed;
-        this.units_passed = units_passed;
-        this.gpa_total = gpa_total;
-        this.gpa_semester = gpa_semester;
-        this.user_name = user_name;
+        this.semestersPassed = semestersPassed;
+        this.unitsPassed = unitsPassed;
+        this.gpaTotal = gpaTotal;
+        this.gpaSemester = gpaSemester;
+        this.userName = userName;
         this.password = password;
         this.faculty = faculty;
-        this.name_f = name_f;
-        this.name_l = name_l;
-        this.national_code = national_code;
-        this.phone_n = phone_n;
+        this.nameF = nameF;
+        this.nameL = nameL;
+        this.nationalCode = nationalCode;
+        this.phoneN = phoneN;
         this.photo = photo;
         this.access = access;
     }
@@ -42,36 +47,36 @@ public class Student extends Person{
         this.major = major;
     }
 
-    public int getSemesters_passed() {
-        return semesters_passed;
+    public int getSemestersPassed() {
+        return semestersPassed;
     }
 
-    public void setSemesters_passed(int semesters_passed) {
-        this.semesters_passed = semesters_passed;
+    public void setSemestersPassed(int semestersPassed) {
+        this.semestersPassed = semestersPassed;
     }
 
-    public int getUnits_passed() {
-        return units_passed;
+    public int getUnitsPassed() {
+        return unitsPassed;
     }
 
-    public void setUnits_passed(int units_passed) {
-        this.units_passed = units_passed;
+    public void setUnitsPassed(int unitsPassed) {
+        this.unitsPassed = unitsPassed;
     }
 
-    public float getGpa_total() {
-        return gpa_total;
+    public float getGpaTotal() {
+        return gpaTotal;
     }
 
-    public void setGpa_total(float gpa_total) {
-        this.gpa_total = gpa_total;
+    public void setGpaTotal(float gpaTotal) {
+        this.gpaTotal = gpaTotal;
     }
 
-    public float getGpa_semester() {
-        return gpa_semester;
+    public float getGpaSemester() {
+        return gpaSemester;
     }
 
-    public void setGpa_semester(float gpa_semester) {
-        this.gpa_semester = gpa_semester;
+    public void setGpaSemester(float gpaSemester) {
+        this.gpaSemester = gpaSemester;
     }
     public String getFaculty() {
         return faculty;
@@ -84,19 +89,19 @@ public class Student extends Person{
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
+                "faculty='" + faculty + '\'' +
                 ", major='" + major + '\'' +
-                ", semesters_passed=" + semesters_passed +
-                ", units_passed=" + units_passed +
-                ", gpa_total=" + gpa_total +
-                ", gpa_semester=" + gpa_semester +
-                ", user_name='" + user_name + '\'' +
+                ", semestersPassed=" + semestersPassed +
+                ", unitsPassed=" + unitsPassed +
+                ", gpaTotal=" + gpaTotal +
+                ", gpaSemester=" + gpaSemester +
+                ", id=" + id +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", faculty='" + faculty + '\'' +
-                ", name_f='" + name_f + '\'' +
-                ", name_l='" + name_l + '\'' +
-                ", national_code='" + national_code + '\'' +
-                ", phone_n='" + phone_n + '\'' +
+                ", nameF='" + nameF + '\'' +
+                ", nameL='" + nameL + '\'' +
+                ", nationalCode='" + nationalCode + '\'' +
+                ", phoneN='" + phoneN + '\'' +
                 ", photo='" + photo + '\'' +
                 ", access=" + access +
                 '}';

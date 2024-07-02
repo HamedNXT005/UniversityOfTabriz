@@ -15,16 +15,19 @@ public class Resources {
     @Column (name = "year_ed")
     private Date yearEd;
     private int semester;
-    private Long total_budget;
-    private Long rate_sc;
-    private Long rate_normal;
-    public Resources(Long id, Date year_ed, int semester, Long total_budget, Long rate_sc, Long rate_normal) {
+    @Column(name = "total_budget")
+    private Long totalBudget;
+    @Column(name = "rate_sc")
+    private Long rateSc;
+    @Column(name = "rate_normal")
+    private Long rateNormal;
+    public Resources(Long id, Date yearEd, int semester, Long totalBudget, Long rateSc, Long rateNormal) {
         this.id = id;
-        this.yearEd = year_ed;
+        this.yearEd = yearEd;
         this.semester = semester;
-        this.total_budget = total_budget;
-        this.rate_sc = rate_sc;
-        this.rate_normal = rate_normal;
+        this.totalBudget = totalBudget;
+        this.rateSc = rateSc;
+        this.rateNormal = rateNormal;
     }
 
     public Resources() {
@@ -55,39 +58,39 @@ public class Resources {
         this.semester = semester;
     }
 
-    public Long getTotal_budget() {
-        return total_budget;
+    public Long getTotalBudget() {
+        return totalBudget;
     }
 
-    public void setTotal_budget(Long total_budget) {
-        this.total_budget = total_budget;
+    public void setTotalBudget(Long totalBudget) {
+        this.totalBudget = totalBudget;
     }
 
-    public Long getRate_sc() {
-        return rate_sc;
+    public Long getRateSc() {
+        return rateSc;
     }
 
-    public void setRate_sc(Long rate_sc) {
-        this.rate_sc = rate_sc;
+    public void setRateSc(Long rateSc) {
+        this.rateSc = rateSc;
     }
 
-    public Long getRate_normal() {
-        return rate_normal;
+    public Long getRateNormal() {
+        return rateNormal;
     }
 
-    public void setRate_normal(Long rate_normal) {
-        this.rate_normal = rate_normal;
+    public void setRateNormal(Long rateNormal) {
+        this.rateNormal = rateNormal;
     }
 
     @Override
     public String toString() {
         return "Resources{" +
                 "id=" + id +
-                ", year_ed=" + yearEd +
+                ", yearEd=" + yearEd +
                 ", semester=" + semester +
-                ", total_budget=" + total_budget +
-                ", rate_sc=" + rate_sc +
-                ", rate_normal=" + rate_normal +
+                ", totalBudget=" + totalBudget +
+                ", rateSc=" + rateSc +
+                ", rateNormal=" + rateNormal +
                 '}';
     }
 }

@@ -9,14 +9,14 @@ import jakarta.persistence.Table;
 public class Employee extends Person{
     private String department;
     private String role;
-    public Employee(Long id, String user_name, String password, String name_f, String name_l, String national_code, String phone_n, String photo, boolean access,String department, String role) {
+    public Employee(Long id, String userName, String password, String nameF, String nameL, String nationalCode, String phoneN, String photo, boolean access,String department, String role) {
         this.id = id;
-        this.user_name = user_name;
+        this.userName = userName;
         this.password = password;
-        this.name_f = name_f;
-        this.name_l = name_l;
-        this.national_code = national_code;
-        this.phone_n = phone_n;
+        this.nameF = nameF;
+        this.nameL = nameL;
+        this.nationalCode = nationalCode;
+        this.phoneN = phoneN;
         this.photo = photo;
         this.access = access;
         this.department = department;
@@ -49,12 +49,12 @@ public class Employee extends Person{
                 "department='" + department + '\'' +
                 ", role='" + role + '\'' +
                 ", id=" + id +
-                ", user_name='" + user_name + '\'' +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", name_f='" + name_f + '\'' +
-                ", name_l='" + name_l + '\'' +
-                ", national_code='" + national_code + '\'' +
-                ", phone_n='" + phone_n + '\'' +
+                ", nameF='" + nameF + '\'' +
+                ", nameL='" + nameL + '\'' +
+                ", nationalCode='" + nationalCode + '\'' +
+                ", phoneN='" + phoneN + '\'' +
                 ", photo='" + photo + '\'' +
                 ", access=" + access +
                 '}';

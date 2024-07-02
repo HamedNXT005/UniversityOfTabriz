@@ -8,12 +8,12 @@ import java.util.Date;
 @Entity
 @Table(name = "civil_pre_courses_plan")
 public class CivilPreCoursesPlan extends PreCoursesPlan{
-    public CivilPreCoursesPlan(Long id, Long course_id, Long teacher_id, int class_n, Date exam_date) {
+    public CivilPreCoursesPlan(Long id, Long courseId, Long teacherId, int classN, Date examDate) {
         this.id = id;
-        this.course_id = course_id;
-        this.teacher_id = teacher_id;
-        this.class_n = class_n;
-        this.exam_date = exam_date;
+        this.courseId = courseId;
+        this.teacherId = teacherId;
+        this.classN = classN;
+        this.examDate = examDate;
     }
     public CivilPreCoursesPlan() {
 
@@ -23,10 +23,10 @@ public class CivilPreCoursesPlan extends PreCoursesPlan{
     public String toString() {
         return "CivilPreCoursesPlan{" +
                 "id=" + id +
-                ", course_id=" + course_id +
-                ", teacher_id=" + teacher_id +
-                ", class_n=" + class_n +
-                ", exam_date=" + exam_date +
+                ", courseId=" + courseId +
+                ", teacherId=" + teacherId +
+                ", classN=" + classN +
+                ", examDate=" + examDate +
                 '}';
     }
 }
