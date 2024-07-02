@@ -28,7 +28,7 @@ public class LoginController {
         logger.info("Application Started.");
         MDC.clear();
         uid = 101;
-        return "Login";
+        return "EmployeePanel";
     }
 
     @GetMapping("/api/getStudents")

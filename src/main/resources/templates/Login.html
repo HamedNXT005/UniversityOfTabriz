@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
     <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
     <script th:src="@{/JS/Login.js}"></script>
     <style>
@@ -72,7 +72,7 @@
  <div class="login-box">
     <img th:src="@{/Img/images.jpg}" alt="circle image" class="circle-image">
      <h1 class="logo"><cite>University Of Tabriz</cite></h1>
-    <form>
+    <div>
         <div class="textbox">
             <input type="text" placeholder="Username" name="username" required>
         </div>
@@ -80,7 +80,7 @@
             <input type="password" placeholder="Password" name="password" required>
         </div>
         <input type="submit" class="btn" value="Login" onclick="">
-    </form>
+    </div>
  </div>
 </body>
 </html>
