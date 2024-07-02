@@ -13,7 +13,7 @@ public abstract class Salary {
     @Id
     protected Long id;
     protected Long user_id;
-    protected int houres_taught;
+    protected int hours_taught;
     protected Date year_ed;
     protected int semester;
     protected Long salary;
@@ -33,12 +33,12 @@ public abstract class Salary {
         this.user_id = user_id;
     }
 
-    public int getHoures_taught() {
-        return houres_taught;
+    public int getHours_taught() {
+        return hours_taught;
     }
 
-    public void setHoures_taught(int houres_taught) {
-        this.houres_taught = houres_taught;
+    public void setHours_taught(int hours_taught) {
+        this.hours_taught = hours_taught;
     }
 
     public Date getYear_ed() {

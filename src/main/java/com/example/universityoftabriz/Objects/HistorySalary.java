@@ -8,35 +8,35 @@ import java.util.Date;
 @Entity
 @Table(name = "history_salary")
 public class HistorySalary extends Salary{
-    private Date peyment_date;
-    public HistorySalary(Long id, Long user_id, int houres_taught, Date year_ed, int semester, Long salary , Date peyment_date) {
+    private Date payment_date;
+    public HistorySalary(Long id, Long user_id, int hours_taught, Date year_ed, int semester, Long salary , Date payment_date) {
         this.id = id;
         this.user_id = user_id;
-        this.houres_taught = houres_taught;
+        this.hours_taught = hours_taught;
         this.year_ed = year_ed;
         this.semester = semester;
         this.salary = salary;
-        this.peyment_date = peyment_date;
+        this.payment_date = payment_date;
     }
     public HistorySalary() {
 
     }
 
-    public Date getPeyment_date() {
-        return peyment_date;
+    public Date getPayment_date() {
+        return payment_date;
     }
 
-    public void setPeyment_date(Date peyment_date) {
-        this.peyment_date = peyment_date;
+    public void setPayment_date(Date payment_date) {
+        this.payment_date = payment_date;
     }
 
     @Override
     public String toString() {
         return "HistorySalary{" +
-                "peyment_date=" + peyment_date +
+                "payment_date=" + payment_date +
                 ", id=" + id +
                 ", user_id=" + user_id +
-                ", houres_taught=" + houres_taught +
+                ", hours_taught=" + hours_taught +
                 ", year_ed=" + year_ed +
                 ", semester=" + semester +
                 ", salary=" + salary +
