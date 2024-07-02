@@ -11,9 +11,9 @@ public class HistorySalary extends Salary{
     private Date payment_date;
     public HistorySalary(Long id, Long user_id, int hours_taught, Date year_ed, int semester, Long salary , Date payment_date) {
         this.id = id;
-        this.user_id = user_id;
+        this.userId = user_id;
         this.hours_taught = hours_taught;
-        this.year_ed = year_ed;
+        this.yearEd = year_ed;
         this.semester = semester;
         this.salary = salary;
         this.payment_date = payment_date;
@@ -35,9 +35,9 @@ public class HistorySalary extends Salary{
         return "HistorySalary{" +
                 "payment_date=" + payment_date +
                 ", id=" + id +
-                ", user_id=" + user_id +
+                ", user_id=" + userId +
                 ", hours_taught=" + hours_taught +
-                ", year_ed=" + year_ed +
+                ", year_ed=" + yearEd +
                 ", semester=" + semester +
                 ", salary=" + salary +
                 '}';

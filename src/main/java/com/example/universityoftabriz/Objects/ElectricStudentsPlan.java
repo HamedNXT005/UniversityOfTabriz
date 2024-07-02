@@ -8,8 +8,8 @@ import jakarta.persistence.Table;
 public class ElectricStudentsPlan extends StudentPlan{
     public ElectricStudentsPlan(Long id, Long student_id, Long course_id, float grade) {
         this.id = id;
-        this.student_id = student_id;
-        this.course_id = course_id;
+        this.studentId = student_id;
+        this.courseId = course_id;
         this.grade = grade;
     }
     public ElectricStudentsPlan() {
@@ -20,8 +20,8 @@ public class ElectricStudentsPlan extends StudentPlan{
     public String toString() {
         return "ElectricStudentsPlan{" +
                 "id=" + id +
-                ", student_id=" + student_id +
-                ", course_id=" + course_id +
+                ", student_id=" + studentId +
+                ", course_id=" + courseId +
                 ", grade=" + grade +
                 '}';
     }

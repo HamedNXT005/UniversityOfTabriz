@@ -1,9 +1,6 @@
 package com.example.universityoftabriz.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -12,9 +9,11 @@ import java.util.Date;
 public abstract class Salary {
     @Id
     protected Long id;
-    protected Long user_id;
+    @Column (name = "user_id")
+    protected Long userId;
     protected int hours_taught;
-    protected Date year_ed;
+    @Column (name = "year_ed")
+    protected Date yearEd;
     protected int semester;
     protected Long salary;
     public Long getId() {
@@ -25,12 +24,12 @@ public abstract class Salary {
         this.id = id;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public int getHours_taught() {
@@ -41,12 +40,12 @@ public abstract class Salary {
         this.hours_taught = hours_taught;
     }
 
-    public Date getYear_ed() {
-        return year_ed;
+    public Date getYearEd() {
+        return yearEd;
     }
 
-    public void setYear_ed(Date year_ed) {
-        this.year_ed = year_ed;
+    public void setYearEd(Date yearEd) {
+        this.yearEd = yearEd;
     }
 
     public int getSemester() {

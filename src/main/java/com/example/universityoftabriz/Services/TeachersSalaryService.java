@@ -20,10 +20,10 @@ public class TeachersSalaryService {
     }
 
     public List<TeachersSalary> getTeachersSalaryByUid(long user_id){
-        return teachersSalaryRepository.findByUser_id(user_id);
+        return teachersSalaryRepository.findByUserId(user_id);
     }
 
     public List<TeachersSalary> getTeachersSalaryByDate(Date year_ed, int semester){
-        return teachersSalaryRepository.findByYear_edAndSemester(year_ed,semester);
+        return teachersSalaryRepository.findByYearEdAndSemester(year_ed,semester);
     }
 }

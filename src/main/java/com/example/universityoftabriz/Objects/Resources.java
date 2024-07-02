@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -11,14 +12,15 @@ import java.util.Date;
 public class Resources {
     @Id
     private Long id;
-    private Date year_ed;
+    @Column (name = "year_ed")
+    private Date yearEd;
     private int semester;
     private Long total_budget;
     private Long rate_sc;
     private Long rate_normal;
     public Resources(Long id, Date year_ed, int semester, Long total_budget, Long rate_sc, Long rate_normal) {
         this.id = id;
-        this.year_ed = year_ed;
+        this.yearEd = year_ed;
         this.semester = semester;
         this.total_budget = total_budget;
         this.rate_sc = rate_sc;
@@ -37,12 +39,12 @@ public class Resources {
         this.id = id;
     }
 
-    public Date getYear_ed() {
-        return year_ed;
+    public Date getYearEd() {
+        return yearEd;
     }
 
-    public void setYear_ed(Date year_ed) {
-        this.year_ed = year_ed;
+    public void setYearEd(Date yearEd) {
+        this.yearEd = yearEd;
     }
 
     public int getSemester() {
@@ -81,7 +83,7 @@ public class Resources {
     public String toString() {
         return "Resources{" +
                 "id=" + id +
-                ", year_ed=" + year_ed +
+                ", year_ed=" + yearEd +
                 ", semester=" + semester +
                 ", total_budget=" + total_budget +
                 ", rate_sc=" + rate_sc +
