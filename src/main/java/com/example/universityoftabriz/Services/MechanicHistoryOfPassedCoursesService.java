@@ -7,13 +7,23 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class MechanicHistoryOfPassedCoursesService {
+public class MechanicHistoryOfPassedCoursesService implements HistoryOfPassedCourses<MechanicHistoryOfPassedCourses>{
     @Autowired
     private MechanicHistoryOfPassedCoursesRepository mechanicHistoryOfPassedCoursesRepository;
 
     public void updateMechanicHistoryOfPassedCourses(MechanicHistoryOfPassedCourses mechanicHistoryOfPassedCourses, Logger logger) {
         mechanicHistoryOfPassedCoursesRepository.save(mechanicHistoryOfPassedCourses);
         logger.info("Mechanic History of passed courses with id: {} updated successfully.",mechanicHistoryOfPassedCourses.getId());
+    }
+    @Override
+    public List<MechanicHistoryOfPassedCourses> getHistoryOfPCByStudentId(Long studentId){
+        return mechanicHistoryOfPassedCoursesRepository.findByStudentId(studentId);
+    }
+    @Override
+    public List<MechanicHistoryOfPassedCourses> findByStudentIdAndCourseId(Long studentId, Long courseId){
+        return mechanicHistoryOfPassedCoursesRepository.findByStudentIdAndCourseId(studentId,courseId);
     }
 }
