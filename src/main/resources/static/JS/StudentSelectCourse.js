@@ -3,16 +3,18 @@ function toggleSidebar() {
     if (sidebar.style.left === "-290px") {
         sidebar.style.left = "0";
     } else {
+
         sidebar.style.left = "-290px";
     }
 
 }
+
 function switchHome (){
     window.location.href= "/StudentPanel";
 }
- function switchCoursesList(){
+function switchCoursesList(){
     window.location.href="/StudentPanel/StudentCoursesList";
- }
+}
 function  switchSeeGPA(){
     window.location.href="/StudentPanel/StudentSeeGPA";
 
@@ -39,23 +41,13 @@ function LogOut(){
 $(document).ready(function (){
     $.ajax({
         type: "GET",
-        url: "/StudentPanel/getInfo" ,
+        url: "/StudentPanel/StudentSelectCourse/getInfo" ,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (result){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
             $("#faculty1").text(result.faculty);
             $("#major1").text(result.major);
-            $("#nameF").text(result.nameF);
-            $("#nameL").text(result.nameL);
-            $("#faculty").text(result.faculty);
-            $("#major").text(result.major);
-            $("#nCode").text(result.nationalCode);
-            $("#PNumber").text(result.phoneN);
-            $("#semesterPassed").text(result.semestersPassed);
-            $("#unitPassed").text(result.unitsPassed);
-            $("#gpaTotal").text(result.gpaTotal);
-            $("#gpaSemester").text(result.gpaSemester);
         },error(){
             console.log("error");
         }
