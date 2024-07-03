@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
   <script th:src="@{/JS/EmployeePanel.js}"></script>
-  <title>Employee Panel</title>
+  <title>Salary Payment</title>
   <style>
     body {
       margin: 0;
@@ -16,8 +16,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px;
-      background-color: #333;
-      color: white;
+      background-color: #074173;
+      color: #FFC700;
       height: 90px;
     }
     .person .person-img {
@@ -43,8 +43,8 @@
     .sidebar {
       width: 250px;
       height: 100vh;
-      background-color: #444;
-      color: white;
+      background-color: #074172;
+      color: #FFC700;
       padding: 20px;
       position: absolute;
       top: 0;
@@ -58,7 +58,7 @@
     }
     a {
       display: block;
-      color: white;
+      color: #FFC700;
       text-decoration: none;
       margin-bottom: 15px;
       font-size: 20px;
@@ -71,21 +71,21 @@
     <img th:src="${ImageURL}" class="person-img" id="personIMG">
     <span style="font-size: 24px" id="PersonInfo"></span>
   </div>
-  <h1 class="logo-text"><cite>Employee Panel</cite></h1>
+  <h1 class="logo-text" style="color: #FFC700;"><cite>Salary Payment</cite></h1>
   <img class="logo-right" th:src="@{/Img/images.jpg}">
 </header>
-<div style="background-color: #333333; height: 50px;">
+<div style="background-color: #074173; height: 50px;">
   <button class="menu-btn" onclick="toggleSidebar()">
     <img th:src="@{/Img/Menu.png}">
   </button>
 </div>
 <div class="sidebar" id="sidebar">
   <div>
-    <h4 style="display: inline;">Department:</h4>
-    <h3 style="display: inline;" id="department"> Finance</h3>
+    <h4 style="display: inline; color: #FFC700;">Department:</h4>
+    <h3 style="display: inline; color: #FFC700;" id="department"> Finance</h3>
     <br>
-    <h4 style="display: inline;">Role:</h4>
-    <h3 style="display: inline;" id="role"> Employee</h3>
+    <h4 style="display: inline; color: #FFC700;">Role:</h4>
+    <h3 style="display: inline; color: #FFC700;" id="role"> Employee</h3>
     <br>
     <br>
     <a onclick="switchHome()" id="homeBtn" style="margin-top: 10px;">Home</a>

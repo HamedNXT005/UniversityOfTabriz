@@ -9,7 +9,6 @@ function toggleSidebar() {
 }
 
 $(document).ready(function (){
-    alert("Wellcome");
     $.ajax({
         type: "GET",
         url: "/StudentPanel/getInfo" ,
@@ -17,6 +16,16 @@ $(document).ready(function (){
         dataType: "json",
         success: function (result){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
+            $("#nameF").text(result.nameF);
+            $("#nameL").text(result.nameL);
+            $("#faculty").text(result.faculty);
+            $("#major").text(result.major);
+            $("#nCode").text(result.nationalCode);
+            $("#PNumber").text(result.phoneN);
+            $("#semesterPassed").text(result.semestersPassed);
+            $("#unitPassed").text(result.unitsPassed);
+            $("#gpaTotal").text(result.gpaTotal);
+            $("#gpaSemester").text(result.gpaSemester);
         },error(){
             console.log("error");
         }

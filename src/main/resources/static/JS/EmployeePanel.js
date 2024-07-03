@@ -30,7 +30,7 @@ function LogOut(){
         dataType: "json",
         success: function (result){
             if (result === true){
-                window.location.href === "/Login";
+                window.location.href = "/Login";
             }
         },error(){
             console.log("error");
@@ -39,7 +39,6 @@ function LogOut(){
 }
 
 $(document).ready(function (){
-    alert("Wellcome");
     $.ajax({
         type: "GET",
         url: "/EmployeePanel/getInfo" ,
@@ -47,6 +46,14 @@ $(document).ready(function (){
         dataType: "json",
         success: function (result){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
+            $("#department").text(result.department);
+            $("#role").text(result.role);
+            $("#nameF").text(result.nameF);
+            $("#nameL").text(result.nameL);
+            $("#edep").text(result.department);
+            $("#erole").text(result.role);
+            $("#nCode").text(result.nationalCode);
+            $("#PNumber").text(result.phoneN);
         },error(){
             console.log("error");
         }
