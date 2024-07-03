@@ -31,6 +31,7 @@ public class EmployeePanelController {
     public Optional<Employee> getEmployeeInfo(){
         Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
         return Optional.of(employee.get());
+
     }
 
     @GetMapping("/EmployeePanel/LogOut")

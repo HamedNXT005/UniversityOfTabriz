@@ -36,6 +36,7 @@ function LogOut(){
     });
 }
 
+
 $(document).ready(function (){
     $.ajax({
         type: "GET",

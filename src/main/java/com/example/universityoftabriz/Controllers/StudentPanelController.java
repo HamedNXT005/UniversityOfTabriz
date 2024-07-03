@@ -28,6 +28,7 @@ public class StudentPanelController {
         return "StudentPanel";
     }
 
+
     @GetMapping("/StudentPanel/getInfo")
     @ResponseBody
     public Optional<Student> getStudentInfo(){

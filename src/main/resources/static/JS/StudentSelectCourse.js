@@ -3,6 +3,7 @@ function toggleSidebar() {
     if (sidebar.style.left === "-290px") {
         sidebar.style.left = "0";
     } else {
+
         sidebar.style.left = "-290px";
     }
 
