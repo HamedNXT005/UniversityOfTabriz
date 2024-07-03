@@ -12,33 +12,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Optional;
 
 @Controller
-public class StudentPanelController {
-
+public class StudentSelectCourseController {
     @Autowired
     private StudentService studentService;
 
-    @RequestMapping("/StudentPanel")
-    public String StudentPanel(Model model){
+    @RequestMapping("/StudentPanel/StudentSelectCourse")
+    public String StudentCoursesList(Model model) {
         Optional<Student> student = studentService.getStudentById(LoginController.uid);
         Student student1 = student.get();
 
         String ImageUrl = student1.getPhoto();
         model.addAttribute("ImageURL" , ImageUrl);
 
-        return "StudentPanel";
+        return "StudentSelectCourse";
     }
 
-    @GetMapping("/StudentPanel/getInfo")
+    @GetMapping("/StudentPanel/StudentSelectCourse/getInfo")
     @ResponseBody
-    public Optional<Student> getStudentInfo(){
+    public Optional<Student> getEmployeeInfo(){
         Optional<Student> student = studentService.getStudentById(LoginController.uid);
         return Optional.of(student.get());
     }
 
-    @GetMapping("/StudentPanel/LogOut")
-    @ResponseBody
-    public boolean Logout(){
-        LoginController.uid = 100;
-        return true;
-    }
 }

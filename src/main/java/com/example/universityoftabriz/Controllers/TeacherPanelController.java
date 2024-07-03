@@ -17,7 +17,7 @@ public class TeacherPanelController {
     private TeacherService teacherService;
 
     @RequestMapping("/TeacherPanel")
-    public String EmployeePanel(Model model){
+    public String TeacherPanel(Model model){
         Optional<Teacher> teacher = teacherService.getTeacherByID(LoginController.uid);
         Teacher teacher1 = teacher.get();
 
@@ -29,7 +29,7 @@ public class TeacherPanelController {
 
     @GetMapping("/TeacherPanel/getInfo")
     @ResponseBody
-    public Optional<Teacher> getEmployeeInfo(){
+    public Optional<Teacher> getTeacherInfo(){
         Optional<Teacher> teacher = teacherService.getTeacherByID(LoginController.uid);
         return Optional.of(teacher.get());
     }
