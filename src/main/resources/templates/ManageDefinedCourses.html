@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
-  <script th:src="@{/JS/EmployeePanel.js}"></script>
-  <title>Employee Panel</title>
+  <script th:src="@{/JS/TeachersList.js}"></script>
+  <title>Manage Defined Courses</title>
   <style>
     body {
       margin: 0;
@@ -62,27 +62,6 @@
       margin-bottom: 15px;
       font-size: 20px;
     }
-    table {
-      border-collapse: collapse;
-      border-color: #074173;
-      width: 80%;
-      margin: 20px auto;
-    }
-    th, td {
-      border: 1px solid #074173;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #074173;
-      color: #FFC700;
-      font-size: xx-large;
-    }
-    td{
-      font-size: x-large;
-      color: #074173;
-    }
-
   </style>
 </head>
 <body>
@@ -91,7 +70,7 @@
     <img th:src="${ImageURL}" class="person-img" id="personIMG">
     <span style="font-size: 24px; color: #FFC700" id="PersonInfo"></span>
   </div>
-  <h1 class="logo-text" style="color: #FFC700;"><cite>Employee Panel</cite></h1>
+  <h1 class="logo-text" style="color: #FFC700;"><cite>Manage Defined Courses</cite></h1>
   <img class="logo-right" th:src="@{/Img/images.jpg}">
 </header>
 <div style="background-color: #074173; height: 50px;">
@@ -127,35 +106,6 @@
 </div>
 
 <div class="main-content" id="main-content">
-  <table>
-    <tr>
-      <th colspan="2"><cite>Personal Information</cite></th>
-    </tr>
-    <tr style="background-color: #f2f2f2">
-      <td style="font-weight: bold;">First name</td>
-      <td id="nameF"></td>
-    </tr>
-    <tr>
-      <td style="font-weight: bold;">Last name</td>
-      <td id="nameL"></td>
-    </tr>
-    <tr style="background-color: #f2f2f2">
-      <td style="font-weight: bold;">Department</td>
-      <td id="edap"></td>
-    </tr>
-    <tr>
-      <td style="font-weight: bold;">Role</td>
-      <td id="erole"></td>
-    </tr>
-    <tr style="background-color: #f2f2f2">
-      <td style="font-weight: bold;">National Code</td>
-      <td id="nCode"></td>
-    </tr>
-    <tr>
-      <td style="font-weight: bold;">Phone number</td>
-      <td id="PNumber"></td>
-    </tr>
-  </table>
 </div>
 </body>
 </html>

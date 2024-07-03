@@ -22,6 +22,31 @@ function switchDeterminationTheBudget(){
 function switchManageEmployee(){
     window.location.href = "/Employee/Finance/ManageEmployee";
 }
+
+function switchTList(){
+    window.location.href = "/EmployeePanel/TeachersList";
+}
+function switchATeacher(){
+    window.location.href = "/EmployeePanel/AddTeacher";
+}
+function switchSList(){
+    window.location.href = "/EmployeePanel/StudentsList";
+}
+function switchAStudent(){
+    window.location.href = "/EmployeePanel/AddStudent";
+}
+function switchAcademicalME(){
+    window.location.href = "/EmployeePanel/AcademicalManageE";
+}
+function switchAcademicalSTList(){
+    window.location.href = "/EmployeePanel/FacultyStudentsList";
+}
+function switchDeterminationCourses(){
+    window.location.href = "/EmployeePanel/DeterminationTheCourses";
+}
+function switchManageTheDefinedCourses(){
+    window.location.href = "/EmployeePanel/ManageDefinedCourses";
+}
 function LogOut(){
     $.ajax({
         type: "GET",

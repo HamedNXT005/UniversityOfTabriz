@@ -66,19 +66,13 @@ function LogOut(){
 $(document).ready(function (){
     $.ajax({
         type: "GET",
-        url: "/EmployeePanel/getInfo" ,
+        url: "/EmployeePanel/DeterminationTheCourses/getInfo" ,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (result){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
             $("#department").text(result.department);
             $("#role").text(result.role);
-            $("#nameF").text(result.nameF);
-            $("#nameL").text(result.nameL);
-            $("#edep").text(result.department);
-            $("#erole").text(result.role);
-            $("#nCode").text(result.nationalCode);
-            $("#PNumber").text(result.phoneN);
         },error(){
             console.log("error");
         }
