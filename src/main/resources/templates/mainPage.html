@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
+    <script th:src="@{/JS/MainPage.js}"></script>
     <title>University Website</title>
     <style>
         body {
@@ -12,42 +14,31 @@
             margin: 0;
             padding: 0;
         }
-
         header {
             background-color:#074173;
             color: #ffffff;
             text-align: center;
             padding: 10px 0;
         }
-
         nav {
             background-color: #EEEDEB;
             padding: 10px;
         }
-
         nav ul {
             list-style-type: none;
             text-align: center;
         }
-
         nav ul li {
             display: inline;
             margin-right: 10px;
         }
-
         nav a {
             color: #FFC700;
             text-decoration:none;
-
-
         }
-
         section {
             padding: 20px;
         }
-
-
-
         footer {
             background-color: #333;
             color: #fff;
@@ -67,17 +58,14 @@
         #Faculty{
             font-size: xx-large;
             color: #074173;
-            padding-left: 10px
-        ;
+            padding-left: 10px;
         }
         #h6{
             font-size: xx-large;
             color: #074173;
             padding-left: 10px
         }
-
     </style>
-
 </head>
 
 <body>
@@ -89,10 +77,10 @@
 <nav>
     <ul>
         <b>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Sign In</a></li>
-</b>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a onclick="switchToLogin()">Sign In</a></li>
+        </b>
     </ul>
 </nav>
 <h1 id="about">
@@ -110,8 +98,6 @@
     <img src="../static/Img/638060062455449786.jpg" style="width:500px;height:400px; padding-left: 10px;">
     <video width="500" height="400" autoplay muted style="padding-left: 10px;">
         <source src="../static/Img/export.mp4" type="video/mp4">
-
-
     </video>
 </div>
 <!--<div>-->

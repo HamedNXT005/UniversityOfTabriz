@@ -9,7 +9,6 @@ function toggleSidebar() {
 }
 
 $(document).ready(function (){
-    alert("Wellcome");
     $.ajax({
         type: "GET",
         url: "/TeacherPanel/getInfo" ,
@@ -17,6 +16,12 @@ $(document).ready(function (){
         dataType: "json",
         success: function (result){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
+            $("#nameF").text(result.nameF);
+            $("#nameL").text(result.nameL);
+            $("#faculty").text(result.faculty);
+            $("#status").text(result.status);
+            $("#nCode").text(result.nationalCode);
+            $("#PNumber").text(result.phoneN);
         },error(){
             console.log("error");
         }
