@@ -11,6 +11,7 @@
             font-size: large;
             margin: 0;
             padding: 0;
+            background-color: #EEEDEB;
         }
 
         header {
@@ -21,7 +22,7 @@
         }
 
         nav {
-            background-color: #EEEDEB;
+            background-color: #FFC700;
             padding: 10px;
         }
 
@@ -36,24 +37,17 @@
         }
 
         nav a {
-            color: #FFC700;
+            color: #074173;
             text-decoration:none;
 
 
         }
-
         section {
             padding: 20px;
+
         }
 
 
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
         #about{
             color:#074173;
             font-family: "Arial Narrow";
@@ -67,15 +61,44 @@
         #Faculty{
             font-size: xx-large;
             color: #074173;
-            padding-left: 10px
-        ;
+            padding-left: 10px;
         }
         #h6{
             font-size: xx-large;
             color: #074173;
-            padding-left: 10px
-        }
+            padding-left: 10px;
 
+        }
+        #h7{
+            font-size: xx-large;
+            color: #074173;
+            padding-left: 10px;
+
+        }
+        #h8 {
+            font-size: xx-large;
+            color: #074173;
+            padding-left: 10px;
+        }
+            #underline{
+               font-color: #074173;
+            }
+            footer {
+                background-color:#074173;
+                color: #fff;
+                text-align:left;
+                padding-top:50px ;
+                padding-left: 20px;
+        }
+            #footerh1{
+                font-size:xx-large ;
+            }
+        #footerh2{
+            font-size:xx-large ;
+        }
+        #footerh3{
+            font-size:xx-large ;
+        }
     </style>
 
 </head>
@@ -83,7 +106,7 @@
 <body>
 <header>
     <h1>University Of Tabriz</h1>
-<!--<img src="../static/img/photo_2024-07-01_19-01-19.jpg" style="width:100px;height:100px; padding-right: 1130px;">-->
+<img th:src="@{/Img/photo_2024-07-01_19-01-19.jpg}" style="width:100px;height:100px; margin-right: 1130px; margin-top: -90px; border-radius:50%">
 </header>
 
 <nav>
@@ -106,8 +129,8 @@
     Not only does the University of Tabriz excel in academics, but it also values cultural diversity and community engagement. The university promotes a vibrant campus life with various clubs, societies, and cultural events that enrich the student experience and foster a sense of belonging. Additionally, the university is actively involved in community outreach initiatives, contributing to the social and economic development of the region. Overall, the University of Tabriz is a dynamic institution that continues to uphold its reputation for academic excellence and societal impact.
 </h2>
 <div style="display: flex;">
-<img src="../static/Img/638060062491543029.jpg" style="width:500px;height:400px; padding-left: 10px;">
-    <img src="../static/Img/638060062455449786.jpg" style="width:500px;height:400px; padding-left: 10px;">
+<img th:src="@{/Img/638060062491543029.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th: src="@/Img/638060062455449786.jpg}" style="width:500px;height:400px; padding-left: 10px;">
     <video width="500" height="400" autoplay muted style="padding-left: 10px;">
         <source src="../static/Img/export.mp4" type="video/mp4">
 
@@ -120,7 +143,7 @@
 
 <!--    </video>-->
 <!--</div>-->
-<h4>
+<h4 id="underline">
 ____________________________________________________________________________________________________________________________________________
 </h4>
 <h5 id="Faculty">
@@ -128,22 +151,57 @@ ________________________________________________________________________________
 </h5>
 
     <div style="display: flex;">
-        <img src="../static/Img/1500368897-.jpg" style="width:500px;height:400px; padding-left: 10px;">
-        <img src="../static/Img/1500460274-7777.jpg" style="width:500px;height:400px; padding-left: 10px;">
+        <img th:src="@{/Img/1500368897-.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+        <img th:src="@{/Img/1500460274-7777.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+        <img src="../static/Img/jelo-7.jpg.download" style="width:500px;height:400px; padding-left: 10px;">
+
     </div>
 <h6 id="h6">
 
-   Civil Faculty members:
+   Faculty Of Chemistry:
 
 </h6>
 
 <div style="display: flex;">
-    <img src="../static/Img/20150831000527903.jpg" style="width:150px;height:180px; padding-left: 10px;">
-    <img src="../static/Img/IMG_3002.jpg" style="width:150px;height:180px; padding-left: 10px;">
-    <img src="../static/Img/download.jfif" style="width:150px;height:180px; padding-left: 10px;">
-    <img src="../static/Img/download%20(1).jfif" style="width:150px;height:180px; padding-left: 10px;">
+
+    <img th: src="@{/Img/1539754267-.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th: src="@{/Img/389788_580.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img  th:src="@{/Img/2011-08-14_08.49.15_10.jpg}" style="width:500px;height:400px; padding-left: 10px;">
 
 </div>
 
+<h1 id="h7">
+    Faculty Of Computer And Electric:
+</h1>
+
+<div style="display: flex;">
+
+    <img th: src="@{/Img/Portal_of_University_of_Tabriz_1.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img  th:src="@{/Img/64628ba0648f8-back-faculty.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img  th:src="@{/Img/background.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+
+</div>
+
+<h2 id="h8">
+    Faculty Of Mechanic:
+</h2>
+<div style="display: flex;">
+
+    <img th: src="@{/Img/65e23aea4c69a-02.png}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th: src="@{/Img/1624871880-8w5s2-3e2a2118.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th: src="@{/Img/844350_3005557--دانشکده-ساخت-و-تولید-دانشگاه-تبریز.png}" style="width:500px;height:400px; padding-left: 10px;">
+
+</div>
+<h3> <br>
+
+
+    </br>
+</h3>
+
 </body>
+<footer>
+    <h1 id="footerh1"> Address:East Azerbaijan Province, Tabriz، 29 Bahman Boulevard</h1>
+    <h2 id="footerh2"> Telephone: 041-33340081-9 </h2>
+    <h3 id="footerh3"> Post Code:5166616471</h3>
+</footer>
 </html>
