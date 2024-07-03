@@ -22,6 +22,10 @@ public class StudentService {
         return  studentRepository.findById(id);
     }
 
+    public Optional<Student> getStudentByUserName(String userName){
+        return studentRepository.findByUserName(userName);
+    }
+
     public void updateStudent(Student student, Logger logger) {
         studentRepository.save(student);
         logger.info("Student with id: {} updated successfully.",student.getId());

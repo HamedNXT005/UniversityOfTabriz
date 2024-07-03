@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
-  <script th:src="@{/JS/EmployeePanel.js}"></script>
-  <title>Employee Panel</title>
+  <script th:src="@{/JS/TeacherPanel.js}"></script>
+  <title>Teacher Panel</title>
   <style>
     body {
       margin: 0;
@@ -48,20 +48,13 @@
       padding: 20px;
       position: absolute;
       top: 0;
-      left: 0px;
+      left: -290px;
       transition: left 0.3s ease;
       margin-top: 170px;
     }
     .main-content {
       margin-left: 290px; /* Same width as the sidebar */
       padding: 20px;
-    }
-    a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin-bottom: 15px;
-      font-size: 20px;
     }
   </style>
 </head>
@@ -71,7 +64,7 @@
     <img th:src="${ImageURL}" class="person-img" id="personIMG">
     <span style="font-size: 24px" id="PersonInfo"></span>
   </div>
-  <h1 class="logo-text"><cite>Employee Panel</cite></h1>
+  <h1 class="logo-text"><cite>Teacher Panel</cite></h1>
   <img class="logo-right" th:src="@{/Img/images.jpg}">
 </header>
 <div style="background-color: #333333; height: 50px;">
@@ -80,26 +73,10 @@
   </button>
 </div>
 <div class="sidebar" id="sidebar">
-  <div>
-    <h3 style="display: inline">Department:</h3>
-    <h2 style="display: inline" id="department"> Finance</h2>
-    <br>
-    <h3 style="display: inline;">Role:</h3>
-    <h2 style="display: inline; margin-bottom: 10px;" id="role" > Employee</h2>
-    <br>
-    <br>
-    <a onclick="switchHome()" id="homeBtn" style="margin-top: 10px;">Home</a>
-    <a onclick="switchDeterminationSalary()" id="salaryBtn">Determination salary rates</a>
-    <a onclick="switchSalaryPeyment()" id="salaryPBtn">Salary Payment</a>
-    <a onclick="switchDeterminationTheBudget()" id="budgetBtn">Determination the budget</a>
-    <a onclick="switchManageEmployee()" id="meBtn">Manage Employees</a>
-    <a onclick="LogOut()" id="logoutBtn">Log Out</a>
-  </div>
-
+  Sidebar Content
 </div>
 
 <div class="main-content" id="main-content">
-  Page Content
 </div>
 </body>
 </html>

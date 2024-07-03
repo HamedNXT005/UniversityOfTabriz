@@ -1,6 +1,5 @@
 package com.example.universityoftabriz.Services;
 
-import com.example.universityoftabriz.Objects.Resources;
 import com.example.universityoftabriz.Objects.Teacher;
 import com.example.universityoftabriz.Repository.TeacherRepository;
 import org.slf4j.Logger;
@@ -18,6 +17,15 @@ public class TeacherService {
     public void updateTeacher(Teacher teacher, Logger logger) {
         teacherRepository.save(teacher);
         logger.info("Teacher with id: {} updated successfully.",teacher.getId());
+    }
+
+    public Optional<Teacher> getTeacherByID(Long id){
+        return teacherRepository.findById(id);
+    }
+
+
+    public Optional<Teacher> getTeacherByUserName(String userName){
+        return teacherRepository.findByUserName(userName);
     }
 
     public Optional<Teacher> getTeacherByNameFAndNameL(String nameF, String nameL){
