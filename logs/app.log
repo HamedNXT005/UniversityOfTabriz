@@ -1,0 +1,217 @@
+2024-07-03 11:41:04.340 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 6224 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 11:41:04.342 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 11:41:13.304 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 9.335 seconds (process running for 10.375)
+2024-07-03 11:41:29.301 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 11:41:39.792 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] uId:  --- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.util.NoSuchElementException: No value present] with root cause
+java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at com.example.universityoftabriz.Controllers.EmployeePanelController.EmployeePanel(EmployeePanelController.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-07-03 11:42:34.859 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 6968 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 11:42:34.860 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 11:42:43.604 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 9.115 seconds (process running for 9.981)
+2024-07-03 11:42:53.859 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 11:43:25.434 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 14752 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 11:43:25.437 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 11:43:32.848 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 7.795 seconds (process running for 8.66)
+2024-07-03 11:43:47.392 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 11:44:41.827 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 19728 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 11:44:41.828 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 11:44:49.648 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 8.266 seconds (process running for 9.092)
+2024-07-03 11:45:02.338 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 12:09:42.024 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 19044 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 12:09:42.026 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 12:09:51.523 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 9.95 seconds (process running for 11.061)
+2024-07-03 12:10:29.652 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 12:10:57.163 INFO c.e.u.C.LoginController uId: 14025361234 --- The user is logged in.
+2024-07-03 12:11:09.029 INFO c.e.u.C.LoginController uId: 14025361234 --- The user is logged in.
+2024-07-03 12:13:01.474 INFO c.e.u.C.LoginController uId: 101 --- The user is logged in.
+2024-07-03 12:14:13.635 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 16596 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 12:14:13.637 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 12:14:23.170 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 10.038 seconds (process running for 11.34)
+2024-07-03 12:14:44.052 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 12:15:07.648 INFO c.e.u.C.LoginController uId: 14025361234 --- The user is logged in.
+2024-07-03 12:16:04.384 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 19560 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 12:16:04.386 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 12:16:10.690 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 6.739 seconds (process running for 8.084)
+2024-07-03 12:22:57.260 INFO c.e.u.C.LoginController uId: 14025361234 --- The user is logged in.
+2024-07-03 12:23:00.532 INFO c.e.u.C.LoginController uId: 14025361234 --- Application Started.
+2024-07-03 12:23:17.011 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 21324 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 12:23:17.013 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 12:23:25.960 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 9.342 seconds (process running for 10.539)
+2024-07-03 12:23:37.698 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 12:24:28.920 INFO c.e.u.C.LoginController uId: 14025361234 --- The user is logged in.
+2024-07-03 12:24:31.897 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] uId:  --- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.util.NoSuchElementException: No value present] with root cause
+java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at com.example.universityoftabriz.Controllers.EmployeePanelController.getEmployeeInfo(EmployeePanelController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-07-03 12:27:18.477 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 22044 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 12:27:18.479 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 12:27:27.376 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 9.316 seconds (process running for 10.498)
+2024-07-03 12:27:59.503 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 12:29:19.347 INFO c.e.u.C.LoginController uId: 101 --- The user is logged in.
+2024-07-03 12:29:35.635 INFO c.e.u.C.LoginController uId: 14025361234 --- The user is logged in.
+2024-07-03 12:29:37.616 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] uId:  --- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.util.NoSuchElementException: No value present] with root cause
+java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at com.example.universityoftabriz.Controllers.EmployeePanelController.getEmployeeInfo(EmployeePanelController.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-07-03 12:31:59.406 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 18628 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 12:31:59.408 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 12:32:08.869 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 9.938 seconds (process running for 11.095)
+2024-07-03 12:32:15.981 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 12:32:24.986 INFO c.e.u.C.LoginController uId: 14025361234 --- The user is logged in.
+2024-07-03 12:32:32.312 INFO c.e.u.C.LoginController uId: 14025361234 --- Application Started.
+2024-07-03 12:32:55.644 INFO c.e.u.C.LoginController uId: 1001 --- The user is logged in.
+2024-07-03 14:27:04.525 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 4612 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 14:27:04.526 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 14:27:17.262 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 13.252 seconds (process running for 15.325)
+2024-07-03 14:27:32.530 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 14:27:41.838 INFO c.e.u.C.LoginController uId: 101 --- The user is logged in.
+2024-07-03 14:28:56.871 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 18812 (C:\Users\Hamed2\Desktop\UniversityOfTabriz\target\classes started by Hamed2 in C:\Users\Hamed2\Desktop\UniversityOfTabriz)
+2024-07-03 14:28:56.873 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-07-03 14:29:07.723 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 11.343 seconds (process running for 12.918)
+2024-07-03 14:29:20.119 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-07-03 14:29:35.795 INFO c.e.u.C.LoginController uId: 101 --- The user is logged in.

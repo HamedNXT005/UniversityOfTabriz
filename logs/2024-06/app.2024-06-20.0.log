@@ -1,0 +1,5 @@
+2024-06-20 22:20:23.199 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Starting UniversityOfTabrizApplication using Java 21.0.1 with PID 16428 (C:\Users\Linux_laptop\Desktop\UniversityOfTabriz\target\classes started by Linux_laptop in C:\Users\Linux_laptop\Desktop\UniversityOfTabriz)
+2024-06-20 22:20:23.200 INFO c.e.u.UniversityOfTabrizApplication uId:  --- No active profile set, falling back to 1 default profile: "default"
+2024-06-20 22:20:26.362 INFO c.e.u.UniversityOfTabrizApplication uId:  --- Started UniversityOfTabrizApplication in 3.416 seconds (process running for 4.118)
+2024-06-20 22:20:33.524 INFO c.e.u.C.LoginController uId: 100 --- Application Started.
+2024-06-20 22:20:37.346 INFO c.e.u.C.LoginController uId: 101 --- Got Students.

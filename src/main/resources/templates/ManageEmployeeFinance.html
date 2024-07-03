@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
+  <script th:src="@{/JS/ManageEmployeeFinance.js}"></script>
+  <title>Manage Employee</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      height: 90px;
+    }
+    .person .person-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .menu-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+    }
+    .logo-text {
+      font-size: 36px;
+      font-weight: bold;
+    }
+    .logo-right {
+      max-width: 80px;
+      border-radius: 50%;
+    }
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      position: absolute;
+      top: 0;
+      left: -290px;
+      transition: left 0.3s ease;
+      margin-top: 170px;
+    }
+    .main-content {
+      margin-left: 290px; /* Same width as the sidebar */
+      padding: 20px;
+    }
+    a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="person">
+    <img th:src="${ImageURL}" class="person-img" id="personIMG">
+    <span style="font-size: 24px" id="PersonInfo"></span>
+  </div>
+  <h1 class="logo-text"><cite>Manage Employee</cite></h1>
+  <img class="logo-right" th:src="@{/Img/images.jpg}">
+</header>
+<div style="background-color: #333333; height: 50px;">
+  <button class="menu-btn" onclick="toggleSidebar()">
+    <img th:src="@{/Img/Menu.png}">
+  </button>
+</div>
+<div class="sidebar" id="sidebar">
+  <div>
+    <h4 style="display: inline;">Department:</h4>
+    <h3 style="display: inline;" id="department"> Finance</h3>
+    <br>
+    <h4 style="display: inline;">Role:</h4>
+    <h3 style="display: inline;" id="role"> Employee</h3>
+    <br>
+    <br>
+    <a onclick="switchHome()" id="homeBtn" style="margin-top: 10px;">Home</a>
+    <a onclick="switchDeterminationSalary()" id="salaryBtn">Determination salary rates</a>
+    <a onclick="switchSalaryPeyment()" id="salaryPBtn">Salary Payment</a>
+    <a onclick="switchDeterminationTheBudget()" id="budgetBtn">Determination the budget</a>
+    <a onclick="switchManageEmployee()" id="meBtn">Manage Employees</a>
+    <a onclick="LogOut()" id="logoutBtn">Log Out</a>
+  </div>
+
+</div>
+
+<div class="main-content" id="main-content">
+  Page Content
+</div>
+</body>
+</html>
