@@ -15,4 +15,5 @@ public interface CivilDefinedCoursesRepository extends JpaRepository<CivilDefine
 
     Optional<CivilDefinedCourses> findByTeacherIdAndCourseId(Long teacherId, Long courseId);
 
+    List<CivilDefinedCourses> findByCapacityGreaterThan(int capacity);
 }

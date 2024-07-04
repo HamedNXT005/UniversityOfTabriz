@@ -2,6 +2,7 @@ package com.example.universityoftabriz.Repository;
 
 import com.example.universityoftabriz.Objects.ChemistryDefinedCourses;
 import com.example.universityoftabriz.Objects.CivilDefinedCourses;
+import com.example.universityoftabriz.Objects.ComputerDefinedCourses;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -14,4 +15,5 @@ public interface ChemistryDefinedCoursesRepository extends JpaRepository<Chemist
 
     Optional<ChemistryDefinedCourses> findByTeacherIdAndCourseId(Long teacherId, Long courseId);
 
+    List<ChemistryDefinedCourses> findByCapacityGreaterThan(int capacity);
 }

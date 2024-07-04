@@ -15,4 +15,5 @@ public interface ElectricDefinedCoursesRepository extends JpaRepository<Electric
 
     Optional<ElectricDefinedCourses> findByTeacherIdAndCourseId(Long teacherId, Long courseId);
 
+    List<ElectricDefinedCourses> findByCapacityGreaterThan(int capacity);
 }

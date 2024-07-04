@@ -19,6 +19,10 @@ public class ChemistryDefinedCoursesService implements DefinedCourses<ChemistryD
         logger.info("Chemistry Defined Courses with id: {} updated successfully.",chemistryDefinedCourses.getId());
     }
 
+    public List<ChemistryDefinedCourses> getAvailableCourses(){
+        return chemistryDefinedCoursesRepository.findByCapacityGreaterThan(0);
+    }
+
     @Override
     public List<ChemistryDefinedCourses> getDCByTeacherId(Long teacherId){
         return chemistryDefinedCoursesRepository.findByTeacherId(teacherId);

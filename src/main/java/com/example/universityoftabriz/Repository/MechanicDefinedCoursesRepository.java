@@ -14,4 +14,6 @@ public interface MechanicDefinedCoursesRepository extends JpaRepository<Mechanic
     List<MechanicDefinedCourses> findByCourseId(Long courseId);
 
     Optional<MechanicDefinedCourses> findByTeacherIdAndCourseId(Long teacherId, Long courseId);
+
+    List<MechanicDefinedCourses> findByCapacityGreaterThan(int capacity);
 }

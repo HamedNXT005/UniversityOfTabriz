@@ -19,6 +19,10 @@ public class ElectricDefinedCoursesService implements DefinedCourses<ElectricDef
         logger.info("Electric Defined Courses with id: {} updated successfully.",electricDefinedCourses.getId());
     }
 
+    public List<ElectricDefinedCourses> getAvailableCourses(){
+        return electricDefinedCoursesRepository.findByCapacityGreaterThan(0);
+    }
+
     @Override
     public List<ElectricDefinedCourses> getDCByTeacherId(Long teacherId){
         return electricDefinedCoursesRepository.findByTeacherId(teacherId);

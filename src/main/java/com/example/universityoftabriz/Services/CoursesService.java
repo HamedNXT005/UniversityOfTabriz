@@ -20,6 +20,10 @@ public class CoursesService {
         logger.info("Course with id: {} updated successfully.",course.getId());
     }
 
+    public Optional<Courses> getById(long id){
+        return coursesRepository.findById(id);
+    }
+
     public Optional<Courses> getCourseByName(String name){
         return coursesRepository.findByName(name);
     }

@@ -19,6 +19,9 @@ public class CivilDefinedCoursesService implements DefinedCourses<CivilDefinedCo
         logger.info("Civil Defined Courses with id: {} updated successfully.",civilDefinedCourses.getId());
     }
 
+    public List<CivilDefinedCourses> getAvailableCourses(){
+        return civilDefinedCoursesRepository.findByCapacityGreaterThan(0);
+    }
     @Override
     public List<CivilDefinedCourses> getDCByTeacherId(Long teacherId){
         return civilDefinedCoursesRepository.findByTeacherId(teacherId);

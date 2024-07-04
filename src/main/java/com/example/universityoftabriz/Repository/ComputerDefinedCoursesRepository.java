@@ -15,4 +15,5 @@ public interface ComputerDefinedCoursesRepository extends JpaRepository<Computer
 
     Optional<ComputerDefinedCourses> findByTeacherIdAndCourseId(Long teacherId, Long courseId);
 
+    List<ComputerDefinedCourses> findByCapacityGreaterThan(int capacity);
 }

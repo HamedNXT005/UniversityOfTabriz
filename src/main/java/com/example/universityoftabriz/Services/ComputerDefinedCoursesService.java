@@ -19,6 +19,10 @@ public class ComputerDefinedCoursesService implements DefinedCourses<ComputerDef
         logger.info("Computer Defined Courses with id: {} updated successfully.",computerDefinedCourses.getId());
     }
 
+    public List<ComputerDefinedCourses> getAvailableCourses(){
+        return computerDefinedCoursesRepository.findByCapacityGreaterThan(0);
+    }
+
     @Override
     public List<ComputerDefinedCourses> getDCByTeacherId(Long teacherId){
         return computerDefinedCoursesRepository.findByTeacherId(teacherId);

@@ -1,7 +1,6 @@
 package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.MechanicDefinedCourses;
-import com.example.universityoftabriz.Objects.MechanicStudentsPlan;
 import com.example.universityoftabriz.Repository.MechanicDefinedCoursesRepository;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +18,11 @@ public class MechanicDefinedCoursesService implements DefinedCourses<MechanicDef
         mechanicDefinedCoursesRepository.save(mechanicDefinedCourses);
         logger.info("Mechanic Defined Courses with id: {} updated successfully.",mechanicDefinedCourses.getId());
     }
+
+    public List<MechanicDefinedCourses> getAvailableCourses(){
+        return mechanicDefinedCoursesRepository.findByCapacityGreaterThan(0);
+    }
+
     @Override
     public List<MechanicDefinedCourses> getDCByTeacherId(Long teacherId){
         return mechanicDefinedCoursesRepository.findByTeacherId(teacherId);
