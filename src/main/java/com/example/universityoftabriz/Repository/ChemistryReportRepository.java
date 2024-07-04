@@ -1,8 +1,10 @@
 package com.example.universityoftabriz.Repository;
 
 import com.example.universityoftabriz.Objects.ChemistryReport;
+import com.example.universityoftabriz.Objects.ChemistryStudentsPlan;
 import com.example.universityoftabriz.Objects.CivilReport;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.Date;
 import java.util.List;
@@ -17,5 +19,6 @@ public interface ChemistryReportRepository extends JpaRepository<ChemistryReport
     List<ChemistryReport> findByTeacherIdAndCourseId(Long teacher_id, Long course_id);
 
     Optional<ChemistryReport> findByDateOfSubmitionAndTeacherIdAndCourseId(Date date_of_submition, Long teacher_id, Long course_id);
-
+    @Query(value = "SELECT * FROM resources ORDER BY id DESC LIMIT 1", nativeQuery = true)
+    ChemistryReport findLastRecord();
 }

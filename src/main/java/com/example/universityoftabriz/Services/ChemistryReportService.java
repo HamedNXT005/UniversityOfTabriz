@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Services;
 
+import com.example.universityoftabriz.Objects.ChemistryDefinedCourses;
 import com.example.universityoftabriz.Objects.ChemistryReport;
 import com.example.universityoftabriz.Repository.ChemistryReportRepository;
 import org.slf4j.Logger;
@@ -37,5 +38,9 @@ public class ChemistryReportService implements ReportService<ChemistryReport>{
     @Override
     public Optional<ChemistryReport> getReportSpecific(Date date, Long teacher_id, Long course_id) {
         return chemistryReportRepository.findByDateOfSubmitionAndTeacherIdAndCourseId(date, teacher_id, course_id);
+    }
+
+    public ChemistryReport findLastRecord() {
+        return chemistryReportRepository.findLastRecord();
     }
 }

@@ -31,6 +31,11 @@ public class ElectricStudentsPlanService implements StudentsPlanService<Electric
         return electricStudentsPlanRepository.findByCourseId(course_id);
     }
 
+    @Override
+    public ElectricStudentsPlan findLastRecord() {
+        return electricStudentsPlanRepository.findLastRecord();
+    }
+
     public Optional<ElectricStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
         return electricStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }

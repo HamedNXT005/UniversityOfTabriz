@@ -29,6 +29,11 @@ public class ComputerStudentsPlanService implements StudentsPlanService<Computer
         return computerStudentsPlanRepository.findByCourseId(course_id);
     }
 
+    @Override
+    public ComputerStudentsPlan findLastRecord() {
+        return computerStudentsPlanRepository.findLastRecord();
+    }
+
     public Optional<ComputerStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
         return computerStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }

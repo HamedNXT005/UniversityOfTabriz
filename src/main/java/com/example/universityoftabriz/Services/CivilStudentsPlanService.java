@@ -29,6 +29,10 @@ public class CivilStudentsPlanService implements StudentsPlanService<CivilStuden
     public List<CivilStudentsPlan> getPlanByCourseId(Long course_id) {
         return civilStudentsPlanRepository.findByCourseId(course_id);
     }
+    @Override
+    public CivilStudentsPlan findLastRecord() {
+        return civilStudentsPlanRepository.findLastRecord();
+    }
     public Optional<CivilStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
         return civilStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }

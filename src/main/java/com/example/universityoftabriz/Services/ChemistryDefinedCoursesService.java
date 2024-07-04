@@ -2,7 +2,6 @@ package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.ChemistryDefinedCourses;
 import com.example.universityoftabriz.Repository.ChemistryDefinedCoursesRepository;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +32,9 @@ public class ChemistryDefinedCoursesService implements DefinedCourses<ChemistryD
     @Override
     public Optional<ChemistryDefinedCourses> getDCByTeacherIdAndCourseId(Long teacherId, Long courseId){
         return chemistryDefinedCoursesRepository.findByTeacherIdAndCourseId(teacherId, courseId);
+    }
+
+    public ChemistryDefinedCourses findLastRecord() {
+        return chemistryDefinedCoursesRepository.findLastRecord();
     }
 }

@@ -44,6 +44,7 @@ public class DeterminationTheBudgetController {
         LocalDate localDate = LocalDate.now();
         int data = localDate.getYear();
         Resources resource = resourcesService.getLastRecord();
+        long lastId = resource.getId();
         if (resource != null){
             if (data == year){
                 if (year == resource.getYearEd() && resource.getSemester() == sem){
@@ -52,6 +53,7 @@ public class DeterminationTheBudgetController {
                     mes = "Update Successful";
                 }else{
                     Resources resource1 = new Resources();
+                    resource1.setId(lastId+1);
                     resource1.setYearEd(year);
                     resource1.setSemester(sem);
                     resource1.setTotalBudget(tBudget);
@@ -65,6 +67,7 @@ public class DeterminationTheBudgetController {
             }
         } else {
             Resources resource1 = new Resources();
+            resource1.setId(lastId+1);
             resource1.setYearEd(year);
             resource1.setSemester(sem);
             resource1.setTotalBudget(tBudget);

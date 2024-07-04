@@ -87,6 +87,8 @@ public class TeacherRegisterDailyReportController {
     public void registerToComputer(@RequestParam Teacher teacher,@RequestParam long courseId, @RequestParam boolean as,@RequestParam String absents){
         MDC.put("uid",String.valueOf(LoginController.uid));
         ComputerReport report = new ComputerReport();
+        ComputerReport lastReport = computerReportService.findLastRecord();
+        report.setId(lastReport.getId()+1);
         report.setTeacherId(teacher.getId());
         report.setCourseId(courseId);
         report.setAttendencyStatus(as);
@@ -120,6 +122,8 @@ public class TeacherRegisterDailyReportController {
     public void registerToCivil(@RequestParam Teacher teacher,@RequestParam long courseId, @RequestParam boolean as,@RequestParam String absents){
         MDC.put("uid",String.valueOf(LoginController.uid));
         CivilReport report = new CivilReport();
+        CivilReport lastReport = civilReportService.findLastRecord();
+        report.setId(lastReport.getId()+1);
         report.setTeacherId(teacher.getId());
         report.setCourseId(courseId);
         report.setAttendencyStatus(as);
@@ -153,6 +157,8 @@ public class TeacherRegisterDailyReportController {
     public void registerToChemistry(@RequestParam Teacher teacher,@RequestParam long courseId, @RequestParam boolean as,@RequestParam String absents){
         MDC.put("uid",String.valueOf(LoginController.uid));
         ChemistryReport report = new ChemistryReport();
+        ChemistryReport lastReport = chemistryReportService.findLastRecord();
+        report.setId(lastReport.getId()+1);
         report.setTeacherId(teacher.getId());
         report.setCourseId(courseId);
         report.setAttendencyStatus(as);
@@ -186,6 +192,8 @@ public class TeacherRegisterDailyReportController {
     public void registerToElectric(@RequestParam Teacher teacher,@RequestParam long courseId, @RequestParam boolean as,@RequestParam String absents){
         MDC.put("uid",String.valueOf(LoginController.uid));
         ElectricReport report = new ElectricReport();
+        ElectricReport lastReport = electricReportService.findLastRecord();
+        report.setId(lastReport.getId()+1);
         report.setTeacherId(teacher.getId());
         report.setCourseId(courseId);
         report.setAttendencyStatus(as);
@@ -218,6 +226,8 @@ public class TeacherRegisterDailyReportController {
     public void registerToMechanic(@RequestParam Teacher teacher,@RequestParam long courseId, @RequestParam boolean as,@RequestParam String absents){
         MDC.put("uid",String.valueOf(LoginController.uid));
         MechanicReport report = new MechanicReport();
+        MechanicReport lastReport = mechanicReportService.findLastRecord();
+        report.setId(lastReport.getId()+1);
         report.setTeacherId(teacher.getId());
         report.setCourseId(courseId);
         report.setAttendencyStatus(as);

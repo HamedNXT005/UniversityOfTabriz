@@ -74,7 +74,9 @@ public class TeacherChooseCoursesController {
         Iterator<ComputerPreCoursesPlan> iterator = list.iterator();
         while (iterator.hasNext()){
             ComputerPreCoursesPlan course = iterator.next();
+            ComputerDefinedCourses lastCourse = computerDefinedCoursesService.findLastRecord();
             ComputerDefinedCourses dcourse = new ComputerDefinedCourses();
+            dcourse.setId(lastCourse.getId()+1);
             dcourse.setTeacherId(teacher.getId());
             dcourse.setCourseId(course.getCourseId());
             dcourse.setClassN(course.getClassN());
@@ -102,7 +104,9 @@ public class TeacherChooseCoursesController {
         Iterator<ChemistryPreCoursesPlan> iterator = list.iterator();
         while (iterator.hasNext()){
             ChemistryPreCoursesPlan course = iterator.next();
+            ChemistryDefinedCourses lastCourse = chemistryDefinedCoursesService.findLastRecord();
             ChemistryDefinedCourses dcourse = new ChemistryDefinedCourses();
+            dcourse.setId(lastCourse.getId()+1);
             dcourse.setTeacherId(teacher.getId());
             dcourse.setCourseId(course.getCourseId());
             dcourse.setClassN(course.getClassN());
@@ -130,7 +134,9 @@ public class TeacherChooseCoursesController {
         Iterator<CivilPreCoursesPlan> iterator = list.iterator();
         while (iterator.hasNext()){
             CivilPreCoursesPlan course = iterator.next();
+            CivilDefinedCourses lastCourse = civilDefinedCoursesService.findLastRecord();
             CivilDefinedCourses dcourse = new CivilDefinedCourses();
+            dcourse.setId(lastCourse.getId()+1);
             dcourse.setTeacherId(teacher.getId());
             dcourse.setCourseId(course.getCourseId());
             dcourse.setClassN(course.getClassN());
@@ -158,7 +164,9 @@ public class TeacherChooseCoursesController {
         Iterator<ElectricPreCoursesPlan> iterator = list.iterator();
         while (iterator.hasNext()){
             ElectricPreCoursesPlan course = iterator.next();
+            ElectricDefinedCourses lastCourse = electricDefinedCoursesService.findLastRecord();
             ElectricDefinedCourses dcourse = new ElectricDefinedCourses();
+            dcourse.setId(lastCourse.getId()+1);
             dcourse.setTeacherId(teacher.getId());
             dcourse.setCourseId(course.getCourseId());
             dcourse.setClassN(course.getClassN());
@@ -186,7 +194,9 @@ public class TeacherChooseCoursesController {
         Iterator<MechanicPreCoursesPlan> iterator = list.iterator();
         while (iterator.hasNext()){
             MechanicPreCoursesPlan course = iterator.next();
+            MechanicDefinedCourses lastCourse = mechanicDefinedCoursesService.findLastRecord();
             MechanicDefinedCourses dcourse = new MechanicDefinedCourses();
+            dcourse.setId(lastCourse.getId()+1);
             dcourse.setTeacherId(teacher.getId());
             dcourse.setCourseId(course.getCourseId());
             dcourse.setClassN(course.getClassN());

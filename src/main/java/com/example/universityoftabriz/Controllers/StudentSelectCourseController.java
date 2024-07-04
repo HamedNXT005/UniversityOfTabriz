@@ -91,7 +91,9 @@ public class StudentSelectCourseController {
     public void submitForComputer(@RequestParam Student student,@RequestParam List<ComputerDefinedCourses> courses){
         MDC.put("uid",String.valueOf(LoginController.uid));
         for (ComputerDefinedCourses course:courses){
+            ComputerStudentsPlan lastPlan = computerStudentsPlanService.findLastRecord();
             ComputerStudentsPlan studentsPlan = new ComputerStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -122,7 +124,9 @@ public class StudentSelectCourseController {
     public void submitForChemistry(@RequestParam Student student,@RequestParam List<ChemistryDefinedCourses> courses){
         MDC.put("uid",String.valueOf(LoginController.uid));
         for (ChemistryDefinedCourses course:courses){
+            ChemistryStudentsPlan lastPlan = chemistryStudentsPlanService.findLastRecord();
             ChemistryStudentsPlan studentsPlan = new ChemistryStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -153,7 +157,9 @@ public class StudentSelectCourseController {
     public void submitForCivil(@RequestParam Student student,@RequestParam List<CivilDefinedCourses> courses){
         MDC.put("uid",String.valueOf(LoginController.uid));
         for (CivilDefinedCourses course:courses){
+            CivilStudentsPlan lastPlan = civilStudentsPlanService.findLastRecord();
             CivilStudentsPlan studentsPlan = new CivilStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -184,7 +190,9 @@ public class StudentSelectCourseController {
     public void submitForElectric(@RequestParam Student student,@RequestParam List<ElectricDefinedCourses> courses){
         MDC.put("uid",String.valueOf(LoginController.uid));
         for (ElectricDefinedCourses course:courses){
+            ElectricStudentsPlan lastPlan = electricStudentsPlanService.findLastRecord();
             ElectricStudentsPlan studentsPlan = new ElectricStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -215,7 +223,9 @@ public class StudentSelectCourseController {
     public void submitForMechanic(@RequestParam Student student,@RequestParam List<MechanicDefinedCourses> courses){
         MDC.put("uid",String.valueOf(LoginController.uid));
         for (MechanicDefinedCourses course:courses){
+            MechanicStudentsPlan lastPlan = mechanicStudentsPlanService.findLastRecord();
             MechanicStudentsPlan studentsPlan = new MechanicStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);

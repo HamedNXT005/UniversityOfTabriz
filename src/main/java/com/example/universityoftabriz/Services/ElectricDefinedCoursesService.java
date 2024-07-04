@@ -2,7 +2,6 @@ package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.ElectricDefinedCourses;
 import com.example.universityoftabriz.Repository.ElectricDefinedCoursesRepository;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +32,9 @@ public class ElectricDefinedCoursesService implements DefinedCourses<ElectricDef
     @Override
     public Optional<ElectricDefinedCourses> getDCByTeacherIdAndCourseId(Long teacherId, Long courseId){
         return electricDefinedCoursesRepository.findByTeacherIdAndCourseId(teacherId, courseId);
+    }
+
+    public ElectricDefinedCourses findLastRecord() {
+        return electricDefinedCoursesRepository.findLastRecord();
     }
 }

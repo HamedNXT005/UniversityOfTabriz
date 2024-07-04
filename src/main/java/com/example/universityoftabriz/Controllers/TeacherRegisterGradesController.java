@@ -65,6 +65,8 @@ public class TeacherRegisterGradesController {
         studentsPlan.setGrade(grade);
         computerStudentsPlanService.updateComputerStudentsPlan(studentsPlan);
         ComputerHistoryOfPassedCourses historyOfPassedCourses = new ComputerHistoryOfPassedCourses();
+        ComputerHistoryOfPassedCourses lastHistory = computerHistoryOfPassedCoursesService.findLastRecord();
+        historyOfPassedCourses.setId(lastHistory.getId()+1);
         historyOfPassedCourses.setStudentId(studentId);
         historyOfPassedCourses.setCourseId(courseId);
         historyOfPassedCourses.setGrade(grade);
@@ -82,6 +84,8 @@ public class TeacherRegisterGradesController {
         studentsPlan.setGrade(grade);
         chemistryStudentsPlanService.updateChemistryStudentsPlan(studentsPlan);
         ChemistryHistoryOfPassedCourses historyOfPassedCourses = new ChemistryHistoryOfPassedCourses();
+        ChemistryHistoryOfPassedCourses lastHistory = chemistryHistoryOfPassedCoursesService.findLastRecord();
+        historyOfPassedCourses.setId(lastHistory.getId()+1);
         historyOfPassedCourses.setStudentId(studentId);
         historyOfPassedCourses.setCourseId(courseId);
         historyOfPassedCourses.setGrade(grade);
@@ -98,6 +102,8 @@ public class TeacherRegisterGradesController {
         studentsPlan.setGrade(grade);
         civilStudentsPlanService.updateCivilStudentsPlan(studentsPlan);
         CivilHistoryOfPassedCourses historyOfPassedCourses = new CivilHistoryOfPassedCourses();
+        CivilHistoryOfPassedCourses lastHistory = civilHistoryOfPassedCoursesService.findLastRecord();
+        historyOfPassedCourses.setId(lastHistory.getId()+1);
         historyOfPassedCourses.setStudentId(studentId);
         historyOfPassedCourses.setCourseId(courseId);
         historyOfPassedCourses.setGrade(grade);
@@ -114,6 +120,8 @@ public class TeacherRegisterGradesController {
         studentsPlan.setGrade(grade);
         electricStudentsPlanService.updateElectricStudentsPlan(studentsPlan);
         ElectricHistoryOfPassedCourses historyOfPassedCourses = new ElectricHistoryOfPassedCourses();
+        ElectricHistoryOfPassedCourses lastHistory = electricHistoryOfPassedCoursesService.findLastRecord();
+        historyOfPassedCourses.setId(lastHistory.getId()+1);
         historyOfPassedCourses.setStudentId(studentId);
         historyOfPassedCourses.setCourseId(courseId);
         historyOfPassedCourses.setGrade(grade);
@@ -130,6 +138,8 @@ public class TeacherRegisterGradesController {
         studentsPlan.setGrade(grade);
         mechanicStudentsPlanService.updateMechanicStudentsPlan(studentsPlan);
         MechanicHistoryOfPassedCourses historyOfPassedCourses = new MechanicHistoryOfPassedCourses();
+        MechanicHistoryOfPassedCourses lastHistory = mechanicHistoryOfPassedCoursesService.findLastRecord();
+        historyOfPassedCourses.setId(lastHistory.getId()+1);
         historyOfPassedCourses.setStudentId(studentId);
         historyOfPassedCourses.setCourseId(courseId);
         historyOfPassedCourses.setGrade(grade);

@@ -1,9 +1,7 @@
 package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.MechanicHistoryOfPassedCourses;
-import com.example.universityoftabriz.Objects.MechanicStudentsPlan;
 import com.example.universityoftabriz.Repository.MechanicHistoryOfPassedCoursesRepository;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +22,8 @@ public class MechanicHistoryOfPassedCoursesService implements HistoryOfPassedCou
     @Override
     public List<MechanicHistoryOfPassedCourses> findByStudentIdAndCourseId(Long studentId, Long courseId){
         return mechanicHistoryOfPassedCoursesRepository.findByStudentIdAndCourseId(studentId,courseId);
+    }
+    public MechanicHistoryOfPassedCourses findLastRecord() {
+        return mechanicHistoryOfPassedCoursesRepository.findLastRecord();
     }
 }

@@ -2,7 +2,6 @@ package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.ChemistryHistoryOfPassedCourses;
 import com.example.universityoftabriz.Repository.ChemistryHistoryOfPassedCoursesRepository;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +23,8 @@ public class ChemistryHistoryOfPassedCoursesService implements HistoryOfPassedCo
     @Override
     public List<ChemistryHistoryOfPassedCourses> findByStudentIdAndCourseId(Long studentId, Long courseId){
         return chemistryHistoryOfPassedCoursesRepository.findByStudentIdAndCourseId(studentId,courseId);
+    }
+    public ChemistryHistoryOfPassedCourses findLastRecord() {
+        return chemistryHistoryOfPassedCoursesRepository.findLastRecord();
     }
 }

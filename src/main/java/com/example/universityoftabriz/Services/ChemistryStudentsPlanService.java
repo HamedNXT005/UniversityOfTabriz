@@ -30,6 +30,11 @@ public class ChemistryStudentsPlanService implements StudentsPlanService<Chemist
         return chemistryStudentsPlanRepository.findByCourseId(course_id);
     }
 
+    @Override
+    public ChemistryStudentsPlan findLastRecord() {
+        return chemistryStudentsPlanRepository.findLastRecord();
+    }
+
     public Optional<ChemistryStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
         return chemistryStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }

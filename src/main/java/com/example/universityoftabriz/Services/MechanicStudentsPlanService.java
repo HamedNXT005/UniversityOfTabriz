@@ -28,6 +28,11 @@ public class MechanicStudentsPlanService implements StudentsPlanService<Mechanic
         return mechanicStudentsPlanRepository.findByCourseId(course_id);
     }
 
+    @Override
+    public MechanicStudentsPlan findLastRecord() {
+        return mechanicStudentsPlanRepository.findLastRecord();
+    }
+
     public Optional<MechanicStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
         return mechanicStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }

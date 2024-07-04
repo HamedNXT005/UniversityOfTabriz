@@ -2,7 +2,10 @@ package com.example.universityoftabriz.Repository;
 
 import com.example.universityoftabriz.Objects.CivilDefinedCourses;
 import com.example.universityoftabriz.Objects.ComputerDefinedCourses;
+import com.example.universityoftabriz.Objects.MechanicDefinedCourses;
+import com.example.universityoftabriz.Objects.Resources;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,4 +19,6 @@ public interface CivilDefinedCoursesRepository extends JpaRepository<CivilDefine
     Optional<CivilDefinedCourses> findByTeacherIdAndCourseId(Long teacherId, Long courseId);
 
     List<CivilDefinedCourses> findByCapacityGreaterThan(int capacity);
+    @Query(value = "SELECT * FROM resources ORDER BY id DESC LIMIT 1", nativeQuery = true)
+    CivilDefinedCourses findLastRecord();
 }
