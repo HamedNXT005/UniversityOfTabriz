@@ -17,6 +17,16 @@ public abstract class PreCoursesPlan {
     protected int classN;
     @Column(name = "exam_date")
     protected Date examDate;
+    protected boolean status;
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
     public Long getId() {
         return id;
     }

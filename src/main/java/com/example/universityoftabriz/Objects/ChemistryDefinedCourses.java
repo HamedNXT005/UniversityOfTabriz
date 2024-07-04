@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Table(name = "chemistry_defined_courses")
 public class ChemistryDefinedCourses extends DefinedCourses{
-    public ChemistryDefinedCourses(Long id, Long teacherId, Long courseId, Date primaryDay, Time timeOfPrimaryDay, Date secondaryDay, Time timeOfSecondaryDay, int classN, Date examDate, int capacity) {
+    public ChemistryDefinedCourses(Long id, Long teacherId, Long courseId, String primaryDay, Time timeOfPrimaryDay, String secondaryDay, Time timeOfSecondaryDay, int classN, Date examDate, int capacity) {
         this.id = id;
         this.teacherId = teacherId;
         this.courseId = courseId;

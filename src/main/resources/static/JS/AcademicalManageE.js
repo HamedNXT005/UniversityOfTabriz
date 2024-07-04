@@ -64,6 +64,8 @@ function LogOut(){
 }
 
 $(document).ready(function (){
+    var dep = "";
+    var role = "";
     $.ajax({
         type: "GET",
         url: "/EmployeePanel/AcademicalManageE/getInfo" ,
@@ -73,8 +75,89 @@ $(document).ready(function (){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
             $("#department").text(result.department);
             $("#role").text(result.role);
+            dep = result.department;
+            role = result.role;
         },error(){
             console.log("error");
         }
     });
-})
+
+    $.ajax({
+        type: "GET",
+        url: "/EmployeePanel/getPhase" ,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result){
+            if (result === 1){
+                if (dep === "Finance"){
+                    $("#salaryBtn").css("display", "block");
+                    if (role === "Boss"){
+                        $("#budgetBtn").css("display", "block");
+                        $("#meBtn").css("display", "block");
+                    }
+                }else if(dep === "AcademicalAffairs"){
+                    $("#seeTList").css("display", "block");
+                    $("#ATeacher").css("display", "block");
+                    $("#seeSList").css("display", "block");
+                    $("#AStudent").css("display", "block");
+                    if(role === "Boss"){
+                        $("#academicMEBtn").css("display", "block");
+                    }
+                }else if (dep === "FacultyAcademical"){
+                    $("#seeSListF").css("display", "block");
+                    $("#DeterminationTheCourses").css("display", "block");
+                    $("#ManageTheDefinedCourses").css("display", "block");
+                }
+            }else if(result === 2){
+                if (dep === "Finance"){
+                    $("#salaryPBtn").css("display", "block");
+                    if (role === "Boss"){
+                        $("#meBtn").css("display", "block");
+                    }
+                }else if(dep === "AcademicalAffairs"){
+                    $("#seeTList").css("display", "block");
+                    $("#seeSList").css("display", "block");
+                    if(role === "Boss"){
+                        $("#academicMEBtn").css("display", "block");
+                    }
+                }else if (dep === "FacultyAcademical"){
+                    $("#seeSListF").css("display", "block");
+                    $("#ManageTheDefinedCourses").css("display", "block");
+                }
+            }
+            else if (result === 3){
+                if (dep === "Finance"){
+                    $("#salaryPBtn").css("display", "block");
+                    if (role === "Boss"){
+                        $("#meBtn").css("display", "block");
+                    }
+                }else if(dep === "AcademicalAffairs"){
+                    $("#seeTList").css("display", "block");
+                    $("#seeSList").css("display", "block");
+                    if(role === "Boss"){
+                        $("#academicMEBtn").css("display", "block");
+                    }
+                }else if (dep === "FacultyAcademical"){
+                    $("#seeSListF").css("display", "block");
+                }
+            }else if(result === 4){
+                if (dep === "Finance"){
+                    $("#salaryPBtn").css("display", "block");
+                    if (role === "Boss"){
+                        $("#meBtn").css("display", "block");
+                    }
+                }else if(dep === "AcademicalAffairs"){
+                    $("#seeTList").css("display", "block");
+                    $("#seeSList").css("display", "block");
+                    if(role === "Boss"){
+                        $("#academicMEBtn").css("display", "block");
+                    }
+                }else if (dep === "FacultyAcademical"){
+                    $("#seeSListF").css("display", "block");
+                }
+            }
+        },error(){
+            console.log("error");
+        }
+    });
+});

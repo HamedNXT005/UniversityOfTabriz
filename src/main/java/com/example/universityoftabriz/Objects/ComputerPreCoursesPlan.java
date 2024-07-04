@@ -8,12 +8,13 @@ import java.util.Date;
 @Entity
 @Table(name = "computer_pre_courses_plan")
 public class ComputerPreCoursesPlan extends PreCoursesPlan{
-    public ComputerPreCoursesPlan(Long id, Long courseId, Long teacherId, int classN, Date examDate) {
+    public ComputerPreCoursesPlan(Long id, Long courseId, Long teacherId, int classN, Date examDate , boolean status) {
         this.id = id;
         this.courseId = courseId;
         this.teacherId = teacherId;
         this.classN = classN;
         this.examDate = examDate;
+        this.status = status;
     }
     public ComputerPreCoursesPlan() {
 
@@ -27,6 +28,7 @@ public class ComputerPreCoursesPlan extends PreCoursesPlan{
                 ", teacherId=" + teacherId +
                 ", classN=" + classN +
                 ", examDate=" + examDate +
+                ", status=" + status +
                 '}';
     }
 }

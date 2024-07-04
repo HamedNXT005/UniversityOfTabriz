@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 @Table(name = "teachers_salary")
 public class TeachersSalary extends Salary{
-    public TeachersSalary(Long id, Long userId, int hoursTaught, Date yearEd, int semester, Long salary) {
+    public TeachersSalary(Long id, Long userId, int hoursTaught, String yearEd, int semester, Long salary) {
         this.id = id;
         this.userId = userId;
         this.hoursTaught = hoursTaught;

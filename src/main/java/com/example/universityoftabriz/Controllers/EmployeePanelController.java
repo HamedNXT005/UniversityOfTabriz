@@ -34,6 +34,12 @@ public class EmployeePanelController {
 
     }
 
+    @GetMapping("/EmployeePanel/getPhase")
+    @ResponseBody
+    public long getPhase(){
+        return LoginController.phaseId;
+    }
+
     @GetMapping("/EmployeePanel/LogOut")
     @ResponseBody
     public boolean Logout(){
