@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
+    <script th:src="@{/JS/AdminSElectPhase.js}"></script>
+    <title>Admin Select Phase</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #074173;
+            color: #FFC700;
+            height: 90px;
+        }
+        .person .person-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .logo-text {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .logo-right {
+            max-width: 80px;
+            border-radius: 50%;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #074172;
+            color: #FFC700;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: -290px;
+            transition: left 0.3s ease;
+            margin-top: 170px;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            border-color: #074173;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #074173;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #074173;
+            color: #FFC700;
+            font-size: xx-large;
+        }
+        td{
+            font-size: x-large;
+            color: #074173;
+        }
+        a {
+            display: block;
+            color: #FFC700;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="person">
+        <img th:src="${ImageURL}" class="person-img" id="personIMG">
+        <span style="font-size: 24px" id="PersonInfo"></span>
+    </div>
+    <h1 class="logo-text" style="color: #FFC700;"><cite>Admin Panel</cite></h1>
+    <img class="logo-right" th:src="@{/Img/images.jpg}">
+</header>
+<div style="background-color: #074173; height: 50px;">
+    <button class="menu-btn" onclick="toggleSidebar()">
+        <img th:src="@{/Img/Menu.png}">
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+    <div>
+        <br>
+        <h4 style="display: inline; color: #FFC700;" id="status1"></h4>
+        <br>
+        <br>
+        <a onclick="switchHome()" id="homeBtn" style="margin-top: 10px;">Home</a>
+        <a onclick="switchManageStudents()" id="listOfStudents">Manage students</a>
+        <a onclick="switchManageTeachers()" id="salaryPayment">Manage Teachers</a>
+        <a onclick="switchManageEmployees()" id="registerGrade">Manage Employees</a>
+        <a onclick="LogOut()" id="logoutBtn">Log Out</a>
+    </div>
+
+</div>
+
+</body>
+</html>

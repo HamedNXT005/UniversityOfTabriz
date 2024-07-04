@@ -2,8 +2,8 @@ package com.example.universityoftabriz.Controllers;
 
 import com.example.universityoftabriz.Objects.*;
 import com.example.universityoftabriz.Services.*;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.codec.Base64;
+//import com.itextpdf.text.DocumentException;
+//import com.itextpdf.text.pdf.codec.Base64;
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -108,23 +108,23 @@ public class LoginController {
         return access;
     }
 
-    @GetMapping("/Login/exportPdf")
-    @ResponseBody
-    public ResponseEntity<InputStreamResource> exportPDF(@RequestParam Teacher teacher, @RequestParam HistorySalary report){
-        try {
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            historySalaryService.exportSalary(report,teacher,outputStream);
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Content-Disposition", "inline; filename=Salary_Report_"+report.getUserId()+"_"+report.getPayment_date()+".pdf");
-            logger.info("Salary report file exported successfully.");
-            return ResponseEntity.ok()
-                    .headers(headers)
-                    .contentType(MediaType.APPLICATION_PDF)
-                    .body(new InputStreamResource(inputStream));
-        } catch (DocumentException | IOException e){
-            logger.error("Couldn't export the salary report file.  Exception:\n"+e);
-            return ResponseEntity.status(500).body(null);
-        }
-    }
+//    @GetMapping("/Login/exportPdf")
+//    @ResponseBody
+//    public ResponseEntity<InputStreamResource> exportPDF(@RequestParam Teacher teacher, @RequestParam HistorySalary report){
+//        try {
+//            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+//            historySalaryService.exportSalary(report,teacher,outputStream);
+//            ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
+//            HttpHeaders headers = new HttpHeaders();
+//            headers.add("Content-Disposition", "inline; filename=Salary_Report_"+report.getUserId()+"_"+report.getPayment_date()+".pdf");
+//            logger.info("Salary report file exported successfully.");
+//            return ResponseEntity.ok()
+//                    .headers(headers)
+//                    .contentType(MediaType.APPLICATION_PDF)
+//                    .body(new InputStreamResource(inputStream));
+//        } catch (DocumentException | IOException e){
+//            logger.error("Couldn't export the salary report file.  Exception:\n"+e);
+//            return ResponseEntity.status(500).body(null);
+//        }
+//    }
 }
