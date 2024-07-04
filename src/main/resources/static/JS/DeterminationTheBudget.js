@@ -63,6 +63,27 @@ function LogOut(){
     });
 }
 
+function submitBudget(){
+    var year = parseInt($("#yearED").val());
+    var sem = parseInt($("#semester").val());
+    var tBudget = BigInt($("#TBudget").val());
+
+    if (year !== 0 && sem !== 0 && sem < 3 && tBudget !== 0){
+        $.apply({
+            method: 'POST',
+            url: "/Employee/Finance/DeterminationBudget/DBudget?year="+year+"&sem=" + sem  + "&tBudget=" + tBudget,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result){
+                console.log(result);
+            },error(){
+                console.log("error");
+            }
+        })
+    }
+
+}
+
 $(document).ready(function (){
     var dep = "";
     var role = "";

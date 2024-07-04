@@ -1,20 +1,26 @@
 package com.example.universityoftabriz.Controllers;
 
 import com.example.universityoftabriz.Objects.Employee;
+import com.example.universityoftabriz.Objects.Resources;
 import com.example.universityoftabriz.Services.EmployeeService;
+import com.example.universityoftabriz.Services.ResourcesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.xml.crypto.Data;
+import java.time.LocalDate;
 import java.util.Optional;
 
 @Controller
 public class DeterminationTheBudgetController {
     @Autowired
     private EmployeeService employeeService;
+    @Autowired
+    private ResourcesService resourcesService;
+
+
     @RequestMapping("/Employee/Finance/DeterminationBudget")
     public String DeterminationBudget(Model model){
         Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
@@ -29,5 +35,44 @@ public class DeterminationTheBudgetController {
     public Optional<Employee> getEmployeeInfo(){
         Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
         return Optional.of(employee.get());
+    }
+
+    @PostMapping("/Employee/Finance/DeterminationBudget/DBudget")
+    @ResponseBody
+    public String DBudget(@RequestParam int year , @RequestParam int sem , @RequestParam long tBudget){
+        String mes = "Not SuccessFul";
+        LocalDate localDate = LocalDate.now();
+        int data = localDate.getYear();
+        Resources resource = resourcesService.getLastRecord();
+        if (resource != null){
+            if (data == year){
+                if (year == resource.getYearEd() && resource.getSemester() == sem){
+                    resource.setTotalBudget(tBudget);
+                    resourcesService.updateResource(resource);
+                    mes = "Update Successful";
+                }else{
+                    Resources resource1 = new Resources();
+                    resource1.setYearEd(year);
+                    resource1.setSemester(sem);
+                    resource1.setTotalBudget(tBudget);
+                    resource1.setRateSc(0L);
+                    resource1.setRateNormal(0L);
+                    resourcesService.updateResource(resource1);
+                    mes = "Insert Successful";
+                }
+            }else {
+
+            }
+        } else {
+            Resources resource1 = new Resources();
+            resource1.setYearEd(year);
+            resource1.setSemester(sem);
+            resource1.setTotalBudget(tBudget);
+            resource1.setRateSc(0L);
+            resource1.setRateNormal(0L);
+            resourcesService.updateResource(resource1);
+            mes = "Insert Successful";
+        }
+        return mes;
     }
 }

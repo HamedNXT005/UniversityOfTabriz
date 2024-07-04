@@ -5,15 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.util.Date;
-
 @Entity
 @Table(name = "resources")
 public class Resources {
     @Id
     private Long id;
     @Column (name = "year_ed")
-    private Date yearEd;
+    private int yearEd;
     private int semester;
     @Column(name = "total_budget")
     private Long totalBudget;
@@ -21,7 +19,7 @@ public class Resources {
     private Long rateSc;
     @Column(name = "rate_normal")
     private Long rateNormal;
-    public Resources(Long id, Date yearEd, int semester, Long totalBudget, Long rateSc, Long rateNormal) {
+    public Resources(Long id, int yearEd, int semester, Long totalBudget, Long rateSc, Long rateNormal) {
         this.id = id;
         this.yearEd = yearEd;
         this.semester = semester;
@@ -42,11 +40,11 @@ public class Resources {
         this.id = id;
     }
 
-    public Date getYearEd() {
+    public int getYearEd() {
         return yearEd;
     }
 
-    public void setYearEd(Date yearEd) {
+    public void setYearEd(int yearEd) {
         this.yearEd = yearEd;
     }
 
@@ -66,7 +64,7 @@ public class Resources {
         this.totalBudget = totalBudget;
     }
 
-    public Long getRateSc() {
+    public Long getRateSc(int i) {
         return rateSc;
     }
 

@@ -16,6 +16,7 @@ public class ResourcesService {
 
     public void updateResource(Resources resource ) {
             resourcesRepository.save(resource);
+
     }
 
     public Optional<Resources> getResourceByDate(Date date, int semester){
