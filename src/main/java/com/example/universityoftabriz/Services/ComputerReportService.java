@@ -2,7 +2,6 @@ package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.ComputerReport;
 import com.example.universityoftabriz.Repository.ComputerReportRepository;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +36,9 @@ public class ComputerReportService implements ReportService<ComputerReport>{
     @Override
     public Optional<ComputerReport> getReportSpecific(Date date, Long teacher_id, Long course_id) {
         return computerReportRepository.findByDateOfSubmitionAndTeacherIdAndCourseId(date, teacher_id, course_id);
+    }
+
+    public ComputerReport findLastRecord() {
+        return computerReportRepository.findLastRecord();
     }
 }

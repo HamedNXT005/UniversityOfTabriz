@@ -1,5 +1,7 @@
 package com.example.universityoftabriz.Services;
 
+import com.example.universityoftabriz.Objects.ChemistryDefinedCourses;
+import com.example.universityoftabriz.Objects.ChemistryReport;
 import com.example.universityoftabriz.Objects.CivilReport;
 import com.example.universityoftabriz.Repository.CivilReportRepository;
 import org.slf4j.Logger;
@@ -38,4 +40,8 @@ public class CivilReportService implements ReportService<CivilReport>{
     public Optional<CivilReport> getReportSpecific(Date date, Long teacher_id, Long course_id) {
         return civilReportRepository.findByDateOfSubmitionAndTeacherIdAndCourseId(date, teacher_id, course_id);
     }
+    public CivilReport findLastRecord() {
+        return civilReportRepository.findLastRecord();
+    }
+
 }

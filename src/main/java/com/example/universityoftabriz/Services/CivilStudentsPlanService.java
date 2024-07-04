@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CivilStudentsPlanService implements StudentsPlanService<CivilStudentsPlan>{
@@ -27,5 +28,12 @@ public class CivilStudentsPlanService implements StudentsPlanService<CivilStuden
     @Override
     public List<CivilStudentsPlan> getPlanByCourseId(Long course_id) {
         return civilStudentsPlanRepository.findByCourseId(course_id);
+    }
+    @Override
+    public CivilStudentsPlan findLastRecord() {
+        return civilStudentsPlanRepository.findLastRecord();
+    }
+    public Optional<CivilStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
+        return civilStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }
 }

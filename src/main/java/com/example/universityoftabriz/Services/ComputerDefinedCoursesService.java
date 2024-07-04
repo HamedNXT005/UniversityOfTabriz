@@ -2,7 +2,6 @@ package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.ComputerDefinedCourses;
 import com.example.universityoftabriz.Repository.ComputerDefinedCoursesRepository;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +32,9 @@ public class ComputerDefinedCoursesService implements DefinedCourses<ComputerDef
     @Override
     public Optional<ComputerDefinedCourses> getDCByTeacherIdAndCourseId(Long teacherId, Long courseId){
         return computerDefinedCoursesRepository.findByTeacherIdAndCourseId(teacherId, courseId);
+    }
+
+    public ComputerDefinedCourses findLastRecord() {
+        return computerDefinedCoursesRepository.findLastRecord();
     }
 }

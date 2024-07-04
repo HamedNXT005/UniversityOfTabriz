@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Services;
 
+import com.example.universityoftabriz.Objects.ComputerStudentsPlan;
 import com.example.universityoftabriz.Objects.ElectricStudentsPlan;
 import com.example.universityoftabriz.Objects.HistorySalary;
 import com.example.universityoftabriz.Objects.MechanicStudentsPlan;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ElectricStudentsPlanService implements StudentsPlanService<ElectricStudentsPlan>{
@@ -27,5 +29,14 @@ public class ElectricStudentsPlanService implements StudentsPlanService<Electric
     @Override
     public List<ElectricStudentsPlan> getPlanByCourseId(Long course_id) {
         return electricStudentsPlanRepository.findByCourseId(course_id);
+    }
+
+    @Override
+    public ElectricStudentsPlan findLastRecord() {
+        return electricStudentsPlanRepository.findLastRecord();
+    }
+
+    public Optional<ElectricStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
+        return electricStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }
 }

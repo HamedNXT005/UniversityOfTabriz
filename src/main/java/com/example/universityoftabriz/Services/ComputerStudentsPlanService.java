@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ComputerStudentsPlanService implements StudentsPlanService<ComputerStudentsPlan>{
@@ -26,5 +27,14 @@ public class ComputerStudentsPlanService implements StudentsPlanService<Computer
     @Override
     public List<ComputerStudentsPlan> getPlanByCourseId(Long course_id) {
         return computerStudentsPlanRepository.findByCourseId(course_id);
+    }
+
+    @Override
+    public ComputerStudentsPlan findLastRecord() {
+        return computerStudentsPlanRepository.findLastRecord();
+    }
+
+    public Optional<ComputerStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
+        return computerStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }
 }

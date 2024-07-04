@@ -89,8 +89,11 @@ public class StudentSelectCourseController {
     @GetMapping("/StudentPanel/StudentSelectionCourse/submitForComputer")
     @ResponseBody
     public void submitForComputer(@RequestParam Student student,@RequestParam List<ComputerDefinedCourses> courses){
+        MDC.put("uid",String.valueOf(LoginController.uid));
         for (ComputerDefinedCourses course:courses){
+            ComputerStudentsPlan lastPlan = computerStudentsPlanService.findLastRecord();
             ComputerStudentsPlan studentsPlan = new ComputerStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -100,6 +103,7 @@ public class StudentSelectCourseController {
             logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
         }
         logger.info("All courses were added successfully to the student's plan.");
+        MDC.clear();
     }
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForChemistry")
@@ -118,8 +122,11 @@ public class StudentSelectCourseController {
     @GetMapping("/StudentPanel/StudentSelectionCourse/submitForChemistry")
     @ResponseBody
     public void submitForChemistry(@RequestParam Student student,@RequestParam List<ChemistryDefinedCourses> courses){
+        MDC.put("uid",String.valueOf(LoginController.uid));
         for (ChemistryDefinedCourses course:courses){
+            ChemistryStudentsPlan lastPlan = chemistryStudentsPlanService.findLastRecord();
             ChemistryStudentsPlan studentsPlan = new ChemistryStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -129,6 +136,7 @@ public class StudentSelectCourseController {
             logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
         }
         logger.info("All courses were added successfully to the student's plan.");
+        MDC.clear();
     }
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForCivil")
@@ -147,8 +155,11 @@ public class StudentSelectCourseController {
     @GetMapping("/StudentPanel/StudentSelectionCourse/submitForCivil")
     @ResponseBody
     public void submitForCivil(@RequestParam Student student,@RequestParam List<CivilDefinedCourses> courses){
+        MDC.put("uid",String.valueOf(LoginController.uid));
         for (CivilDefinedCourses course:courses){
+            CivilStudentsPlan lastPlan = civilStudentsPlanService.findLastRecord();
             CivilStudentsPlan studentsPlan = new CivilStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -158,6 +169,7 @@ public class StudentSelectCourseController {
             logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
         }
         logger.info("All courses were added successfully to the student's plan.");
+        MDC.clear();
     }
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForElectric")
@@ -176,8 +188,11 @@ public class StudentSelectCourseController {
     @GetMapping("/StudentPanel/StudentSelectionCourse/submitForElectric")
     @ResponseBody
     public void submitForElectric(@RequestParam Student student,@RequestParam List<ElectricDefinedCourses> courses){
+        MDC.put("uid",String.valueOf(LoginController.uid));
         for (ElectricDefinedCourses course:courses){
+            ElectricStudentsPlan lastPlan = electricStudentsPlanService.findLastRecord();
             ElectricStudentsPlan studentsPlan = new ElectricStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -187,6 +202,7 @@ public class StudentSelectCourseController {
             logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
         }
         logger.info("All courses were added successfully to the student's plan.");
+        MDC.clear();
     }
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForMechanic")
@@ -205,8 +221,11 @@ public class StudentSelectCourseController {
     @GetMapping("/StudentPanel/StudentSelectionCourse/submitForMechanic")
     @ResponseBody
     public void submitForMechanic(@RequestParam Student student,@RequestParam List<MechanicDefinedCourses> courses){
+        MDC.put("uid",String.valueOf(LoginController.uid));
         for (MechanicDefinedCourses course:courses){
+            MechanicStudentsPlan lastPlan = mechanicStudentsPlanService.findLastRecord();
             MechanicStudentsPlan studentsPlan = new MechanicStudentsPlan();
+            studentsPlan.setId(lastPlan.getId()+1);
             studentsPlan.setStudentId(student.getId());
             studentsPlan.setCourseId(course.getCourseId());
             studentsPlan.setGrade(0f);
@@ -216,6 +235,7 @@ public class StudentSelectCourseController {
             logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
         }
         logger.info("All courses were added successfully to the student's plan.");
+        MDC.clear();
     }
 
     private static <T extends DefinedCourses, U extends HistoryOfPassedCourses> void deletePassedCourses(List<T> available, List<U> passed) {
