@@ -21,6 +21,27 @@
             color: white;
             height: 90px;
         }
+        table {
+            border-collapse: collapse;
+            border-color: #074173;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #074173;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #074173;
+            color: #FFC700;
+            font-size: xx-large;
+        }
+        td{
+            font-size: x-large;
+            color: #074173;
+        }
+
         .person .person-img {
             width: 80px;
             height: 80px;
@@ -63,6 +84,10 @@
             margin-bottom: 15px;
             font-size: 20px;
         }
+        #button{
+            background-color: #074173;
+            color: #FFC700;
+        }
     </style>
 </head>
 <body>
@@ -100,5 +125,29 @@
 
 <div class="main-content" id="main-content">
 </div>
+<table>
+    <tr>
+        <th colspan="20"><cite>Register Grades</cite></th>
+    </tr>
+    <tr style="background-color: #f2f2f2">
+        <td style="font-weight: bold;">Student Number</td>
+        <td id="CourseName"></td>
+
+        <td style="font-weight: bold;">First Name</td>
+        <td id="PDay"></td>
+
+        <td style="font-weight: bold;">Last Name</td>
+        <td id="TPday"></td>
+
+        <td style="font-weight: bold;">Major</td>
+        <td id="SDay"></td>
+
+
+        <td style="font-weight: bold;">Grade</td>
+        <td id="TSDay"></td>
+
+        <td style="font-weight: bold;"><button id="button"> Submit</button></td>
+    </tr>
+</table>
 </body>
 </html>
