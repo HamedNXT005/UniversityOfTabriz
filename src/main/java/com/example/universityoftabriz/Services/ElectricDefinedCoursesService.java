@@ -14,9 +14,8 @@ public class ElectricDefinedCoursesService implements DefinedCourses<ElectricDef
     @Autowired
     private ElectricDefinedCoursesRepository electricDefinedCoursesRepository;
 
-    public void updateElectricDefinedCourses(ElectricDefinedCourses electricDefinedCourses, Logger logger) {
+    public void updateElectricDefinedCourses(ElectricDefinedCourses electricDefinedCourses ) {
         electricDefinedCoursesRepository.save(electricDefinedCourses);
-        logger.info("Electric Defined Courses with id: {} updated successfully.",electricDefinedCourses.getId());
     }
 
     public List<ElectricDefinedCourses> getAvailableCourses(){

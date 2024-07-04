@@ -15,9 +15,8 @@ public class ChemistryReportService implements ReportService<ChemistryReport>{
     @Autowired
     private ChemistryReportRepository chemistryReportRepository;
 
-    public void updateChemistryReport(ChemistryReport chemistryReport, Logger logger) {
+    public void updateChemistryReport(ChemistryReport chemistryReport ) {
         chemistryReportRepository.save(chemistryReport);
-        logger.info("Chemistry Report with id: {} updated successfully.",chemistryReport.getId());
     }
 
     @Override

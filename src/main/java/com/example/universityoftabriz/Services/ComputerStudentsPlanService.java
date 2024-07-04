@@ -14,9 +14,8 @@ public class ComputerStudentsPlanService implements StudentsPlanService<Computer
     @Autowired
     private ComputerStudentsPlanRepository computerStudentsPlanRepository;
 
-    public void updateComputerStudentsPlan(ComputerStudentsPlan computerStudentsPlan, Logger logger) {
+    public void updateComputerStudentsPlan(ComputerStudentsPlan computerStudentsPlan ) {
         computerStudentsPlanRepository.save(computerStudentsPlan);
-        logger.info("Computer Students plan with id: {} updated successfully.",computerStudentsPlan.getId());
     }
 
     @Override

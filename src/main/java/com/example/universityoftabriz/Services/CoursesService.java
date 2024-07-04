@@ -15,9 +15,8 @@ public class CoursesService {
     @Autowired
     private CoursesRepository coursesRepository;
 
-    public void updateCourses(Courses course, Logger logger) {
+    public void updateCourses(Courses course ) {
         coursesRepository.save(course);
-        logger.info("Course with id: {} updated successfully.",course.getId());
     }
 
     public Optional<Courses> getById(long id){

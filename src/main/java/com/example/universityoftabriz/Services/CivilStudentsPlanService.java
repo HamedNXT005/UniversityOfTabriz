@@ -15,9 +15,8 @@ public class CivilStudentsPlanService implements StudentsPlanService<CivilStuden
     @Autowired
     private CivilStudentsPlanRepository civilStudentsPlanRepository;
 
-    public void updateCivilStudentsPlan(CivilStudentsPlan civilStudentsPlan, Logger logger) {
+    public void updateCivilStudentsPlan(CivilStudentsPlan civilStudentsPlan ) {
         civilStudentsPlanRepository.save(civilStudentsPlan);
-        logger.info("Civil Students plan with id: {} updated successfully.",civilStudentsPlan.getId());
     }
 
     @Override

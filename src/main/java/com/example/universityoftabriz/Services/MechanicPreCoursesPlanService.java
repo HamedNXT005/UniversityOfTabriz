@@ -14,9 +14,8 @@ public class MechanicPreCoursesPlanService implements PreCoursesPlan<MechanicPre
     @Autowired
     private MechanicPreCoursesPlanRepository mechanicPreCoursesPlanRepository;
 
-    public void updateMechanicPreCoursesPlan(MechanicPreCoursesPlan mechanicPreCoursesPlan, Logger logger) {
+    public void updateMechanicPreCoursesPlan(MechanicPreCoursesPlan mechanicPreCoursesPlan) {
         mechanicPreCoursesPlanRepository.save(mechanicPreCoursesPlan);
-        logger.info("Mechanic Pre-Courses Plan with id: {} updated successfully.",mechanicPreCoursesPlan.getId());
     }
     @Override
     public List<MechanicPreCoursesPlan> getPrePlanByCourseId(Long course_id){

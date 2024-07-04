@@ -4,6 +4,9 @@ import com.example.universityoftabriz.Objects.*;
 import com.example.universityoftabriz.Objects.DefinedCourses;
 import com.example.universityoftabriz.Objects.HistoryOfPassedCourses;
 import com.example.universityoftabriz.Services.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +19,7 @@ import java.util.*;
 
 @Controller
 public class StudentSelectCourseController {
+    private static final Logger logger = LoggerFactory.getLogger(StudentSelectCourseController.class);
     @Autowired
     private StudentService studentService;
     @Autowired
@@ -25,21 +29,31 @@ public class StudentSelectCourseController {
     @Autowired
     private ChemistryHistoryOfPassedCoursesService chemistryHistoryOfPassedCoursesService;
     @Autowired
+    private ChemistryStudentsPlanService chemistryStudentsPlanService;
+    @Autowired
     private ComputerDefinedCoursesService computerDefinedCoursesService;
     @Autowired
     private ComputerHistoryOfPassedCoursesService computerHistoryOfPassedCoursesService;
+    @Autowired
+    private ComputerStudentsPlanService computerStudentsPlanService;
     @Autowired
     private ElectricDefinedCoursesService electricDefinedCoursesService;
     @Autowired
     private ElectricHistoryOfPassedCoursesService electricHistoryOfPassedCoursesService;
     @Autowired
+    private ElectricStudentsPlanService electricStudentsPlanService;
+    @Autowired
     private MechanicDefinedCoursesService mechanicDefinedCoursesService;
     @Autowired
     private MechanicHistoryOfPassedCoursesService mechanicHistoryOfPassedCoursesService;
     @Autowired
+    private MechanicStudentsPlanService mechanicStudentsPlanService;
+    @Autowired
     private CivilDefinedCoursesService civilDefinedCoursesService;
     @Autowired
     private CivilHistoryOfPassedCoursesService civilHistoryOfPassedCoursesService;
+    @Autowired
+    private CivilStudentsPlanService civilStudentsPlanService;
 
     @RequestMapping("/StudentPanel/StudentSelectCourse")
     public String StudentCoursesList(Model model) {
@@ -66,7 +80,26 @@ public class StudentSelectCourseController {
         List<ComputerHistoryOfPassedCourses> passedCourses = computerHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
+        MDC.put("uid",String.valueOf(LoginController.uid));
+        logger.info("Available courses for selection sent to the front-end");
+        MDC.clear();
         return availableCourses;
+    }
+
+    @GetMapping("/StudentPanel/StudentSelectionCourse/submitForComputer")
+    @ResponseBody
+    public void submitForComputer(@RequestParam Student student,@RequestParam List<ComputerDefinedCourses> courses){
+        for (ComputerDefinedCourses course:courses){
+            ComputerStudentsPlan studentsPlan = new ComputerStudentsPlan();
+            studentsPlan.setStudentId(student.getId());
+            studentsPlan.setCourseId(course.getCourseId());
+            studentsPlan.setGrade(0f);
+            computerStudentsPlanService.updateComputerStudentsPlan(studentsPlan);
+            course.setCapacity(course.getCapacity()-1);
+            computerDefinedCoursesService.updateComputerDefinedCourses(course);
+            logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
+        }
+        logger.info("All courses were added successfully to the student's plan.");
     }
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForChemistry")
@@ -76,7 +109,26 @@ public class StudentSelectCourseController {
         List<ChemistryHistoryOfPassedCourses> passedCourses = chemistryHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
+        MDC.put("uid",String.valueOf(LoginController.uid));
+        logger.info("Available courses for selection sent to the front-end");
+        MDC.clear();
         return availableCourses;
+    }
+
+    @GetMapping("/StudentPanel/StudentSelectionCourse/submitForChemistry")
+    @ResponseBody
+    public void submitForChemistry(@RequestParam Student student,@RequestParam List<ChemistryDefinedCourses> courses){
+        for (ChemistryDefinedCourses course:courses){
+            ChemistryStudentsPlan studentsPlan = new ChemistryStudentsPlan();
+            studentsPlan.setStudentId(student.getId());
+            studentsPlan.setCourseId(course.getCourseId());
+            studentsPlan.setGrade(0f);
+            chemistryStudentsPlanService.updateChemistryStudentsPlan(studentsPlan);
+            course.setCapacity(course.getCapacity()-1);
+            chemistryDefinedCoursesService.updateChemistryDefinedCourses(course);
+            logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
+        }
+        logger.info("All courses were added successfully to the student's plan.");
     }
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForCivil")
@@ -86,7 +138,26 @@ public class StudentSelectCourseController {
         List<CivilHistoryOfPassedCourses> passedCourses = civilHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
+        MDC.put("uid",String.valueOf(LoginController.uid));
+        logger.info("Available courses for selection sent to the front-end");
+        MDC.clear();
         return availableCourses;
+    }
+
+    @GetMapping("/StudentPanel/StudentSelectionCourse/submitForCivil")
+    @ResponseBody
+    public void submitForCivil(@RequestParam Student student,@RequestParam List<CivilDefinedCourses> courses){
+        for (CivilDefinedCourses course:courses){
+            CivilStudentsPlan studentsPlan = new CivilStudentsPlan();
+            studentsPlan.setStudentId(student.getId());
+            studentsPlan.setCourseId(course.getCourseId());
+            studentsPlan.setGrade(0f);
+            civilStudentsPlanService.updateCivilStudentsPlan(studentsPlan);
+            course.setCapacity(course.getCapacity()-1);
+            civilDefinedCoursesService.updateCivilDefinedCourses(course);
+            logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
+        }
+        logger.info("All courses were added successfully to the student's plan.");
     }
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForElectric")
@@ -96,7 +167,26 @@ public class StudentSelectCourseController {
         List<ElectricHistoryOfPassedCourses> passedCourses = electricHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
+        MDC.put("uid",String.valueOf(LoginController.uid));
+        logger.info("Available courses for selection sent to the front-end");
+        MDC.clear();
         return availableCourses;
+    }
+
+    @GetMapping("/StudentPanel/StudentSelectionCourse/submitForElectric")
+    @ResponseBody
+    public void submitForElectric(@RequestParam Student student,@RequestParam List<ElectricDefinedCourses> courses){
+        for (ElectricDefinedCourses course:courses){
+            ElectricStudentsPlan studentsPlan = new ElectricStudentsPlan();
+            studentsPlan.setStudentId(student.getId());
+            studentsPlan.setCourseId(course.getCourseId());
+            studentsPlan.setGrade(0f);
+            electricStudentsPlanService.updateElectricStudentsPlan(studentsPlan);
+            course.setCapacity(course.getCapacity()-1);
+            electricDefinedCoursesService.updateElectricDefinedCourses(course);
+            logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
+        }
+        logger.info("All courses were added successfully to the student's plan.");
     }
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForMechanic")
@@ -106,7 +196,26 @@ public class StudentSelectCourseController {
         List<MechanicHistoryOfPassedCourses> passedCourses = mechanicHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
+        MDC.put("uid",String.valueOf(LoginController.uid));
+        logger.info("Available courses for selection sent to the front-end");
+        MDC.clear();
         return availableCourses;
+    }
+
+    @GetMapping("/StudentPanel/StudentSelectionCourse/submitForMechanic")
+    @ResponseBody
+    public void submitForMechanic(@RequestParam Student student,@RequestParam List<MechanicDefinedCourses> courses){
+        for (MechanicDefinedCourses course:courses){
+            MechanicStudentsPlan studentsPlan = new MechanicStudentsPlan();
+            studentsPlan.setStudentId(student.getId());
+            studentsPlan.setCourseId(course.getCourseId());
+            studentsPlan.setGrade(0f);
+            mechanicStudentsPlanService.updateMechanicStudentsPlan(studentsPlan);
+            course.setCapacity(course.getCapacity()-1);
+            mechanicDefinedCoursesService.updateMechanicDefinedCourses(course);
+            logger.info("Course with id: {} was added successfully to the student's plan.",course.getCourseId());
+        }
+        logger.info("All courses were added successfully to the student's plan.");
     }
 
     private static <T extends DefinedCourses, U extends HistoryOfPassedCourses> void deletePassedCourses(List<T> available, List<U> passed) {

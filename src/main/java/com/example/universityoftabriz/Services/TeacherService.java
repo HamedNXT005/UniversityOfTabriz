@@ -14,9 +14,8 @@ public class TeacherService {
     @Autowired
     private TeacherRepository teacherRepository;
 
-    public void updateTeacher(Teacher teacher, Logger logger) {
+    public void updateTeacher(Teacher teacher ) {
         teacherRepository.save(teacher);
-        logger.info("Teacher with id: {} updated successfully.",teacher.getId());
     }
 
     public Optional<Teacher> getTeacherByID(Long id){

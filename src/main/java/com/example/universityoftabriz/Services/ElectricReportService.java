@@ -16,9 +16,8 @@ public class ElectricReportService implements ReportService<ElectricReport>{
     @Autowired
     private ElectricReportRepository electricReportRepository;
 
-    public void updateElectricReport(ElectricReport electricReport, Logger logger) {
+    public void updateElectricReport(ElectricReport electricReport ) {
         electricReportRepository.save(electricReport);
-        logger.info("Electric Report with id: {} updated successfully.",electricReport.getId());
     }
 
     @Override

@@ -14,9 +14,8 @@ public class ResourcesService {
     @Autowired
     private ResourcesRepository resourcesRepository;
 
-    public void updateResource(Resources resource, Logger logger) {
+    public void updateResource(Resources resource ) {
             resourcesRepository.save(resource);
-            logger.info("Resource with id: {} updated successfully.",resource.getId());
     }
 
     public Optional<Resources> getResourceByDate(Date date, int semester){

@@ -13,9 +13,8 @@ public class ChemistryHistoryOfPassedCoursesService implements HistoryOfPassedCo
     @Autowired
     private ChemistryHistoryOfPassedCoursesRepository chemistryHistoryOfPassedCoursesRepository;
 
-    public void updateChemistryHistoryOfPassedCourses(ChemistryHistoryOfPassedCourses chemistryHistoryOfPassedCourses, Logger logger) {
+    public void updateChemistryHistoryOfPassedCourses(ChemistryHistoryOfPassedCourses chemistryHistoryOfPassedCourses) {
         chemistryHistoryOfPassedCoursesRepository.save(chemistryHistoryOfPassedCourses);
-        logger.info("Chemistry History of passed courses with id: {} updated successfully.",chemistryHistoryOfPassedCourses.getId());
     }
 
     @Override

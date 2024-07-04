@@ -12,8 +12,7 @@ public class SemesterPhaseService {
     @Autowired
     private SemesterPhaseRepository semesterPhaseRepository;
 
-    public void updateSemesterPhase(SemesterPhase semesterPhase, Logger logger) {
+    public void updateSemesterPhase(SemesterPhase semesterPhase ) {
         semesterPhaseRepository.save(semesterPhase);
-        logger.info("Semester Phase with id: {} updated successfully.",semesterPhase.getId());
     }
 }

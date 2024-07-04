@@ -23,9 +23,8 @@ public class HistorySalaryService {
     @Autowired
     private HistorySalaryRepository historySalaryRepository;
 
-    public void updateHistorySalary(HistorySalary historySalary, Logger logger) {
+    public void updateHistorySalary(HistorySalary historySalary) {
         historySalaryRepository.save(historySalary);
-        logger.info("History of Salary with id: {} updated successfully.",historySalary.getId());
     }
 
     public List<HistorySalary> getHistorySByUserId(Long userId){

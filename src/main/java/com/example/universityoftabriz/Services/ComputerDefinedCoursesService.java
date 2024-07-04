@@ -14,9 +14,8 @@ public class ComputerDefinedCoursesService implements DefinedCourses<ComputerDef
     @Autowired
     private ComputerDefinedCoursesRepository computerDefinedCoursesRepository;
 
-    public void updateComputerDefinedCourses(ComputerDefinedCourses computerDefinedCourses, Logger logger) {
+    public void updateComputerDefinedCourses(ComputerDefinedCourses computerDefinedCourses ) {
         computerDefinedCoursesRepository.save(computerDefinedCourses);
-        logger.info("Computer Defined Courses with id: {} updated successfully.",computerDefinedCourses.getId());
     }
 
     public List<ComputerDefinedCourses> getAvailableCourses(){

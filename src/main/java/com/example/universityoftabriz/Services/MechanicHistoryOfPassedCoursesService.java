@@ -14,9 +14,8 @@ public class MechanicHistoryOfPassedCoursesService implements HistoryOfPassedCou
     @Autowired
     private MechanicHistoryOfPassedCoursesRepository mechanicHistoryOfPassedCoursesRepository;
 
-    public void updateMechanicHistoryOfPassedCourses(MechanicHistoryOfPassedCourses mechanicHistoryOfPassedCourses, Logger logger) {
+    public void updateMechanicHistoryOfPassedCourses(MechanicHistoryOfPassedCourses mechanicHistoryOfPassedCourses) {
         mechanicHistoryOfPassedCoursesRepository.save(mechanicHistoryOfPassedCourses);
-        logger.info("Mechanic History of passed courses with id: {} updated successfully.",mechanicHistoryOfPassedCourses.getId());
     }
     @Override
     public List<MechanicHistoryOfPassedCourses> getHistoryOfPCByStudentId(Long studentId){

@@ -14,9 +14,8 @@ public class MechanicDefinedCoursesService implements DefinedCourses<MechanicDef
     @Autowired
     private MechanicDefinedCoursesRepository mechanicDefinedCoursesRepository;
 
-    public void updateMechanicDefinedCourses(MechanicDefinedCourses mechanicDefinedCourses, Logger logger) {
+    public void updateMechanicDefinedCourses(MechanicDefinedCourses mechanicDefinedCourses) {
         mechanicDefinedCoursesRepository.save(mechanicDefinedCourses);
-        logger.info("Mechanic Defined Courses with id: {} updated successfully.",mechanicDefinedCourses.getId());
     }
 
     public List<MechanicDefinedCourses> getAvailableCourses(){

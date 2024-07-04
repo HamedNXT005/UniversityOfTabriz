@@ -15,9 +15,8 @@ public class ElectricStudentsPlanService implements StudentsPlanService<Electric
     @Autowired
     private ElectricStudentsPlanRepository electricStudentsPlanRepository;
 
-    public void updateElectricStudentsPlan(ElectricStudentsPlan electricStudentsPlan, Logger logger) {
+    public void updateElectricStudentsPlan(ElectricStudentsPlan electricStudentsPlan ) {
         electricStudentsPlanRepository.save(electricStudentsPlan);
-        logger.info("Electric Students plan with id: {} updated successfully.",electricStudentsPlan.getId());
     }
 
     @Override

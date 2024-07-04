@@ -13,9 +13,8 @@ public class ElectricPreCoursesPlanService implements PreCoursesPlan<ElectricPre
     @Autowired
     private ElectricPreCoursesPlanRepository electricPreCoursesPlanRepository;
 
-    public void updateElectricPreCoursesPlan(ElectricPreCoursesPlan electricPreCoursesPlan, Logger logger) {
+    public void updateElectricPreCoursesPlan(ElectricPreCoursesPlan electricPreCoursesPlan ) {
         electricPreCoursesPlanRepository.save(electricPreCoursesPlan);
-        logger.info("Electric Pre-Courses Plan with id: {} updated successfully.",electricPreCoursesPlan.getId());
     }
 
     @Override

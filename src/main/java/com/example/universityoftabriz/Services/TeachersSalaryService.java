@@ -14,9 +14,8 @@ public class TeachersSalaryService {
     @Autowired
     private TeachersSalaryRepository teachersSalaryRepository;
 
-    public void updateTeacherSalary(TeachersSalary teacherSalary, Logger logger) {
+    public void updateTeacherSalary(TeachersSalary teacherSalary ) {
         teachersSalaryRepository.save(teacherSalary);
-        logger.info("Resource with id: {} updated successfully.",teacherSalary.getId());
     }
 
     public List<TeachersSalary> getTeachersSalaryByUid(long user_id){

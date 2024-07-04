@@ -13,9 +13,8 @@ public class ComputerPreCoursesPlanService implements PreCoursesPlan<ComputerPre
     @Autowired
     private ComputerPreCoursesPlanRepository computerPreCoursesPlanRepository;
 
-    public void updateComputerPreCoursesPlan(ComputerPreCoursesPlan computerPreCoursesPlan, Logger logger) {
+    public void updateComputerPreCoursesPlan(ComputerPreCoursesPlan computerPreCoursesPlan ) {
         computerPreCoursesPlanRepository.save(computerPreCoursesPlan);
-        logger.info("Computer Pre-Courses Plan with id: {} updated successfully.",computerPreCoursesPlan.getId());
     }
 
     @Override

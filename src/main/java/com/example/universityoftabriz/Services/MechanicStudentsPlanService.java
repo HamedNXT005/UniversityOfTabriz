@@ -14,9 +14,8 @@ public class MechanicStudentsPlanService implements StudentsPlanService<Mechanic
     @Autowired
     private MechanicStudentsPlanRepository mechanicStudentsPlanRepository;
 
-    public void updateMechanicStudentsPlan(MechanicStudentsPlan mechanicStudentsPlan, Logger logger) {
+    public void updateMechanicStudentsPlan(MechanicStudentsPlan mechanicStudentsPlan) {
         mechanicStudentsPlanRepository.save(mechanicStudentsPlan);
-        logger.info("Mechanic Students plan with id: {} updated successfully.",mechanicStudentsPlan.getId());
     }
     @Override
     public List<MechanicStudentsPlan> getPlanByStudentId(Long student_id){

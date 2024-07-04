@@ -15,9 +15,8 @@ public class CivilReportService implements ReportService<CivilReport>{
     @Autowired
     private CivilReportRepository civilReportRepository;
 
-    public void updateCivilReport(CivilReport civilReport, Logger logger) {
+    public void updateCivilReport(CivilReport civilReport ) {
         civilReportRepository.save(civilReport);
-        logger.info("Civil Report with id: {} updated successfully.",civilReport.getId());
     }
 
     @Override

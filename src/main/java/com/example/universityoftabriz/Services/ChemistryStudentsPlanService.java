@@ -14,9 +14,8 @@ public class ChemistryStudentsPlanService implements StudentsPlanService<Chemist
     @Autowired
     private ChemistryStudentsPlanRepository chemistryStudentsPlanRepository;
 
-    public void updateChemistryStudentsPlan(ChemistryStudentsPlan chemistryStudentsPlan, Logger logger) {
+    public void updateChemistryStudentsPlan(ChemistryStudentsPlan chemistryStudentsPlan ) {
         chemistryStudentsPlanRepository.save(chemistryStudentsPlan);
-        logger.info("Chemistry Students plan with id: {} updated successfully.",chemistryStudentsPlan.getId());
     }
 
     @Override

@@ -13,9 +13,8 @@ public class ComputerHistoryOfPassedCoursesService implements HistoryOfPassedCou
     @Autowired
     private ComputerHistoryOfPassedCoursesRepository computerHistoryOfPassedCoursesRepository;
 
-    public void updateComputerHistoryOfPassedCourses(ComputerHistoryOfPassedCourses computerHistoryOfPassedCourses, Logger logger) {
+    public void updateComputerHistoryOfPassedCourses(ComputerHistoryOfPassedCourses computerHistoryOfPassedCourses ) {
         computerHistoryOfPassedCoursesRepository.save(computerHistoryOfPassedCourses);
-        logger.info("Computer History of passed courses with id: {} updated successfully.",computerHistoryOfPassedCourses.getId());
     }
     @Override
     public List<ComputerHistoryOfPassedCourses> getHistoryOfPCByStudentId(Long studentId){

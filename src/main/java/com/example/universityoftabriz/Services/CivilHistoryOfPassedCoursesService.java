@@ -13,9 +13,8 @@ public class CivilHistoryOfPassedCoursesService implements HistoryOfPassedCourse
     @Autowired
     private CivilHistoryOfPassedCoursesRepository civilHistoryOfPassedCoursesRepository;
 
-    public void updateCivilHistoryOfPassedCourses(CivilHistoryOfPassedCourses civilHistoryOfPassedCourses, Logger logger) {
+    public void updateCivilHistoryOfPassedCourses(CivilHistoryOfPassedCourses civilHistoryOfPassedCourses ) {
         civilHistoryOfPassedCoursesRepository.save(civilHistoryOfPassedCourses);
-        logger.info("Civil History of passed courses with id: {} updated successfully.",civilHistoryOfPassedCourses.getId());
     }
 
     @Override

@@ -13,9 +13,8 @@ public class ElectricHistoryOfPassedCoursesService implements HistoryOfPassedCou
     @Autowired
     private ElectricHistoryOfPassedCoursesRepository electricHistoryOfPassedCoursesRepository;
 
-    public void updateElectricHistoryOfPassedCourses(ElectricHistoryOfPassedCourses electricHistoryOfPassedCourses, Logger logger) {
+    public void updateElectricHistoryOfPassedCourses(ElectricHistoryOfPassedCourses electricHistoryOfPassedCourses ) {
         electricHistoryOfPassedCoursesRepository.save(electricHistoryOfPassedCourses);
-        logger.info("Electric History of passed courses with id: {} updated successfully.",electricHistoryOfPassedCourses.getId());
     }
 
     @Override

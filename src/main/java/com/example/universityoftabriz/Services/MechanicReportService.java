@@ -16,9 +16,8 @@ public class MechanicReportService implements ReportService<MechanicReport> {
     @Autowired
     private MechanicReportRepository mechanicReportRepository;
 
-    public void updateMechanicReport(MechanicReport mechanicReport, Logger logger) {
+    public void updateMechanicReport(MechanicReport mechanicReport) {
         mechanicReportRepository.save(mechanicReport);
-        logger.info("Mechanic Report with id: {} updated successfully.",mechanicReport.getId());
     }
     @Override
     public List<MechanicReport> getReportsByTeacherId(Long teacher_id){

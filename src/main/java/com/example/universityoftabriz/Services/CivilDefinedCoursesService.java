@@ -14,9 +14,8 @@ public class CivilDefinedCoursesService implements DefinedCourses<CivilDefinedCo
     @Autowired
     private CivilDefinedCoursesRepository civilDefinedCoursesRepository;
 
-    public void updateCivilDefinedCourses(CivilDefinedCourses civilDefinedCourses, Logger logger) {
+    public void updateCivilDefinedCourses(CivilDefinedCourses civilDefinedCourses) {
         civilDefinedCoursesRepository.save(civilDefinedCourses);
-        logger.info("Civil Defined Courses with id: {} updated successfully.",civilDefinedCourses.getId());
     }
 
     public List<CivilDefinedCourses> getAvailableCourses(){

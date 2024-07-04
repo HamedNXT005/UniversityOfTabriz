@@ -14,9 +14,8 @@ public class ChemistryDefinedCoursesService implements DefinedCourses<ChemistryD
     @Autowired
     private ChemistryDefinedCoursesRepository chemistryDefinedCoursesRepository;
 
-    public void updateChemistryDefinedCourses(ChemistryDefinedCourses chemistryDefinedCourses, Logger logger) {
+    public void updateChemistryDefinedCourses(ChemistryDefinedCourses chemistryDefinedCourses) {
         chemistryDefinedCoursesRepository.save(chemistryDefinedCourses);
-        logger.info("Chemistry Defined Courses with id: {} updated successfully.",chemistryDefinedCourses.getId());
     }
 
     public List<ChemistryDefinedCourses> getAvailableCourses(){

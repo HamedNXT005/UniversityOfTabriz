@@ -13,9 +13,8 @@ public class ChemistryPreCoursesPlanService implements PreCoursesPlan<ChemistryP
     @Autowired
     private ChemistryPreCoursesPlanRepository chemistryPreCoursesPlanRepository;
 
-    public void updateChemistryPreCoursesPlan(ChemistryPreCoursesPlan chemistryPreCoursesPlan, Logger logger) {
+    public void updateChemistryPreCoursesPlan(ChemistryPreCoursesPlan chemistryPreCoursesPlan ) {
         chemistryPreCoursesPlanRepository.save(chemistryPreCoursesPlan);
-        logger.info("Chemistry Pre-Courses Plan with id: {} updated successfully.",chemistryPreCoursesPlan.getId());
     }
     @Override
     public List<ChemistryPreCoursesPlan> getPrePlanByCourseId(Long course_id){

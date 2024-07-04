@@ -15,9 +15,8 @@ public class ComputerReportService implements ReportService<ComputerReport>{
     @Autowired
     private ComputerReportRepository computerReportRepository;
 
-    public void updateComputerReport(ComputerReport computerReport, Logger logger) {
+    public void updateComputerReport(ComputerReport computerReport ) {
         computerReportRepository.save(computerReport);
-        logger.info("Computer Report with id: {} updated successfully.",computerReport.getId());
     }
 
     @Override

@@ -14,9 +14,8 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public void updateEmployee(Employee employee, Logger logger) {
+    public void updateEmployee(Employee employee ) {
         employeeRepository.save(employee);
-        logger.info("Employee with id: {} updated successfully.",employee.getId());
     }
 
     public Optional<Employee> getEmployeeByID(Long id){

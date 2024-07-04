@@ -13,9 +13,8 @@ public class CivilPreCoursesPlanService implements PreCoursesPlan<CivilPreCourse
     @Autowired
     private CivilPreCoursesPlanRepository civilPreCoursesPlanRepository;
 
-    public void updateCivilPreCoursesPlan(CivilPreCoursesPlan civilPreCoursesPlan, Logger logger) {
+    public void updateCivilPreCoursesPlan(CivilPreCoursesPlan civilPreCoursesPlan ) {
         civilPreCoursesPlanRepository.save(civilPreCoursesPlan);
-        logger.info("Civil Pre-Courses Plan with id: {} updated successfully.",civilPreCoursesPlan.getId());
     }
 
     @Override
