@@ -1,13 +1,7 @@
 package com.example.universityoftabriz.Controllers;
 
-import com.example.universityoftabriz.Objects.Employee;
-import com.example.universityoftabriz.Objects.HistorySalary;
-import com.example.universityoftabriz.Objects.Student;
-import com.example.universityoftabriz.Objects.Teacher;
-import com.example.universityoftabriz.Services.EmployeeService;
-import com.example.universityoftabriz.Services.HistorySalaryService;
-import com.example.universityoftabriz.Services.StudentService;
-import com.example.universityoftabriz.Services.TeacherService;
+import com.example.universityoftabriz.Objects.*;
+import com.example.universityoftabriz.Services.*;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.codec.Base64;
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
@@ -39,6 +33,7 @@ public class LoginController {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
     public static long uid = 100;
+    public static long phaseId = 0;
 
     @Autowired
     private StudentService studentService;
@@ -48,12 +43,15 @@ public class LoginController {
     private TeacherService teacherService;
     @Autowired
     private HistorySalaryService historySalaryService;
+    @Autowired
+    private SemesterPhaseService semesterPhaseService;
 
     @RequestMapping("/Login")
     public String Login(){
         MDC.put("uid", String.valueOf(uid));
         logger.info("Application Started.");
         MDC.clear();
+        phaseId = semesterPhaseService.getPhase();
         return "Login";
     }
 
@@ -74,27 +72,6 @@ public class LoginController {
         }
         return access;
     }
-
-    @GetMapping("/Login/exportPdf")
-    @ResponseBody
-    public ResponseEntity<InputStreamResource> exportPDF(@RequestParam Teacher teacher, @RequestParam HistorySalary report){
-        try {
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            historySalaryService.exportSalary(report,teacher,outputStream);
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Content-Disposition", "inline; filename=Salary_Report_"+report.getUserId()+"_"+report.getPayment_date()+".pdf");
-            logger.info("Salary report file exported successfully.");
-            return ResponseEntity.ok()
-                    .headers(headers)
-                    .contentType(MediaType.APPLICATION_PDF)
-                    .body(new InputStreamResource(inputStream));
-        } catch (DocumentException | IOException e){
-            logger.error("Couldn't export the salary report file.  Exception:\n"+e);
-            return ResponseEntity.status(500).body(null);
-        }
-    }
-
     @GetMapping("/Login/TeacherLogin")
     @ResponseBody
     public boolean TeacherValidation(@RequestParam String userName ,@RequestParam String password){
@@ -131,5 +108,23 @@ public class LoginController {
         return access;
     }
 
-
+    @GetMapping("/Login/exportPdf")
+    @ResponseBody
+    public ResponseEntity<InputStreamResource> exportPDF(@RequestParam Teacher teacher, @RequestParam HistorySalary report){
+        try {
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            historySalaryService.exportSalary(report,teacher,outputStream);
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Content-Disposition", "inline; filename=Salary_Report_"+report.getUserId()+"_"+report.getPayment_date()+".pdf");
+            logger.info("Salary report file exported successfully.");
+            return ResponseEntity.ok()
+                    .headers(headers)
+                    .contentType(MediaType.APPLICATION_PDF)
+                    .body(new InputStreamResource(inputStream));
+        } catch (DocumentException | IOException e){
+            logger.error("Couldn't export the salary report file.  Exception:\n"+e);
+            return ResponseEntity.status(500).body(null);
+        }
+    }
 }

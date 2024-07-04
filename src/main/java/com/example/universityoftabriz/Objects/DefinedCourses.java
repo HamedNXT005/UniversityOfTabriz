@@ -15,11 +15,11 @@ public abstract class DefinedCourses {
     @Column(name = "course_id")
     protected Long courseId;
     @Column(name = "primary_day")
-    protected Date primaryDay;
+    protected String primaryDay;
     @Column(name = "time_of_primary_day")
     protected Time timeOfPrimaryDay;
     @Column(name = "secondary_day")
-    protected Date secondaryDay;
+    protected String secondaryDay;
     @Column(name = "time_of_secondary_day")
     protected Time timeOfSecondaryDay;
     @Column(name = "class_n")
@@ -51,11 +51,11 @@ public abstract class DefinedCourses {
         this.courseId = courseId;
     }
 
-    public Date getPrimaryDay() {
+    public String getPrimaryDay() {
         return primaryDay;
     }
 
-    public void setPrimaryDay(Date primaryDay) {
+    public void setPrimaryDay(String primaryDay) {
         this.primaryDay = primaryDay;
     }
 
@@ -67,11 +67,11 @@ public abstract class DefinedCourses {
         this.timeOfPrimaryDay = timeOfPrimaryDay;
     }
 
-    public Date getSecondaryDay() {
+    public String getSecondaryDay() {
         return secondaryDay;
     }
 
-    public void setSecondaryDay(Date secondaryDay) {
+    public void setSecondaryDay(String secondaryDay) {
         this.secondaryDay = secondaryDay;
     }
 

@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SemesterPhaseService {
     @Autowired
@@ -14,5 +16,16 @@ public class SemesterPhaseService {
 
     public void updateSemesterPhase(SemesterPhase semesterPhase ) {
         semesterPhaseRepository.save(semesterPhase);
+    }
+
+    public long getPhase(){
+        long ID = 0;
+        List<SemesterPhase> semesterPhases = semesterPhaseRepository.findAll();
+        for (SemesterPhase semester: semesterPhases) {
+            if (semester.isStatus()){
+                ID = semester.getId();
+            }
+        }
+        return ID;
     }
 }

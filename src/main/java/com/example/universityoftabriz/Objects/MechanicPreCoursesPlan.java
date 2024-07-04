@@ -9,12 +9,13 @@ import java.util.Date;
 @Table(name = "mechanic_pre_courses_plan")
 public class MechanicPreCoursesPlan extends PreCoursesPlan{
 
-    public MechanicPreCoursesPlan(Long id, Long courseId, Long teacherId, int classN, Date examDate) {
+    public MechanicPreCoursesPlan(Long id, Long courseId, Long teacherId, int classN, Date examDate , boolean status) {
         this.id = id;
         this.courseId = courseId;
         this.teacherId = teacherId;
         this.classN = classN;
         this.examDate = examDate;
+        this.status = status;
     }
     public MechanicPreCoursesPlan() {
 
@@ -28,6 +29,7 @@ public class MechanicPreCoursesPlan extends PreCoursesPlan{
                 ", teacherId=" + teacherId +
                 ", classN=" + classN +
                 ", examDate=" + examDate +
+                ", status=" + status +
                 '}';
     }
 }
