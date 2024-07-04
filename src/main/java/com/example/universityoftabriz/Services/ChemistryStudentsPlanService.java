@@ -2,12 +2,14 @@ package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.ChemistryStudentsPlan;
 import com.example.universityoftabriz.Objects.CivilStudentsPlan;
+import com.example.universityoftabriz.Objects.ComputerStudentsPlan;
 import com.example.universityoftabriz.Repository.ChemistryStudentsPlanRepository;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ChemistryStudentsPlanService implements StudentsPlanService<ChemistryStudentsPlan>{
@@ -26,5 +28,9 @@ public class ChemistryStudentsPlanService implements StudentsPlanService<Chemist
     @Override
     public List<ChemistryStudentsPlan> getPlanByCourseId(Long course_id) {
         return chemistryStudentsPlanRepository.findByCourseId(course_id);
+    }
+
+    public Optional<ChemistryStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
+        return chemistryStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
     }
 }

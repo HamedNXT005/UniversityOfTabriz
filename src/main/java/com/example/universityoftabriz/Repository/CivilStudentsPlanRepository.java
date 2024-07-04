@@ -1,9 +1,11 @@
 package com.example.universityoftabriz.Repository;
 
 import com.example.universityoftabriz.Objects.CivilStudentsPlan;
+import com.example.universityoftabriz.Objects.ComputerStudentsPlan;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CivilStudentsPlanRepository extends JpaRepository<CivilStudentsPlan, Long> {
 
@@ -11,4 +13,5 @@ public interface CivilStudentsPlanRepository extends JpaRepository<CivilStudents
     List<CivilStudentsPlan> findByStudentId(Long studentId);
 
     List<CivilStudentsPlan> findByCourseId(Long courseId);
+    Optional<CivilStudentsPlan> findByStudentIdAndCourseId(Long studentId, Long courseId);
 }

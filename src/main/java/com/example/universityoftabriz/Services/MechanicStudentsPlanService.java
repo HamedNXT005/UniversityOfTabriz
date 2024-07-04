@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Services;
 
+import com.example.universityoftabriz.Objects.ComputerStudentsPlan;
 import com.example.universityoftabriz.Objects.MechanicStudentsPlan;
 import com.example.universityoftabriz.Objects.Student;
 import com.example.universityoftabriz.Repository.MechanicStudentsPlanRepository;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MechanicStudentsPlanService implements StudentsPlanService<MechanicStudentsPlan> {
@@ -26,4 +28,7 @@ public class MechanicStudentsPlanService implements StudentsPlanService<Mechanic
         return mechanicStudentsPlanRepository.findByCourseId(course_id);
     }
 
+    public Optional<MechanicStudentsPlan> getPlanByStudentIdAndCourseId(Long studentId, Long courseId){
+        return mechanicStudentsPlanRepository.findByStudentIdAndCourseId(studentId,courseId);
+    }
 }
