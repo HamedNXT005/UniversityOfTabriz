@@ -20,8 +20,12 @@ function switchListOfStudents(){
     window.location.href = "/TeacherPanel/TeacherListOfStudents";
 }
 function switchRegisterGrades(){
-    window.location.href = "/TeacherPanel/TeacherregisterGrades";
+    window.location.href = "/TeacherPanel/TeacherRegisterGrades";
 }
+function switchChooseCourses(){
+    window.location.href = "/TeacherPanel/TeacherChooseCourses";
+}
+
 function LogOut(){
     $.ajax({
         type: "GET",
@@ -46,12 +50,16 @@ $(document).ready(function (){
         dataType: "json",
         success: function (result){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
+            $("#faculty1").text(result.faculty);
+            $("#status1").text(result.status);
+
             $("#nameF").text(result.nameF);
             $("#nameL").text(result.nameL);
             $("#faculty").text(result.faculty);
             $("#status").text(result.status);
             $("#nCode").text(result.nationalCode);
             $("#PNumber").text(result.phoneN);
+
         },error(){
             console.log("error");
         }

@@ -1,7 +1,9 @@
 package com.example.universityoftabriz.Controllers;
 
 import com.example.universityoftabriz.Objects.Employee;
+import com.example.universityoftabriz.Objects.Teacher;
 import com.example.universityoftabriz.Services.EmployeeService;
+import com.example.universityoftabriz.Services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,21 +16,22 @@ import java.util.Optional;
 @Controller
 public class TeacherRegisterGradesController {
     @Autowired
-    private EmployeeService employeeService;
+    private TeacherService teacherService;
 
     @RequestMapping("/TeacherPanel/TeacherRegisterGrades")
     public String StudentsList(Model model){
-        Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
-        Employee employee1 = employee.get();
-        String ImageUrl = employee1.getPhoto();
+        Optional<Teacher> teacher = teacherService.getTeacherByID(LoginController.uid);
+        Teacher teacher1 = teacher.get();
+
+        String ImageUrl = teacher1.getPhoto();
         model.addAttribute("ImageURL" , ImageUrl);
         return "TeacherRegisterGrades";
     }
 
-    @GetMapping("/EmployeePanel/TeacherRegisterGrades/getInfo")
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/getInfo")
     @ResponseBody
-    public Optional<Employee> getEmployeeInfo(){
-        Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
-        return Optional.of(employee.get());
+    public Optional<Teacher> getTeacherInfo(){
+        Optional<Teacher> teacher = teacherService.getTeacherByID(LoginController.uid);
+        return Optional.of(teacher.get());
     }
 }

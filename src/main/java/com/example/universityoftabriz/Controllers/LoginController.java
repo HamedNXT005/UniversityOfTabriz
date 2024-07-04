@@ -23,7 +23,6 @@ import org.apache.logging.log4j.ThreadContext;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;

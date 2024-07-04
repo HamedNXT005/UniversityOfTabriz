@@ -33,6 +33,7 @@ public class TeacherPanelController {
         Optional<Teacher> teacher = teacherService.getTeacherByID(LoginController.uid);
         return Optional.of(teacher.get());
     }
+
     @GetMapping("/TeacherPanel/LogOut")
     @ResponseBody
     public boolean Logout(){

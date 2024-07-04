@@ -9,7 +9,7 @@ import java.util.Date;
 @Table(name = "history_salary")
 public class HistorySalary extends Salary{
     private Date payment_date;
-    public HistorySalary(Long id, Long user_id, int hours_taught, Date year_ed, int semester, Long salary , Date payment_date) {
+    public HistorySalary(Long id, Long user_id, int hours_taught, int year_ed, int semester, Long salary , Date payment_date) {
         this.id = id;
         this.userId = user_id;
         this.hoursTaught = hours_taught;

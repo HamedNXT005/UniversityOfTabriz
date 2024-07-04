@@ -19,7 +19,7 @@ public class ResourcesService {
 
     }
 
-    public Optional<Resources> getResourceByDate(Date date, int semester){
+    public Optional<Resources> getResourceByDate(int date, int semester){
         return resourcesRepository.findByYearEdAndSemester(date,semester);
     }
 

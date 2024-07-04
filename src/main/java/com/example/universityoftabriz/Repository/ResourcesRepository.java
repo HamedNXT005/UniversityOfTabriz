@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface ResourcesRepository extends JpaRepository<Resources, Long> {
 
 
-    Optional<Resources> findByYearEdAndSemester(Date year_ed, int semester);
+    Optional<Resources> findByYearEdAndSemester(int year_ed, int semester);
 
     @Query(value = "SELECT * FROM resources ORDER BY id DESC LIMIT 1", nativeQuery = true)
     Resources findLastRecord();

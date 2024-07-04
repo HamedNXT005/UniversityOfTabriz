@@ -22,7 +22,7 @@ public class TeachersSalaryService {
         return teachersSalaryRepository.findByUserId(user_id);
     }
 
-    public List<TeachersSalary> getTeachersSalaryByDate(Date year_ed, int semester){
+    public List<TeachersSalary> getTeachersSalaryByDate(int year_ed, int semester){
         return teachersSalaryRepository.findByYearEdAndSemester(year_ed,semester);
     }
 }

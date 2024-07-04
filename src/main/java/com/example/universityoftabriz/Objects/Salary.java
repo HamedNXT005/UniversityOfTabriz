@@ -15,7 +15,7 @@ public abstract class Salary {
     @Column(name = "hours_taught")
     protected int hoursTaught;
     @Column (name = "year_ed")
-    protected String yearEd;
+    protected int yearEd;
     protected int semester;
     protected Long salary;
     public Long getId() {
@@ -42,11 +42,11 @@ public abstract class Salary {
         this.hoursTaught = hoursTaught;
     }
 
-    public String getYearEd() {
+    public int getYearEd() {
         return yearEd;
     }
 
-    public void setYearEd(String yearEd) {
+    public void setYearEd(int yearEd) {
         this.yearEd = yearEd;
     }
 
