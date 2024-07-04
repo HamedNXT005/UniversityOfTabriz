@@ -100,7 +100,8 @@ $(document).ready(function (){
                         $("#budgetBtn").css("display", "block");
                         $("#meBtn").css("display", "block");
                     }
-                }else if(dep === "AcademicalAffairs"){
+                }
+                else if(dep === "AcademicalAffairs"){
                     $("#seeTList").css("display", "block");
                     $("#ATeacher").css("display", "block");
                     $("#seeSList").css("display", "block");
@@ -108,12 +109,14 @@ $(document).ready(function (){
                     if(role === "Boss"){
                         $("#academicMEBtn").css("display", "block");
                     }
-                }else if (dep === "FacultyAcademical"){
+                }
+                else if (dep === "FacultyAcademical"){
                     $("#seeSListF").css("display", "block");
                     $("#DeterminationTheCourses").css("display", "block");
                     $("#ManageTheDefinedCourses").css("display", "block");
                 }
-            }else if(result === 2){
+            }
+            else if(result === 2){
                 if (dep === "Finance"){
                     $("#salaryPBtn").css("display", "block");
                     if (role === "Boss"){
@@ -145,7 +148,8 @@ $(document).ready(function (){
                 }else if (dep === "FacultyAcademical"){
                     $("#seeSListF").css("display", "block");
                 }
-            }else if(result === 4){
+            }
+            else if(result === 4){
                 if (dep === "Finance"){
                     $("#salaryPBtn").css("display", "block");
                     if (role === "Boss"){
@@ -161,7 +165,7 @@ $(document).ready(function (){
                     $("#seeSListF").css("display", "block");
                 }
             }
-        },error(){
+        },error:function (){
             console.log("error");
         }
     });

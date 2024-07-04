@@ -61,7 +61,7 @@ public class DeterminationTheBudgetController {
                     mes = "Insert Successful";
                 }
             }else {
-
+                mes = "Year isn't correct";
             }
         } else {
             Resources resource1 = new Resources();

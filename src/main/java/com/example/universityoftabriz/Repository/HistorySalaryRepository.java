@@ -12,7 +12,7 @@ public interface HistorySalaryRepository extends JpaRepository<HistorySalary, Lo
 
     List<HistorySalary> findByUserId(Long userId);
 
-    List<HistorySalary> findByYearEdAndSemester(Timestamp yearEd, int semester);
+    List<HistorySalary> findByYearEdAndSemester(int yearEd, int semester);
 
-    Optional<HistorySalary> findByUserIdAndYearEdAndSemester(Long userId, Timestamp yearEd, int semester);
+    Optional<HistorySalary> findByUserIdAndYearEdAndSemester(Long userId, int yearEd, int semester);
 }

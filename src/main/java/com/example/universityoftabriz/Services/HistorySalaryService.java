@@ -31,11 +31,11 @@ public class HistorySalaryService {
         return historySalaryRepository.findByUserId(userId);
     }
 
-    public List<HistorySalary> getHistorySByYearEdAndSemester(Timestamp yearEd, int semester){
+    public List<HistorySalary> getHistorySByYearEdAndSemester(int yearEd, int semester){
         return historySalaryRepository.findByYearEdAndSemester(yearEd,semester);
     }
 
-    public Optional<HistorySalary> getHistorySByUserIdAndYearEdAndSemester(Long userId, Timestamp yearEd, int semester){
+    public Optional<HistorySalary> getHistorySByUserIdAndYearEdAndSemester(Long userId, int yearEd, int semester){
         return historySalaryRepository.findByUserIdAndYearEdAndSemester(userId, yearEd, semester);
     }
 

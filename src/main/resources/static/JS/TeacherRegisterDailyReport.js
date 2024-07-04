@@ -13,14 +13,17 @@ function switchHome(){
 function switchSalaryPayment(){
     window.location.href = "/TeacherPanel/TeacherSalaryPayment";
 }
-function switchRegisterGrades(){
-    window.location.href = "/TeacherPanel/TeacherRegistergrades";
+function switchRegisterDailyReport(){
+    window.location.href = "/TeacherPanel/TeacherRegisterDailyReport";
 }
-function switchListofStudents(){
+function switchListOfStudents(){
     window.location.href = "/TeacherPanel/TeacherListOfStudents";
+}
+function switchRegisterGrades(){
+    window.location.href = "/TeacherPanel/TeacherRegisterGrades";
 }
 function switchChooseCourses(){
-    window.location.href = "/TeacherPanel/TeacherListOfStudents";
+    window.location.href = "/TeacherPanel/TeacherChooseCourses";
 }
 function LogOut(){
     $.ajax({
