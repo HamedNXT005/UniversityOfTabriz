@@ -16,11 +16,11 @@ function switchSalaryPayment(){
 function switchRegisterDailyReport(){
     window.location.href = "/TeacherPanel/TeacherRegisterDailyReport";
 }
-function switchListOfStudents(){
-    window.location.href = "/TeacherPanel/TeacherListOfStudents";
-}
 function switchRegisterGrades(){
-    window.location.href = "/TeacherPanel/TeacherregisterGrades";
+    window.location.href = "/TeacherPanel/TeacherRegisterGrades";
+}
+function switchChooseCourses(){
+    window.location.href = "/TeacherPanel/TeacherListOfStudents";
 }
 function LogOut(){
     $.ajax({
@@ -41,17 +41,13 @@ function LogOut(){
 $(document).ready(function (){
     $.ajax({
         type: "GET",
-        url: "/TeacherPanel/getInfo" ,
+        url: "/TeacherPanel/TeacherListOfStudents/getInfo" ,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (result){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
-            $("#nameF").text(result.nameF);
-            $("#nameL").text(result.nameL);
-            $("#faculty").text(result.faculty);
-            $("#status").text(result.status);
-            $("#nCode").text(result.nationalCode);
-            $("#PNumber").text(result.phoneN);
+            $("#faculty1").text(result.faculty);
+            $("#status1").text(result.status);
         },error(){
             console.log("error");
         }

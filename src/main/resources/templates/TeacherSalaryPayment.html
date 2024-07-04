@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
+    <script th:src="@{/JS/TeacherSalaryPayment.js}"></script>
+    <title>Teacher Salary payment</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #074173;
+            color: white;
+            height: 90px;
+        }
+        .person .person-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .logo-text {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .logo-right {
+            max-width: 80px;
+            border-radius: 50%;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #074172;
+            color: #FFC700;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: -290px;
+            transition: left 0.3s ease;
+            margin-top: 170px;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        a {
+            display: block;
+            color: #FFC700;
+            text-decoration: none;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="person">
+        <img th:src="${ImageURL}" class="person-img" id="personIMG">
+        <span style="font-size: 24px; color: #FFC700" id="PersonInfo"></span>
+    </div>
+    <h1 class="logo-text" style="color: #FFC700;"><cite>>Students List</cite></h1>
+    <img class="logo-right" th:src="@{/Img/images.jpg}">
+</header>
+<div style="background-color: #074173; height: 50px;">
+    <button class="menu-btn" onclick="toggleSidebar()">
+        <img th:src="@{/Img/Menu.png}">
+    </button>
+</div>
+<div class="sidebar" id="sidebar">
+    <div>
+        <h4 style="display: inline; color: #FFC700;">Faculty:</h4>
+        <h4 style="display: inline; color: #FFC700;" id="Faculty1"></h4>
+        <br>
+        <h4 style="display: inline; color: #FFC700;">Status:</h4>
+        <h4 style="display: inline; color: #FFC700;" id="Status1"></h4>
+        <br>
+        <br>
+        <a onclick="switchHome()" id="homeBtn" style="margin-top: 10px;">Home</a>
+        <a onclick="switchChooseCourses()" id="chooseCourse"> Choosing Courses</a>
+        <a onclick="switchListofStudents()" id="listOfStudents">List Of students</a>
+        <a onclick="switchRegisterGrades()" id="registerGrade">Register Grades</a>
+        <a onclick="switchRegisterDailyReport()" id="dailyStatus">Registering Daily Status</a>
+        <a onclick="LogOut()" id="logoutBtn">Log Out</a>
+    </div>
+
+</div>
+
+<div class="main-content" id="main-content">
+</div>
+</body>
+</html>
