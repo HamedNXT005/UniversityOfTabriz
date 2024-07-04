@@ -11,6 +11,26 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
+        table {
+            border-collapse: collapse;
+            border-color: #074173;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #074173;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #074173;
+            color: #FFC700;
+            font-size: xx-large;
+        }
+        td{
+            font-size: x-large;
+            color: #074173;
+        }
 
         header {
             display: flex;
@@ -106,5 +126,33 @@
 <div class="main-content" id="main-content">
 
 </div>
+<table>
+    <tr>
+        <th colspan="14"><cite>Courses Plan</cite></th>
+    </tr>
+    <tr style="background-color: #f2f2f2">
+        <td style="font-weight: bold;">Course Name</td>
+        <td id="CourseName"></td>
+
+        <td style="font-weight: bold;">Primary Day</td>
+        <td id="PDay"></td>
+
+        <td style="font-weight: bold;">Time Of Primary Day</td>
+        <td id="TPday"></td>
+
+        <td style="font-weight: bold;">Secondary Day</td>
+        <td id="SDay"></td>
+
+
+        <td style="font-weight: bold;">Time Of Secondary Day</td>
+        <td id="TSDay"></td>
+
+        <td style="font-weight: bold;">Class Number</td>
+        <td id="ClassN"></td>
+
+        <td style="font-weight: bold;">Date Of Exam</td>
+        <td id="Exam"></td>
+    </tr>
+</table>
 </body>
 </html>
