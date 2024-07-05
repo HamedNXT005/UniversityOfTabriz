@@ -41,4 +41,8 @@ public class EmployeeService {
     public List<Employee> getEmployeesByDepartmentAndRole(String department, String role){
         return employeeRepository.findByDepartmentAndRole(department,role);
     }
+
+    public List<Employee> getAll(){
+        return employeeRepository.findAll();
+    }
 }

@@ -18,6 +18,11 @@ public class SemesterPhaseService {
         semesterPhaseRepository.save(semesterPhase);
     }
 
+    public List<SemesterPhase> getAll(){
+        return semesterPhaseRepository.findAll();
+    }
+
+
     public long getPhase(){
         long ID = 0;
         List<SemesterPhase> semesterPhases = semesterPhaseRepository.findAll();

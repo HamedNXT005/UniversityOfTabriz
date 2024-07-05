@@ -1,5 +1,7 @@
 package com.example.universityoftabriz.Controllers;
 
+import com.example.universityoftabriz.Objects.Student;
+import com.example.universityoftabriz.Services.StudentService;
 import com.example.universityoftabriz.Services.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,10 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 public class AdminManageStudentsController {
     @Autowired
     private TeacherService teacherService;
+    @Autowired
+    private StudentService studentService;
 
     @RequestMapping("/AdminPanel/AdminManageStudents")
     public String AdminPanel(Model model){
@@ -25,5 +31,11 @@ public class AdminManageStudentsController {
     public boolean Logout(){
         LoginController.uid = 100;
         return true;
+    }
+
+    @GetMapping("/AdminPanel/AdminManageStudents/SeeStudents")
+    @ResponseBody
+    public List<Student> seeStudents(){
+        return studentService.getAll();
     }
 }

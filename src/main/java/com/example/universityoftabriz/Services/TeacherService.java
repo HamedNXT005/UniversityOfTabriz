@@ -42,4 +42,8 @@ public class TeacherService {
     public List<Teacher> getTeachersByStatus(String status){
         return teacherRepository.findByStatus(status);
     }
+
+    public List<Teacher> getAll(){
+        return teacherRepository.findAll();
+    }
 }
