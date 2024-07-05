@@ -23,13 +23,15 @@ import org.apache.logging.log4j.ThreadContext;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
 @Controller
 public class LoginController {
-
+    public static int yearEd;
+    public static int semester;
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
     public static long uid = 100;
     public static long phaseId = 0;
@@ -47,6 +49,17 @@ public class LoginController {
 
     @RequestMapping("/Login")
     public String Login(){
+        LocalDate currentDate = LocalDate.now();
+        if (currentDate.getMonthValue() >= 8) {
+            yearEd = currentDate.getYear();
+            semester = 1;
+        } else if (currentDate.getMonthValue() <= 6) {
+            yearEd = currentDate.getYear()-1;
+            semester = 2;
+        } else {
+            yearEd = currentDate.getYear();
+            semester = 0;
+        }
         MDC.put("uid", String.valueOf(uid));
         logger.info("Application Started.");
         MDC.clear();
