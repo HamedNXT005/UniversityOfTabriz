@@ -49,4 +49,8 @@ public class StudentService {
     public List<Student> getStudentsByGpaTotalGreaterThan(float gpaTotal){
         return studentRepository.findByGpaTotalGreaterThan(gpaTotal);
     }
+
+    public List<Student> getAll(){
+        return studentRepository.findAll();
+    }
 }
