@@ -8,6 +8,9 @@ import com.example.universityoftabriz.Services.EmployeeService;
 import com.example.universityoftabriz.Services.HistorySalaryService;
 import com.example.universityoftabriz.Services.TeacherService;
 import com.example.universityoftabriz.Services.TeachersSalaryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +30,7 @@ public class SalaryPaymentController {
 
     @Autowired
     private HistorySalaryService historySalaryService;
-
+    private static final Logger logger = LoggerFactory.getLogger(SalaryPaymentController.class);
 
     @RequestMapping("/Employee/Finance/SalaryPayment")
     public String SalaryPayment(Model model){
@@ -41,28 +44,37 @@ public class SalaryPaymentController {
     @GetMapping("/Employee/Finance/SalaryPayment/getInfo")
     @ResponseBody
     public Optional<Employee> getEmployeeInfo(){
-        Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
-        return Optional.of(employee.get());
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Employee's info with id: {} has been sent to the front-end",LoginController.uid);
+        MDC.clear();
+        return employeeService.getEmployeeByID(LoginController.uid);
     }
 
     @GetMapping("/Employee/Finance/SalaryPayment/ShowSalary")
     @ResponseBody
     public List<TeachersSalary> getTeachersSalary() {
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Teachers salaries have been sent to the front-end.");
+        MDC.clear();
         return teachersSalaryService.getAll();
     }
 
     @GetMapping("/Employee/Finance/SalaryPayment/getTeacher")
     @ResponseBody
     public Teacher getTeacher(@RequestParam Long id) {
-        Optional<Teacher> teacher = teacherService.getTeacherByID(id);
-        return teacher.get();
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Teacher's info with id: {} has been sent to the front-end",id);
+        MDC.clear();
+        return teacherService.getTeacherByID(id).get();
     }
 
     @GetMapping("/Employee/Finance/SalaryPayment/getTeacherSalary")
     @ResponseBody
     public TeachersSalary getTeacherSalary(@RequestParam Long id) {
-        TeachersSalary teachersSalary = teachersSalaryService.getTeachersSalaryByUid(id);
-        return teachersSalary;
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Teacher's salary with id: {} has been sent to the front-end",id);
+        MDC.clear();
+        return teachersSalaryService.getTeachersSalaryByUid(id);
     }
     @PostMapping("/Employee/Finance/SalaryPayment/UpdateSalary")
     @ResponseBody
@@ -91,6 +103,9 @@ public class SalaryPaymentController {
 
         teachersSalary.setHoursTaught(0);
         teachersSalary.setSalary(0L);
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Teacher's salary with id: {} has been updated.",teachersSalary.getId());
+        MDC.clear();
         teachersSalaryService.updateTeacherSalary(teachersSalary);
     }
 }

@@ -4,6 +4,9 @@ import com.example.universityoftabriz.Objects.Employee;
 import com.example.universityoftabriz.Objects.Resources;
 import com.example.universityoftabriz.Services.EmployeeService;
 import com.example.universityoftabriz.Services.ResourcesService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +21,7 @@ public class DeterminationSalaryRateController {
     private EmployeeService employeeService;
     @Autowired
     private ResourcesService resourcesService;
-
+    private static final Logger logger = LoggerFactory.getLogger(DeterminationSalaryRateController.class);
     @RequestMapping("/Employee/Finance/DeterminationSalary")
     public String DeterminationSalary(Model model){
         Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
@@ -31,10 +34,12 @@ public class DeterminationSalaryRateController {
     @GetMapping("/EmployeePanel/Finance/DeterminationSalary/getInfo")
     @ResponseBody
     public Optional<Employee> getEmployeeInfo(){
-        Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
-        return Optional.of(employee.get());
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Employee's info with id: {} has been sent to the front-end",LoginController.uid);
+        MDC.clear();
+        return employeeService.getEmployeeByID(LoginController.uid);
     }
-
+    //TODO
     @PostMapping("/Employee/Finance/DeterminationBudget/DRate")
     @ResponseBody
     public void DBudget(@RequestParam int year , @RequestParam int sem , @RequestParam long scRate , @RequestParam long nRate){

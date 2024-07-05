@@ -4,6 +4,9 @@ import com.example.universityoftabriz.Objects.SemesterPhase;
 import com.example.universityoftabriz.Objects.Teacher;
 import com.example.universityoftabriz.Services.SemesterPhaseService;
 import com.example.universityoftabriz.Services.TeacherService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +25,7 @@ public class AdminSelectPhaseController {
     private TeacherService teacherService;
     @Autowired
     private SemesterPhaseService semesterPhaseService;
-
+    private static final Logger logger = LoggerFactory.getLogger(AdminSelectPhaseController.class);
     @RequestMapping("/AdminPanel/AdminSelectPhase")
     public String AdminPanel(Model model){
 
@@ -34,12 +37,18 @@ public class AdminSelectPhaseController {
     @ResponseBody
     public boolean Logout(){
         LoginController.uid = 100;
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Admin has logged out.");
+        MDC.clear();
         return true;
     }
 
     @GetMapping("/AdminPanel/AdminSelectPhase/SeePhases")
     @ResponseBody
     public List<SemesterPhase> seePhases(){
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Semester Phases has been sent to the front-end.");
+        MDC.clear();
         return semesterPhaseService.getAll();
     }
 
@@ -50,6 +59,9 @@ public class AdminSelectPhaseController {
         for (SemesterPhase semesterPhase : semesterPhases) {
             if (semesterPhase.getId() == id) {
                 semesterPhase.setStatus(true);
+                MDC.put("uid", String.valueOf(LoginController.uid));
+                logger.info("Semester Phase of {} is active now.",semesterPhase.getPhaseName());
+                MDC.clear();
             } else {
                 semesterPhase.setStatus(false);
             }

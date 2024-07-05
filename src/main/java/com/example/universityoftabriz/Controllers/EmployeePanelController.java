@@ -3,6 +3,9 @@ package com.example.universityoftabriz.Controllers;
 import com.example.universityoftabriz.Objects.Employee;
 import com.example.universityoftabriz.Services.EmployeeService;
 import jakarta.persistence.Column;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +19,7 @@ import java.util.Optional;
 public class EmployeePanelController {
     @Autowired
     private EmployeeService employeeService;
-
+    private static final Logger logger = LoggerFactory.getLogger(EmployeePanelController.class);
     @RequestMapping("/EmployeePanel")
     public String EmployeePanel(Model model){
         Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
@@ -29,14 +32,19 @@ public class EmployeePanelController {
     @GetMapping("/EmployeePanel/getInfo")
     @ResponseBody
     public Optional<Employee> getEmployeeInfo(){
-        Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
-        return Optional.of(employee.get());
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Employee's info with id: {} has been sent to the front-end",LoginController.uid);
+        MDC.clear();
+        return employeeService.getEmployeeByID(LoginController.uid);
 
     }
 
     @GetMapping("/EmployeePanel/getPhase")
     @ResponseBody
     public long getPhase(){
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Phase id: {} has been sent to the front-end.",LoginController.phaseId);
+        MDC.clear();
         return LoginController.phaseId;
     }
 
@@ -44,6 +52,9 @@ public class EmployeePanelController {
     @ResponseBody
     public boolean Logout(){
         LoginController.uid = 100;
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Admin has logged out.");
+        MDC.clear();
         return true;
     }
 }

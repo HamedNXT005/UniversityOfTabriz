@@ -49,8 +49,10 @@ public class TeacherListOfStudentsController {
     @GetMapping("/TeacherPanel/TeacherListOfStudents/getInfo")
     @ResponseBody
     public Optional<Teacher> getTeacherInfo(){
-        Optional<Teacher> teacher = teacherService.getTeacherByID(LoginController.uid);
-        return Optional.of(teacher.get());
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Teacher's info with id: {} has been sent to the front-end",LoginController.uid);
+        MDC.clear();
+        return teacherService.getTeacherByID(LoginController.uid);
     }
 
     @GetMapping("/TeacherPanel/TeacherListOfStudents/showComputer")

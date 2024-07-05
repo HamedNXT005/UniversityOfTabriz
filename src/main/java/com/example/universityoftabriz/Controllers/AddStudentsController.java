@@ -2,6 +2,9 @@ package com.example.universityoftabriz.Controllers;
 
 import com.example.universityoftabriz.Objects.Employee;
 import com.example.universityoftabriz.Services.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +18,7 @@ import java.util.Optional;
 public class AddStudentsController {
     @Autowired
     private EmployeeService employeeService;
-
+    private static final Logger logger = LoggerFactory.getLogger(AddStudentsController.class);
     @RequestMapping("/EmployeePanel/AddStudent")
     public String AddStudent(Model model){
         Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
@@ -28,7 +31,9 @@ public class AddStudentsController {
     @GetMapping("/EmployeePanel/AddStudent/getInfo")
     @ResponseBody
     public Optional<Employee> getEmployeeInfo(){
-        Optional<Employee> employee = employeeService.getEmployeeByID(LoginController.uid);
-        return Optional.of(employee.get());
+        MDC.put("uid", String.valueOf(LoginController.uid));
+        logger.info("Employee's info with id: {} has been sent to the front-end",LoginController.uid);
+        MDC.clear();
+        return employeeService.getEmployeeByID(LoginController.uid);
     }
 }
