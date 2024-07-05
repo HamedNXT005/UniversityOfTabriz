@@ -66,7 +66,7 @@ public class TeacherChooseCoursesController {
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesComputer")
     @ResponseBody
     public List<ComputerPreCoursesPlan> getPreCoursesComputer(@RequestParam Teacher teacher){
-        return computerPreCoursesPlanService.getPrePlanByTeacherId(teacher.getId());
+        return computerPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedComputer")
@@ -92,12 +92,12 @@ public class TeacherChooseCoursesController {
         logger.info("All courses were moved successfully to the defined courses table.");
         MDC.clear();
     }
-
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesChemistry")
     @ResponseBody
     public List<ChemistryPreCoursesPlan> getPreCoursesChemistry(@RequestParam Teacher teacher){
-        return chemistryPreCoursesPlanService.getPrePlanByTeacherId(teacher.getId());
+        return chemistryPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
+
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedChemistry")
     @ResponseBody
@@ -126,7 +126,7 @@ public class TeacherChooseCoursesController {
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesCivil")
     @ResponseBody
     public List<CivilPreCoursesPlan> getPreCoursesCivil(@RequestParam Teacher teacher){
-        return civilPreCoursesPlanService.getPrePlanByTeacherId(teacher.getId());
+        return civilPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedCivil")
@@ -156,7 +156,7 @@ public class TeacherChooseCoursesController {
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesElectric")
     @ResponseBody
     public List<ElectricPreCoursesPlan> getPreCoursesElectric(@RequestParam Teacher teacher){
-        return electricPreCoursesPlanService.getPrePlanByTeacherId(teacher.getId());
+        return electricPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedElectric")
@@ -186,7 +186,7 @@ public class TeacherChooseCoursesController {
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesMechanic")
     @ResponseBody
     public List<MechanicPreCoursesPlan> getPreCoursesMechanic(@RequestParam Teacher teacher){
-        return mechanicPreCoursesPlanService.getPrePlanByTeacherId(teacher.getId());
+        return mechanicPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedMechanic")

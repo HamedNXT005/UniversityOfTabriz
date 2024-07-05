@@ -64,7 +64,7 @@ public class Resources {
         this.totalBudget = totalBudget;
     }
 
-    public Long getRateSc(int i) {
+    public Long getRateSc() {
         return rateSc;
     }
 

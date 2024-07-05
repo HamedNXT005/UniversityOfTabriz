@@ -14,4 +14,5 @@ public interface ChemistryPreCoursesPlanRepository extends JpaRepository<Chemist
 
     List<ChemistryPreCoursesPlan> findByCourseIdAndTeacherId(Long courseId, Long teacherId);
 
+    List<ChemistryPreCoursesPlan> findByTeacherIdAndStatus(Long teacherId, boolean status);
 }

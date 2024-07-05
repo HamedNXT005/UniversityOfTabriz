@@ -28,6 +28,10 @@ public class TeacherRegisterDailyReportController {
     @Autowired
     private TeacherService teacherService;
     @Autowired
+    private TeachersSalaryService teachersSalaryService;
+    @Autowired
+    private ResourcesService resourcesService;
+    @Autowired
     private ComputerDefinedCoursesService computerDefinedCoursesService;
     @Autowired
     private ComputerReportService computerReportService;
@@ -83,7 +87,6 @@ public class TeacherRegisterDailyReportController {
         MDC.clear();
         return list;
     }
-
     @GetMapping("/TeacherPanel/TeacherRegisterDailyReport/registerToComputer")
     @ResponseBody
     public void registerToComputer(@RequestParam Teacher teacher,@RequestParam long courseId, @RequestParam boolean as,@RequestParam String absents){
@@ -98,6 +101,15 @@ public class TeacherRegisterDailyReportController {
         report.setDateOfSubmition(Date.valueOf(LocalDate.now()));
         report.setTimeOfSubmition(Time.valueOf(LocalTime.now()));
         computerReportService.updateComputerReport(report);
+        TeachersSalary teacherSalary = teachersSalaryService.getTeachersSalaryByUid(teacher.getId());
+        teacherSalary.setHoursTaught(teacherSalary.getHoursTaught()+2);
+        Resources resource = resourcesService.getLastRecord();
+        if (teacher.getStatus().equals("sc")){
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateSc());
+        } else {
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateNormal());
+        }
+        teachersSalaryService.updateTeacherSalary(teacherSalary);
         logger.info("Report of the class with id: {} was submitted successfully",courseId);
         MDC.clear();
     }
@@ -133,6 +145,15 @@ public class TeacherRegisterDailyReportController {
         report.setDateOfSubmition(Date.valueOf(LocalDate.now()));
         report.setTimeOfSubmition(Time.valueOf(LocalTime.now()));
         civilReportService.updateCivilReport(report);
+        TeachersSalary teacherSalary = teachersSalaryService.getTeachersSalaryByUid(teacher.getId());
+        teacherSalary.setHoursTaught(teacherSalary.getHoursTaught()+2);
+        Resources resource = resourcesService.getLastRecord();
+        if (teacher.getStatus().equals("sc")){
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateSc());
+        } else {
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateNormal());
+        }
+        teachersSalaryService.updateTeacherSalary(teacherSalary);
         logger.info("Report of the class with id: {} was submitted successfully",courseId);
         MDC.clear();
     }
@@ -168,6 +189,15 @@ public class TeacherRegisterDailyReportController {
         report.setDateOfSubmition(Date.valueOf(LocalDate.now()));
         report.setTimeOfSubmition(Time.valueOf(LocalTime.now()));
         chemistryReportService.updateChemistryReport(report);
+        TeachersSalary teacherSalary = teachersSalaryService.getTeachersSalaryByUid(teacher.getId());
+        teacherSalary.setHoursTaught(teacherSalary.getHoursTaught()+2);
+        Resources resource = resourcesService.getLastRecord();
+        if (teacher.getStatus().equals("sc")){
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateSc());
+        } else {
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateNormal());
+        }
+        teachersSalaryService.updateTeacherSalary(teacherSalary);
         logger.info("Report of the class with id: {} was submitted successfully",courseId);
         MDC.clear();
     }
@@ -203,6 +233,15 @@ public class TeacherRegisterDailyReportController {
         report.setDateOfSubmition(Date.valueOf(LocalDate.now()));
         report.setTimeOfSubmition(Time.valueOf(LocalTime.now()));
         electricReportService.updateElectricReport(report);
+        TeachersSalary teacherSalary = teachersSalaryService.getTeachersSalaryByUid(teacher.getId());
+        teacherSalary.setHoursTaught(teacherSalary.getHoursTaught()+2);
+        Resources resource = resourcesService.getLastRecord();
+        if (teacher.getStatus().equals("sc")){
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateSc());
+        } else {
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateNormal());
+        }
+        teachersSalaryService.updateTeacherSalary(teacherSalary);
         logger.info("Report of the class with id: {} was submitted successfully",courseId);
         MDC.clear();
     }
@@ -237,6 +276,15 @@ public class TeacherRegisterDailyReportController {
         report.setDateOfSubmition(Date.valueOf(LocalDate.now()));
         report.setTimeOfSubmition(Time.valueOf(LocalTime.now()));
         mechanicReportService.updateMechanicReport(report);
+        TeachersSalary teacherSalary = teachersSalaryService.getTeachersSalaryByUid(teacher.getId());
+        teacherSalary.setHoursTaught(teacherSalary.getHoursTaught()+2);
+        Resources resource = resourcesService.getLastRecord();
+        if (teacher.getStatus().equals("sc")){
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateSc());
+        } else {
+            teacherSalary.setSalary(teacherSalary.getHoursTaught()*resource.getRateNormal());
+        }
+        teachersSalaryService.updateTeacherSalary(teacherSalary);
         logger.info("Report of the class with id: {} was submitted successfully",courseId);
         MDC.clear();
     }

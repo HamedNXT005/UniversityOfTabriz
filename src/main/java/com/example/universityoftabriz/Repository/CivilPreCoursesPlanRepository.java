@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Repository;
 
+import com.example.universityoftabriz.Objects.ChemistryPreCoursesPlan;
 import com.example.universityoftabriz.Objects.CivilPreCoursesPlan;
 import com.example.universityoftabriz.Objects.ComputerPreCoursesPlan;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,5 +14,5 @@ public interface CivilPreCoursesPlanRepository extends JpaRepository<CivilPreCou
     List<CivilPreCoursesPlan> findByTeacherId(Long teacherId);
 
     List<CivilPreCoursesPlan> findByCourseIdAndTeacherId(Long courseId, Long teacherId);
-
+    List<CivilPreCoursesPlan> findByTeacherIdAndStatus(Long teacherId, boolean status);
 }

@@ -20,4 +20,5 @@ public interface StudentRepository extends JpaRepository<Student , Long> {
     Optional<Student> findByNationalCode(String nationalCode);
 
     List<Student> findByGpaTotalGreaterThan(float gpaTotal);
+
 }

@@ -28,4 +28,7 @@ public class ChemistryPreCoursesPlanService implements PreCoursesPlan<ChemistryP
     public List<ChemistryPreCoursesPlan> getPrePlanByCourseIdAndTeacherId(Long courseId, Long teacherId){
         return chemistryPreCoursesPlanRepository.findByCourseIdAndTeacherId(courseId,teacherId);
     }
+    public List<ChemistryPreCoursesPlan> getPrePlanByTeacherIdAndStatus(Long teacherId,boolean status){
+        return chemistryPreCoursesPlanRepository.findByTeacherIdAndStatus(teacherId, status);
+    }
 }

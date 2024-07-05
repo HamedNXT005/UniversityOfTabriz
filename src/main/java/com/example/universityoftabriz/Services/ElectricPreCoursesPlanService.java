@@ -1,5 +1,6 @@
 package com.example.universityoftabriz.Services;
 
+import com.example.universityoftabriz.Objects.ChemistryPreCoursesPlan;
 import com.example.universityoftabriz.Objects.ElectricPreCoursesPlan;
 import com.example.universityoftabriz.Repository.ElectricPreCoursesPlanRepository;
 import org.slf4j.Logger;
@@ -28,5 +29,8 @@ public class ElectricPreCoursesPlanService implements PreCoursesPlan<ElectricPre
     @Override
     public List<ElectricPreCoursesPlan> getPrePlanByCourseIdAndTeacherId(Long courseId, Long teacherId){
         return electricPreCoursesPlanRepository.findByCourseIdAndTeacherId(courseId,teacherId);
+    }
+    public List<ElectricPreCoursesPlan> getPrePlanByTeacherIdAndStatus(Long teacherId, boolean status){
+        return electricPreCoursesPlanRepository.findByTeacherIdAndStatus(teacherId, status);
     }
 }

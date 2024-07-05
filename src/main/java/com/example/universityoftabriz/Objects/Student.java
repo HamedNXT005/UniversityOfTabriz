@@ -1,8 +1,12 @@
 package com.example.universityoftabriz.Objects;
 
+import com.example.universityoftabriz.Services.ComputerDefinedCoursesService;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 @Entity
 @Table(name = "info_students")
@@ -85,6 +89,7 @@ public class Student extends Person{
     public void setFaculty(String faculty) {
         this.faculty = faculty;
     }
+
 
     @Override
     public String toString() {
