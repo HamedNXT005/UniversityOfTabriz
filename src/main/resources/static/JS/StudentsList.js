@@ -63,6 +63,37 @@ function LogOut(){
     });
 }
 
+function ShowEmployees() {
+    var radif = 0;
+    $.ajax({
+        type: 'GET',
+        url: '/EmployeePanel/StudentsList/getStudents',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success:function (result){
+            console.log(result)
+            result.forEach(function (item){
+                radif += 1;
+                console.log(item);
+                var ID = item.id;
+                var tr = $('<tr>');
+                tr.append('<td>' + radif + '</td>');
+                tr.append('<td>' + item.nameF + " " + item.nameL + '</td>');
+                tr.append('<td>' + item.id + '</td>');
+                tr.append('<td>' + item.faculty + '</td>');
+                tr.append('<td>' + item.major + '</td>');
+                tr.append('<td>' + item.nationalCode + '</td>');
+                tr.append('<td>' + item.phoneN + '</td>');
+                tr.append('<td>' + item.semestersPassed + '</td>');
+                tr.append('<td>' + item.unitsPassed + '</td>');
+                tr.append('<td>' + item.gpaTotal + '</td>');
+                tr.append('<td>' + item.gpaSemester + '</td>');
+                $('#myTable').append(tr);
+            });
+        }
+    });
+}
+
 $(document).ready(function (){
     var dep = "";
     var role = "";
@@ -95,7 +126,8 @@ $(document).ready(function (){
                         $("#budgetBtn").css("display", "block");
                         $("#meBtn").css("display", "block");
                     }
-                }else if(dep === "AcademicalAffairs"){
+                }
+                else if(dep === "AcademicalAffairs"){
                     $("#seeTList").css("display", "block");
                     $("#ATeacher").css("display", "block");
                     $("#seeSList").css("display", "block");
@@ -103,14 +135,16 @@ $(document).ready(function (){
                     if(role === "Boss"){
                         $("#academicMEBtn").css("display", "block");
                     }
-                }else if (dep === "FacultyAcademical"){
+                }
+                else if (dep === "FacultyAcademical"){
                     $("#seeSListF").css("display", "block");
                     $("#DeterminationTheCourses").css("display", "block");
                     $("#ManageTheDefinedCourses").css("display", "block");
                 }
-            }else if(result === 2){
+            }
+            else if(result === 2){
                 if (dep === "Finance"){
-                    $("#salaryPBtn").css("display", "block");
+                    $("#PsalaryPBtn").css("display", "block");
                     if (role === "Boss"){
                         $("#meBtn").css("display", "block");
                     }
@@ -127,22 +161,7 @@ $(document).ready(function (){
             }
             else if (result === 3){
                 if (dep === "Finance"){
-                    $("#salaryPBtn").css("display", "block");
-                    if (role === "Boss"){
-                        $("#meBtn").css("display", "block");
-                    }
-                }else if(dep === "AcademicalAffairs"){
-                    $("#seeTList").css("display", "block");
-                    $("#seeSList").css("display", "block");
-                    if(role === "Boss"){
-                        $("#academicMEBtn").css("display", "block");
-                    }
-                }else if (dep === "FacultyAcademical"){
-                    $("#seeSListF").css("display", "block");
-                }
-            }else if(result === 4){
-                if (dep === "Finance"){
-                    $("#salaryPBtn").css("display", "block");
+                    $("#PsalaryPBtn").css("display", "block");
                     if (role === "Boss"){
                         $("#meBtn").css("display", "block");
                     }
@@ -156,8 +175,26 @@ $(document).ready(function (){
                     $("#seeSListF").css("display", "block");
                 }
             }
-        },error(){
+            else if(result === 4){
+                if (dep === "Finance"){
+                    $("#PsalaryPBtn").css("display", "block");
+                    if (role === "Boss"){
+                        $("#meBtn").css("display", "block");
+                    }
+                }else if(dep === "AcademicalAffairs"){
+                    $("#seeTList").css("display", "block");
+                    $("#seeSList").css("display", "block");
+                    if(role === "Boss"){
+                        $("#academicMEBtn").css("display", "block");
+                    }
+                }else if (dep === "FacultyAcademical"){
+                    $("#seeSListF").css("display", "block");
+                }
+            }
+        },error:function (){
             console.log("error");
         }
     });
+
+    ShowEmployees();
 })

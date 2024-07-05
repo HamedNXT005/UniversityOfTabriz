@@ -8,13 +8,11 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +35,10 @@ public class HistorySalaryService {
 
     public Optional<HistorySalary> getHistorySByUserIdAndYearEdAndSemester(Long userId, int yearEd, int semester){
         return historySalaryRepository.findByUserIdAndYearEdAndSemester(userId, yearEd, semester);
+    }
+
+    public HistorySalary getLastRecord(){
+        return historySalaryRepository.findLastSalary();
     }
 
     public void exportSalary(HistorySalary report, Teacher teacher, ByteArrayOutputStream outputStream) throws FileNotFoundException, DocumentException {

@@ -118,7 +118,7 @@ $(document).ready(function (){
             }
             else if(result === 2){
                 if (dep === "Finance"){
-                    $("#salaryPBtn").css("display", "block");
+                    $("#PsalaryPBtn").css("display", "block");
                     if (role === "Boss"){
                         $("#meBtn").css("display", "block");
                     }
@@ -135,7 +135,7 @@ $(document).ready(function (){
             }
             else if (result === 3){
                 if (dep === "Finance"){
-                    $("#salaryPBtn").css("display", "block");
+                    $("#PsalaryPBtn").css("display", "block");
                     if (role === "Boss"){
                         $("#meBtn").css("display", "block");
                     }
@@ -151,7 +151,7 @@ $(document).ready(function (){
             }
             else if(result === 4){
                 if (dep === "Finance"){
-                    $("#salaryPBtn").css("display", "block");
+                    $("#PsalaryPBtn").css("display", "block");
                     if (role === "Boss"){
                         $("#meBtn").css("display", "block");
                     }

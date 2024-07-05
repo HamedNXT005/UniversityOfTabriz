@@ -12,6 +12,6 @@ public interface ResourcesRepository extends JpaRepository<Resources, Long> {
 
     Optional<Resources> findByYearEdAndSemester(int year_ed, int semester);
 
-    @Query(value = "SELECT * FROM resources ORDER BY id DESC LIMIT 1", nativeQuery = true)
+    @Query(value = "SELECT TOP 1 * FROM resources ORDER BY id DESC", nativeQuery = true)
     Resources findLastRecord();
 }

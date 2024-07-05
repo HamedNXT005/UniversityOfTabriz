@@ -39,7 +39,8 @@ public class DeterminationTheBudgetController {
 
     @PostMapping("/Employee/Finance/DeterminationBudget/DBudget")
     @ResponseBody
-    public String DBudget(@RequestParam int year , @RequestParam int sem , @RequestParam long tBudget){
+    public void DBudget(@RequestParam int year , @RequestParam int sem , @RequestParam long tBudget){
+        System.out.println(year + " " + sem + " " + tBudget);
         String mes = "Not SuccessFul";
         LocalDate localDate = LocalDate.now();
         int data = localDate.getYear();
@@ -76,6 +77,5 @@ public class DeterminationTheBudgetController {
             resourcesService.updateResource(resource1);
             mes = "Insert Successful";
         }
-        return mes;
     }
 }

@@ -13,7 +13,7 @@ public class AdminManageTeachersController {
     @Autowired
     private TeacherService teacherService;
 
-    @RequestMapping("/AdminPanel/AminManageTeachers")
+    @RequestMapping("/AdminPanel/AdminManageTeachers")
     public String AdminPanel(Model model){
 
         return "AdminManageTeachers";

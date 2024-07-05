@@ -18,11 +18,16 @@ public class TeachersSalaryService {
         teachersSalaryRepository.save(teacherSalary);
     }
 
-    public List<TeachersSalary> getTeachersSalaryByUid(long user_id){
+    public TeachersSalary getTeachersSalaryByUid(long user_id){
         return teachersSalaryRepository.findByUserId(user_id);
     }
 
     public List<TeachersSalary> getTeachersSalaryByDate(int year_ed, int semester){
         return teachersSalaryRepository.findByYearEdAndSemester(year_ed,semester);
     }
+
+    public List<TeachersSalary> getAll(){
+        return teachersSalaryRepository.findAll();
+    }
+
 }

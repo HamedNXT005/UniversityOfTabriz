@@ -10,7 +10,8 @@ import java.util.List;
 
 public interface TeachersSalaryRepository extends JpaRepository<TeachersSalary, Long> {
 
-    List<TeachersSalary> findByUserId(long user_id);
+    TeachersSalary findByUserId(long user_id);
     List<TeachersSalary> findByYearEdAndSemester(int year_ed,int semester);
+
 
 }

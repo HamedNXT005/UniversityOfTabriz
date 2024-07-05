@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
-  <script th:src="@{/JS/EmployeePanel.js}"></script>
+  <script th:src="@{/JS/DeterminationTheBudget.js}"></script>
   <title>Determination The Budget</title>
   <style>
     body {
@@ -65,7 +65,7 @@
       margin-bottom: 15px;
       font-size: 20px;
     }
-    #salaryBtn,#salaryPBtn,#budgetBtn,#meBtn,#seeTList,#ATeacher,#seeSList,#AStudent,#academicMEBtn,#seeSListF,#DeterminationTheCourses,#ManageTheDefinedCourses{
+    #salaryBtn,#PsalaryPBtn,#budgetBtn,#meBtn,#seeTList,#ATeacher,#seeSList,#AStudent,#academicMEBtn,#seeSListF,#DeterminationTheCourses,#ManageTheDefinedCourses{
       display: none;
     }
     #box {
@@ -113,7 +113,7 @@
       font-size: large;
     }
 
-    button {
+    .button {
       width: 30%;
       padding: 10px;
       background-color: #074172;
@@ -144,6 +144,7 @@
     <img th:src="@{/Img/Menu.png}">
   </button>
 </div>
+
 <div class="sidebar" id="sidebar">
   <div>
     <h4 style="display: inline; color: #FFC700;">Department:</h4>
@@ -155,7 +156,7 @@
     <br>
     <a onclick="switchHome()" id="homeBtn" style="margin-top: 10px;">Home</a>
     <a onclick="switchDeterminationSalary()" id="salaryBtn">Determination salary rates</a>
-    <a onclick="switchSalaryPeyment()" id="salaryPBtn">Salary Payment</a>
+    <a onclick="switchSalaryPeyment()" id="PsalaryPBtn">Salary Payment</a>
     <a onclick="switchDeterminationTheBudget()" id="budgetBtn">Determination the budget</a>
     <a onclick="switchManageEmployee()" id="meBtn">Manage Employees</a>
     <a onclick="switchTList()" id="seeTList">Teachers List</a>
@@ -191,7 +192,9 @@
         <label for="TBudget">Total Budget :</label>
         <input type="text" id="TBudget">
       </div>
-      <button id="submitBtn" onclick="submitBudget()">Submit</button>
+      <button class="button" id="submitBTN" onclick="submitBudget()">
+        Submit
+      </button>
     </div>
   </div>
 </div>
