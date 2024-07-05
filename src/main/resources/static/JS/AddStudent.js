@@ -63,6 +63,37 @@ function LogOut(){
     });
 }
 
+function AddNewStudent(){
+    const Student = {
+        id : 1 ,
+        userName : $("#username").val(),
+        password : $("#password").val(),
+        faculty : $("#faculty").val(),
+        major : $("#major").val(),
+        nameF : $("#firstName").val(),
+        nameL : $("#lastName").val(),
+        nationalCode : $("#nCode").val(),
+        phoneN : $("#pNumber").val(),
+        semestersPassed : 0,
+        unitsPassed : 0,
+        gpaTotal : 0,
+        gpaSemester : 0,
+        photo : $("#pPath").val(),
+        access : true
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/EmployeePanel/AddStudent/AddNewStudent" ,
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(Student),
+        success: function (result){
+            console.log("Successful");
+        },error(){
+            console.log("error");
+        }
+    });
+}
 $(document).ready(function (){
     var dep = "";
     var role = "";

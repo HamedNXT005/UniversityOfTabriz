@@ -33,4 +33,8 @@ public class MechanicPreCoursesPlanService implements PreCoursesPlan<MechanicPre
     public List<MechanicPreCoursesPlan> getPrePlanByTeacherIdAndStatus(Long teacherId, boolean status){
         return mechanicPreCoursesPlanRepository.findByTeacherIdAndStatus(teacherId, status);
     }
+
+    public List<MechanicPreCoursesPlan> getAll(){
+        return mechanicPreCoursesPlanRepository.findAll();
+    }
 }

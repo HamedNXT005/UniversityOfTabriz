@@ -53,4 +53,8 @@ public class StudentService {
     public List<Student> getAll(){
         return studentRepository.findAll();
     }
+
+    public Student getLastStudent(){
+        return studentRepository.findLastStudent();
+    }
 }

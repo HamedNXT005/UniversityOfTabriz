@@ -34,4 +34,8 @@ public class ComputerPreCoursesPlanService implements PreCoursesPlan<ComputerPre
     public List<ComputerPreCoursesPlan> getPrePlanByTeacherIdAndStatus(Long teacherId, boolean status){
         return computerPreCoursesPlanRepository.findByTeacherIdAndStatus(teacherId, status);
     }
+
+    public List<ComputerPreCoursesPlan> getAll(){
+        return computerPreCoursesPlanRepository.findAll();
+    }
 }

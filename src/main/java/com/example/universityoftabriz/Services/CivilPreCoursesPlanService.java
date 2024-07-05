@@ -33,4 +33,8 @@ public class CivilPreCoursesPlanService implements PreCoursesPlan<CivilPreCourse
     public List<CivilPreCoursesPlan> getPrePlanByTeacherIdAndStatus(Long teacherId, boolean status){
         return civilPreCoursesPlanRepository.findByTeacherIdAndStatus(teacherId, status);
     }
+
+    public List<CivilPreCoursesPlan> getAll(){
+        return civilPreCoursesPlanRepository.findAll();
+    }
 }

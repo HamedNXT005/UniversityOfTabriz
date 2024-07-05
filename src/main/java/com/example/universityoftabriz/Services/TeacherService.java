@@ -46,4 +46,8 @@ public class TeacherService {
     public List<Teacher> getAll(){
         return teacherRepository.findAll();
     }
+
+    public Teacher getLastTeacher(){
+        return teacherRepository.findLastTeacher();
+    }
 }

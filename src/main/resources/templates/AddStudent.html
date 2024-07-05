@@ -68,6 +68,66 @@
         #salaryBtn,#PsalaryPBtn,#budgetBtn,#meBtn,#seeTList,#ATeacher,#seeSList,#AStudent,#academicMEBtn,#seeSListF,#DeterminationTheCourses,#ManageTheDefinedCourses{
             display: none;
         }
+        #box {
+            width: 70%;
+            padding: 0;
+            border: 1px solid #074172;
+            margin-top: 20px;
+            border-radius: 7px;
+        }
+
+        .header {
+            background-color: #074172;
+            padding: 10px;
+            color: #FFC700;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .body {
+            padding: 20px;
+        }
+
+        .input-section {
+            margin-bottom: 10px;
+        }
+
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        .input-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: x-large;
+            font-weight: bold;
+            color: #FFC700;
+        }
+
+        .input-container input {
+            width: 98%;
+            padding: 8px;
+            border: 1px solid #074172;
+            border-radius: 5px;
+            height: 25px;
+            font-size: large;
+        }
+
+        .button {
+            width: 30%;
+            padding: 10px;
+            background-color: #074172;
+            color: #FFC700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 35%;
+            font-size: x-large;
+            font-weight: bold;
+        }
+        .container{
+            width: 70%;
+        }
     </style>
 </head>
 <body>
@@ -112,6 +172,54 @@
 </div>
 
 <div class="main-content" id="main-content">
+    <div id="box">
+        <div class="header">
+            <h2 style="color: #FFC700; font-size: xx-large"><cite>Add new Student</cite></h2>
+        </div>
+        <div class="body">
+            <div class="input-section">
+                <div class="input-container">
+                    <label for="username">UserName :</label>
+                    <input type="text" id="username">
+                </div>
+                <div class="input-container">
+                    <label for="password">Password :</label>
+                    <input type="text" id="password">
+                </div>
+            </div>
+            <div class="input-container">
+                <label for="firstName">First Name :</label>
+                <input type="text" id="firstName">
+            </div>
+            <div class="input-container">
+                <label for="lastName">Last Name :</label>
+                <input type="text" id="lastName">
+            </div>
+            <div class="input-container">
+                <label for="faculty">Faculty :</label>
+                <input type="text" id="faculty">
+            </div>
+            <div class="input-container">
+                <label for="major">Major :</label>
+                <input type="text" id="major">
+            </div>
+            <div class="input-container">
+                <label for="nCode">National Code :</label>
+                <input type="text" id="nCode">
+            </div>
+            <div class="input-container">
+                <label for="pNumber">Phone Number:</label>
+                <input type="text" id="pNumber">
+            </div>
+            <div class="input-container">
+                <label for="pPath">Photo path :</label>
+                <input type="text" id="pPath">
+            </div>
+            <button class="button" id="submitBTN" onclick="AddNewStudent()">
+                Submit
+            </button>
+        </div>
+    </div>
 </div>
 </body>
 </html>

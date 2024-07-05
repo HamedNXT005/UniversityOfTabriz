@@ -21,4 +21,6 @@ public interface StudentRepository extends JpaRepository<Student , Long> {
 
     List<Student> findByGpaTotalGreaterThan(float gpaTotal);
 
+    @Query(value = "SELECT TOP 1 * FROM info_students ORDER BY id DESC", nativeQuery = true)
+    Student findLastStudent();
 }

@@ -33,4 +33,8 @@ public class ElectricPreCoursesPlanService implements PreCoursesPlan<ElectricPre
     public List<ElectricPreCoursesPlan> getPrePlanByTeacherIdAndStatus(Long teacherId, boolean status){
         return electricPreCoursesPlanRepository.findByTeacherIdAndStatus(teacherId, status);
     }
+
+    public List<ElectricPreCoursesPlan> getAll(){
+        return electricPreCoursesPlanRepository.findAll();
+    }
 }
