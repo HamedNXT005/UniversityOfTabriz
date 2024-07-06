@@ -80,7 +80,7 @@ public class StudentSeeGPAController {
         return mechanicStudentsPlanService.getPlanByStudentId(id);
     }
 
-    @GetMapping("/StudentPanel/StudentCoursesList/GetCourse")
+    @GetMapping("/StudentPanel/StudentSeeGPA/GetCourse")
     @ResponseBody
     public Optional<Courses> getCourse(@RequestParam long id){
         return coursesService.getById(id);

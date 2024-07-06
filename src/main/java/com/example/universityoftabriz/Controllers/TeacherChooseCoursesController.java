@@ -216,7 +216,7 @@ public class TeacherChooseCoursesController {
     public List<ComputerPreCoursesPlan> getCompCourse(@RequestBody ArrayList<Long> Ids){
         ArrayList<ComputerPreCoursesPlan> computerPreCoursesPlans = new ArrayList<>();
         for (Long id: Ids) {
-            computerPreCoursesPlans.add(computerPreCoursesPlanService.getPreCourse(id));
+            computerPreCoursesPlans.add(computerPreCoursesPlanService.getPreCourse(id).get());
         }
         return computerPreCoursesPlans;
     }
@@ -225,7 +225,7 @@ public class TeacherChooseCoursesController {
     public List<CivilPreCoursesPlan> getCivilCourse(@RequestBody ArrayList<Long> Ids){
         ArrayList<CivilPreCoursesPlan> civilPreCoursesPlans = new ArrayList<>();
         for (Long id: Ids) {
-            civilPreCoursesPlans.add(civilPreCoursesPlanService.getCourse(id));
+            civilPreCoursesPlans.add(civilPreCoursesPlanService.getCourse(id).get());
         }
         return civilPreCoursesPlans;
     }
@@ -234,7 +234,7 @@ public class TeacherChooseCoursesController {
     public List<ChemistryPreCoursesPlan> getCHCourse(@RequestBody ArrayList<Long> Ids){
         ArrayList<ChemistryPreCoursesPlan> chemistryPreCoursesPlans = new ArrayList<>();
         for (Long id: Ids) {
-            chemistryPreCoursesPlans.add(chemistryPreCoursesPlanService.getCourse(id));
+            chemistryPreCoursesPlans.add(chemistryPreCoursesPlanService.getCourse(id).get());
         }
         return chemistryPreCoursesPlans;
     }
@@ -243,7 +243,7 @@ public class TeacherChooseCoursesController {
     public List<ElectricPreCoursesPlan> getELCourse(@RequestBody ArrayList<Long> Ids){
         ArrayList<ElectricPreCoursesPlan> electricPreCoursesPlans = new ArrayList<>();
         for (Long id: Ids) {
-            electricPreCoursesPlans.add(electricPreCoursesPlanService.getCourse(id));
+            electricPreCoursesPlans.add(electricPreCoursesPlanService.getCourse(id).get());
         }
         return electricPreCoursesPlans;
     }
@@ -252,7 +252,7 @@ public class TeacherChooseCoursesController {
     public List<MechanicPreCoursesPlan> getMCourse(@RequestBody ArrayList<Long> Ids){
         ArrayList<MechanicPreCoursesPlan> mechanicPreCoursesPlans = new ArrayList<>();
         for (Long id: Ids) {
-            mechanicPreCoursesPlans.add(mechanicPreCoursesPlanService.getCourse(id));
+            mechanicPreCoursesPlans.add(mechanicPreCoursesPlanService.getCourse(id).get());
         }
         return mechanicPreCoursesPlans;
     }

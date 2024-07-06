@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ComputerPreCoursesPlanService implements PreCoursesPlan<ComputerPreCoursesPlan>{
@@ -37,7 +38,7 @@ public class ComputerPreCoursesPlanService implements PreCoursesPlan<ComputerPre
         return computerPreCoursesPlanRepository.findAll();
     }
 
-    public ComputerPreCoursesPlan getPreCourse(long id){
+    public Optional<ComputerPreCoursesPlan> getPreCourse(long id){
         return computerPreCoursesPlanRepository.findById(id);
     }
 }
