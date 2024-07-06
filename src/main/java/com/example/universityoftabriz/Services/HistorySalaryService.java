@@ -36,7 +36,9 @@ public class HistorySalaryService {
     public Optional<HistorySalary> getHistorySByUserIdAndYearEdAndSemester(Long userId, int yearEd, int semester){
         return historySalaryRepository.findByUserIdAndYearEdAndSemester(userId, yearEd, semester);
     }
-
+    public Optional<HistorySalary> getHistorySById(long id){
+        return historySalaryRepository.findById(id);
+    }
     public HistorySalary getLastRecord(){
         return historySalaryRepository.findLastSalary();
     }
