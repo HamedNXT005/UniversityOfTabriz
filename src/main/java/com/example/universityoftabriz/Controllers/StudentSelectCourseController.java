@@ -77,9 +77,9 @@ public class StudentSelectCourseController {
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForComputer")
     @ResponseBody
-    public List<ComputerDefinedCourses> getAvailableCoursesForComputer(@RequestParam Student student){
+    public List<ComputerDefinedCourses> getAvailableCoursesForComputer(@RequestParam long id){
         List<ComputerDefinedCourses> availableCourses = computerDefinedCoursesService.getAvailableCourses();
-        List<ComputerHistoryOfPassedCourses> passedCourses = computerHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
+        List<ComputerHistoryOfPassedCourses> passedCourses = computerHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(id);
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -110,9 +110,9 @@ public class StudentSelectCourseController {
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForChemistry")
     @ResponseBody
-    public List<ChemistryDefinedCourses> getAvailableCoursesForChemistry(@RequestParam Student student){
+    public List<ChemistryDefinedCourses> getAvailableCoursesForChemistry(@RequestParam long id){
         List<ChemistryDefinedCourses> availableCourses = chemistryDefinedCoursesService.getAvailableCourses();
-        List<ChemistryHistoryOfPassedCourses> passedCourses = chemistryHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
+        List<ChemistryHistoryOfPassedCourses> passedCourses = chemistryHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(id);
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -143,9 +143,9 @@ public class StudentSelectCourseController {
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForCivil")
     @ResponseBody
-    public List<CivilDefinedCourses> getAvailableCoursesForCivil(@RequestParam Student student){
+    public List<CivilDefinedCourses> getAvailableCoursesForCivil(@RequestParam long id){
         List<CivilDefinedCourses> availableCourses = civilDefinedCoursesService.getAvailableCourses();
-        List<CivilHistoryOfPassedCourses> passedCourses = civilHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
+        List<CivilHistoryOfPassedCourses> passedCourses = civilHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(id);
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -176,9 +176,9 @@ public class StudentSelectCourseController {
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForElectric")
     @ResponseBody
-    public List<ElectricDefinedCourses> getAvailableCoursesForElectric(@RequestParam Student student){
+    public List<ElectricDefinedCourses> getAvailableCoursesForElectric(@RequestParam long id){
         List<ElectricDefinedCourses> availableCourses = electricDefinedCoursesService.getAvailableCourses();
-        List<ElectricHistoryOfPassedCourses> passedCourses = electricHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
+        List<ElectricHistoryOfPassedCourses> passedCourses = electricHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(id);
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -209,9 +209,9 @@ public class StudentSelectCourseController {
 
     @GetMapping("/StudentPanel/StudentSelectCourse/getAvailableCoursesForMechanic")
     @ResponseBody
-    public List<MechanicDefinedCourses> getAvailableCoursesForMechanic(@RequestParam Student student){
+    public List<MechanicDefinedCourses> getAvailableCoursesForMechanic(@RequestParam long id){
         List<MechanicDefinedCourses> availableCourses = mechanicDefinedCoursesService.getAvailableCourses();
-        List<MechanicHistoryOfPassedCourses> passedCourses = mechanicHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(student.getId());
+        List<MechanicHistoryOfPassedCourses> passedCourses = mechanicHistoryOfPassedCoursesService.getHistoryOfPCByStudentId(id);
         deletePassedCourses(availableCourses,passedCourses);
         trimAvailableCourses(availableCourses,passedCourses,coursesService);
         MDC.put("uid",String.valueOf(LoginController.uid));
