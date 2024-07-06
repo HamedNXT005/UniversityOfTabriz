@@ -42,16 +42,16 @@ function LogOut(){
         }
     });
 }
-function ShowCourses(Faculty , Teacher){
+function ShowCourses(Faculty , ID){
     if (Faculty === "computer"){
         var radif = 0;
         $.ajax({
             type: 'GET',
-            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesComputer?teacher=' + Teacher,
+            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesComputer?id=' + ID,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success:function (result){
-                console.log(result)
+                console.log(result);
                 result.forEach(function (item){
                     radif += 1;
                     console.log(item);
@@ -84,7 +84,7 @@ function ShowCourses(Faculty , Teacher){
         var radif = 0;
         $.ajax({
             type: 'GET',
-            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesCivil?teacher=' + Teacher,
+            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesCivil?id=' + ID,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success:function (result){
@@ -121,7 +121,7 @@ function ShowCourses(Faculty , Teacher){
         var radif = 0;
         $.ajax({
             type: 'GET',
-            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesChemistry?teacher=' + Teacher,
+            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesChemistry?id=' + ID,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success:function (result){
@@ -158,7 +158,7 @@ function ShowCourses(Faculty , Teacher){
         var radif = 0;
         $.ajax({
             type: 'GET',
-            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesElectric?teacher=' + Teacher,
+            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesElectric?id=' + ID,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success:function (result){
@@ -195,7 +195,7 @@ function ShowCourses(Faculty , Teacher){
         var radif = 0;
         $.ajax({
             type: 'GET',
-            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesMechanic?teacher=' + Teacher,
+            url: '/TeacherPanel/TeacherChooseCourses/getPreCoursesMechanic?id=' + ID,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success:function (result){
@@ -355,6 +355,9 @@ function SubmitCourses(Teacher , Faculty){
 }
 
 $(document).ready(function (){
+    const teacher = {
+        id: 10
+    }
     $.ajax({
         type: "GET",
         url: "/TeacherPanel/TeacherChooseCourses/getInfo" ,
@@ -364,8 +367,19 @@ $(document).ready(function (){
             $("#PersonInfo").text(result.nameF + " " + result.nameL);
             $("#faculty1").text(result.faculty);
             $("#status1").text(result.status);
+            teacher.id = result.id;
+            teacher.username = result.username;
+            teacher.password = result.password;
+            teacher.faculty = result.faculty;
+            teacher.nameF = result.nameF;
+            teacher.nameL = result.nameL;
+            teacher.nationalCode = result.nationalCode;
+            teacher.phoneN = result.phoneN;
+            teacher.status = result.status;
+            teacher.photo = result.photo;
+            teacher.access = result.access;
             var faculty = result.faculty;
-            ShowCourses(faculty , result);
+            ShowCourses(faculty , result.id);
         },error(){
             console.log("error");
         }

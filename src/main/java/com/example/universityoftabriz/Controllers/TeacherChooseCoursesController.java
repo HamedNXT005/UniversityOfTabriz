@@ -63,8 +63,8 @@ public class TeacherChooseCoursesController {
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesComputer")
     @ResponseBody
-    public List<ComputerPreCoursesPlan> getPreCoursesComputer(@RequestParam Teacher teacher){
-        return computerPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
+    public List<ComputerPreCoursesPlan> getPreCoursesComputer(@RequestParam long id){
+        return computerPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(id,true);
     }
 
     @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedComputer")
@@ -92,8 +92,8 @@ public class TeacherChooseCoursesController {
     }
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesChemistry")
     @ResponseBody
-    public List<ChemistryPreCoursesPlan> getPreCoursesChemistry(@RequestParam Teacher teacher){
-        return chemistryPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
+    public List<ChemistryPreCoursesPlan> getPreCoursesChemistry(@RequestParam long id){
+        return chemistryPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(id,true);
     }
 
 
@@ -123,8 +123,8 @@ public class TeacherChooseCoursesController {
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesCivil")
     @ResponseBody
-    public List<CivilPreCoursesPlan> getPreCoursesCivil(@RequestParam Teacher teacher){
-        return civilPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
+    public List<CivilPreCoursesPlan> getPreCoursesCivil(@RequestParam long id){
+        return civilPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(id,true);
     }
 
     @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedCivil")
@@ -153,8 +153,8 @@ public class TeacherChooseCoursesController {
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesElectric")
     @ResponseBody
-    public List<ElectricPreCoursesPlan> getPreCoursesElectric(@RequestParam Teacher teacher){
-        return electricPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
+    public List<ElectricPreCoursesPlan> getPreCoursesElectric(@RequestParam long id){
+        return electricPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(id,true);
     }
 
     @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedElectric")
@@ -183,8 +183,8 @@ public class TeacherChooseCoursesController {
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getPreCoursesMechanic")
     @ResponseBody
-    public List<MechanicPreCoursesPlan> getPreCoursesMechanic(@RequestParam Teacher teacher){
-        return mechanicPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
+    public List<MechanicPreCoursesPlan> getPreCoursesMechanic(@RequestParam long id){
+        return mechanicPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(id,true);
     }
 
     @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedMechanic")
@@ -213,11 +213,12 @@ public class TeacherChooseCoursesController {
 
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getCompCourse")
     @ResponseBody
-    public List<ComputerPreCoursesPlan> getCompCourse(@RequestBody ArrayList<Long> Ids){
-        ArrayList<ComputerPreCoursesPlan> computerPreCoursesPlans = new ArrayList<>();
-        for (Long id: Ids) {
-            computerPreCoursesPlans.add(computerPreCoursesPlanService.getPreCourse(id).get());
-        }
+    public List<ComputerPreCoursesPlan> getCompCourse(@RequestBody Teacher teacher){
+        List<ComputerPreCoursesPlan> computerPreCoursesPlans = computerPreCoursesPlanService.getPrePlanByTeacherId(teacher.getId());
+//        for (Long id: Ids) {
+//            computerPreCoursesPlans.add(computerPreCoursesPlanService.getPreCourse(id).get());
+//            System.out.println(computerPreCoursesPlanService.getPreCourse(id).get().getId());
+//        }
         return computerPreCoursesPlans;
     }
     @GetMapping("/TeacherPanel/TeacherChooseCourses/getCivilCourse")
