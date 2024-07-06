@@ -1,10 +1,10 @@
 package com.example.universityoftabriz.Repository;
 
 import com.example.universityoftabriz.Objects.ChemistryPreCoursesPlan;
-import com.example.universityoftabriz.Objects.CivilPreCoursesPlan;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ChemistryPreCoursesPlanRepository extends JpaRepository<ChemistryPreCoursesPlan, Long> {
 
@@ -15,4 +15,6 @@ public interface ChemistryPreCoursesPlanRepository extends JpaRepository<Chemist
     List<ChemistryPreCoursesPlan> findByCourseIdAndTeacherId(Long courseId, Long teacherId);
 
     List<ChemistryPreCoursesPlan> findByTeacherIdAndStatus(Long teacherId, boolean status);
+
+    Optional<ChemistryPreCoursesPlan> findById(Long id);
 }

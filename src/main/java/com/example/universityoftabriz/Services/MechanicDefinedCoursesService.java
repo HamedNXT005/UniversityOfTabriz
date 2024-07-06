@@ -36,4 +36,8 @@ public class MechanicDefinedCoursesService implements DefinedCourses<MechanicDef
     public MechanicDefinedCourses findLastRecord() {
         return mechanicDefinedCoursesRepository.findLastRecord();
     }
+
+    public Optional<MechanicDefinedCourses> getDCourse(Long id){
+        return mechanicDefinedCoursesRepository.findById(id);
+    }
 }

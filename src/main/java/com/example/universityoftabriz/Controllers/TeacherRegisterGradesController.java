@@ -8,11 +8,9 @@ import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -40,6 +38,18 @@ public class TeacherRegisterGradesController {
     private MechanicStudentsPlanService mechanicStudentsPlanService;
     @Autowired
     private MechanicHistoryOfPassedCoursesService mechanicHistoryOfPassedCoursesService;
+    @Autowired
+    private ComputerDefinedCoursesService computerDefinedCoursesService;
+    @Autowired
+    private CivilDefinedCoursesService civilDefinedCoursesService;
+    @Autowired
+    private ChemistryDefinedCoursesService chemistryDefinedCoursesService;
+    @Autowired
+    private ElectricDefinedCoursesService electricDefinedCoursesService;
+    @Autowired
+    private MechanicDefinedCoursesService mechanicDefinedCoursesService;
+
+
     @RequestMapping("/TeacherPanel/TeacherRegisterGrades")
     public String StudentsList(Model model){
         Optional<Teacher> teacher = teacherService.getTeacherByID(LoginController.uid);
@@ -59,7 +69,7 @@ public class TeacherRegisterGradesController {
         return teacherService.getTeacherByID(LoginController.uid);
     }
 
-    @GetMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeComputer")
+    @PostMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeComputer")
     @ResponseBody
     public void submitGradeComputer(@RequestParam long studentId,@RequestParam long courseId,@RequestParam float grade){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -78,7 +88,7 @@ public class TeacherRegisterGradesController {
         MDC.clear();
     }
 
-    @GetMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeChemistry")
+    @PostMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeChemistry")
     @ResponseBody
     public void submitGradeChemistry(@RequestParam long studentId,@RequestParam long courseId,@RequestParam float grade){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -96,7 +106,7 @@ public class TeacherRegisterGradesController {
         logger.info("Grade submitted successfully for the Student with id: {} and Course with id: {} .",studentId,courseId);
         MDC.clear();
     }
-    @GetMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeCivil")
+    @PostMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeCivil")
     @ResponseBody
     public void submitGradeCivil(@RequestParam long studentId,@RequestParam long courseId,@RequestParam float grade){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -114,7 +124,7 @@ public class TeacherRegisterGradesController {
         logger.info("Grade submitted successfully for the Student with id: {} and Course with id: {} .",studentId,courseId);
         MDC.clear();
     }
-    @GetMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeElectric")
+    @PostMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeElectric")
     @ResponseBody
     public void submitGradeElectric(@RequestParam long studentId,@RequestParam long courseId,@RequestParam float grade){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -132,7 +142,7 @@ public class TeacherRegisterGradesController {
         logger.info("Grade submitted successfully for the Student with id: {} and Course with id: {} .",studentId,courseId);
         MDC.clear();
     }
-    @GetMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeMechanic")
+    @PostMapping("/TeacherPanel/TeacherRegisterGrades/submitGradeMechanic")
     @ResponseBody
     public void submitGradeMechanic(@RequestParam long studentId,@RequestParam long courseId,@RequestParam float grade){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -151,4 +161,55 @@ public class TeacherRegisterGradesController {
         MDC.clear();
     }
 
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetCompCourses")
+    @ResponseBody
+    public List<ComputerDefinedCourses> GetCompCourses(@RequestParam Long id){
+        return computerDefinedCoursesService.getDCByTeacherId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetCivilCourses")
+    @ResponseBody
+    public List<CivilDefinedCourses> GetCivilCourses(@RequestParam Long id){
+        return civilDefinedCoursesService.getDCByTeacherId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetCHCourses")
+    @ResponseBody
+    public List<ChemistryDefinedCourses> GetCHCourses(@RequestParam Long id){
+        return chemistryDefinedCoursesService.getDCByTeacherId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetECourses")
+    @ResponseBody
+    public List<ElectricDefinedCourses> GetECourses(@RequestParam Long id){
+        return electricDefinedCoursesService.getDCByTeacherId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetMCourses")
+    @ResponseBody
+    public List<MechanicDefinedCourses> GetMCourses(@RequestParam Long id){
+        return mechanicDefinedCoursesService.getDCByTeacherId(id);
+    }
+
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetCompPlan")
+    @ResponseBody
+    public List<ComputerStudentsPlan> GetCompPlan(@RequestParam long id){
+        return computerStudentsPlanService.getPlanByCourseId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetCivilPlan")
+    @ResponseBody
+    public List<CivilStudentsPlan> GetCivilPlan(@RequestParam long id){
+        return civilStudentsPlanService.getPlanByCourseId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetCHPlan")
+    @ResponseBody
+    public List<ChemistryStudentsPlan> GetCHPlan(@RequestParam long id){
+        return chemistryStudentsPlanService.getPlanByCourseId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetEPlan")
+    @ResponseBody
+    public List<ElectricStudentsPlan> GetEPlan(@RequestParam long id){
+        return electricStudentsPlanService.getPlanByCourseId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherRegisterGrades/GetMPlan")
+    @ResponseBody
+    public List<MechanicStudentsPlan> GetMPlan(@RequestParam long id){
+        return mechanicStudentsPlanService.getPlanByCourseId(id);
+    }
 }

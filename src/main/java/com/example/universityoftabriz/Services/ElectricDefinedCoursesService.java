@@ -37,4 +37,8 @@ public class ElectricDefinedCoursesService implements DefinedCourses<ElectricDef
     public ElectricDefinedCourses findLastRecord() {
         return electricDefinedCoursesRepository.findLastRecord();
     }
+
+    public Optional<ElectricDefinedCourses> getDCourse(Long id){
+        return electricDefinedCoursesRepository.findById(id);
+    }
 }

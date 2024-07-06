@@ -1,8 +1,6 @@
 package com.example.universityoftabriz.Repository;
 
 import com.example.universityoftabriz.Objects.ComputerDefinedCourses;
-import com.example.universityoftabriz.Objects.ElectricDefinedCourses;
-import com.example.universityoftabriz.Objects.Resources;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -21,4 +19,6 @@ public interface ComputerDefinedCoursesRepository extends JpaRepository<Computer
 
     @Query(value = "SELECT * FROM resources ORDER BY id DESC LIMIT 1", nativeQuery = true)
     ComputerDefinedCourses findLastRecord();
+
+    Optional<ComputerDefinedCourses> findById(Long id);
 }

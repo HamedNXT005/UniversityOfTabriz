@@ -1,7 +1,6 @@
 package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.CivilDefinedCourses;
-import com.example.universityoftabriz.Objects.MechanicDefinedCourses;
 import com.example.universityoftabriz.Repository.CivilDefinedCoursesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,5 +35,9 @@ public class CivilDefinedCoursesService implements DefinedCourses<CivilDefinedCo
 
     public CivilDefinedCourses findLastRecord() {
         return civilDefinedCoursesRepository.findLastRecord();
+    }
+
+    public Optional<CivilDefinedCourses> getDCourse(Long id){
+        return civilDefinedCoursesRepository.findById(id);
     }
 }

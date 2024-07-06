@@ -54,6 +54,9 @@
     }
     .main-content {
       padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     a {
       display: block;
@@ -64,6 +67,34 @@
     }
     #salaryBtn,#PsalaryPBtn,#budgetBtn,#meBtn,#seeTList,#ATeacher,#seeSList,#AStudent,#academicMEBtn,#seeSListF,#DeterminationTheCourses,#ManageTheDefinedCourses{
       display: none;
+    }
+    table {
+      width: 96%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #074173;
+      padding: 8px;
+      text-align: left;
+      color: #FFC700;
+      font-weight: bold;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-size: x-large;
+    }
+    .button{
+      background-color: #074173;
+      color: #FFC700;
+      width: 90%;
+      font-weight: bold;
+      font-size: large;
+    }
+    .head{
+      font-size: xx-large;
+      font-weight: bold;
+      color: #FFC700;
+      background-color: #074173;
     }
   </style>
 </head>
@@ -109,6 +140,24 @@
 </div>
 
 <div class="main-content" id="main-content">
+  <table id="myTable">
+    <thead>
+    <tr>
+      <th colspan="7" class="head"><cite>University's Students List</cite></th>
+    </tr>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Faculty</th>
+      <th>Status</th>
+      <th>National Code</th>
+      <th>Phone Number</th>
+      <th>Accessible</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 </div>
 </body>
 </html>

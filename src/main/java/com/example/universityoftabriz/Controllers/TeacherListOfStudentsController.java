@@ -35,6 +35,16 @@ public class TeacherListOfStudentsController {
     private ElectricStudentsPlanService electricStudentsPlanService;
     @Autowired
     private MechanicStudentsPlanService mechanicStudentsPlanService;
+    @Autowired
+    private ComputerDefinedCoursesService computerDefinedCoursesService;
+    @Autowired
+    private CivilDefinedCoursesService civilDefinedCoursesService;
+    @Autowired
+    private ChemistryDefinedCoursesService chemistryDefinedCoursesService;
+    @Autowired
+    private ElectricDefinedCoursesService electricDefinedCoursesService;
+    @Autowired
+    private MechanicDefinedCoursesService mechanicDefinedCoursesService;
 
     @RequestMapping("/TeacherPanel/TeacherListOfStudents")
     public String StudentsList(Model model){
@@ -135,4 +145,30 @@ public class TeacherListOfStudentsController {
         return list;
     }
 
+
+    @GetMapping("/TeacherPanel/TeacherListOfStudents/GetTeacherCompClasses")
+    @ResponseBody
+    public List<ComputerDefinedCourses> GetTeacherCompClasses(@RequestParam long id){
+        return computerDefinedCoursesService.getDCByTeacherId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherListOfStudents/GetTeacherCivilClasses")
+    @ResponseBody
+    public List<CivilDefinedCourses> GetTeacherCivilClasses(@RequestParam long id){
+        return civilDefinedCoursesService.getDCByTeacherId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherListOfStudents/GetTeacherChClasses")
+    @ResponseBody
+    public List<ChemistryDefinedCourses> GetTeacherChClasses(@RequestParam long id){
+        return chemistryDefinedCoursesService.getDCByTeacherId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherListOfStudents/GetTeacherEClasses")
+    @ResponseBody
+    public List<ElectricDefinedCourses> GetTeacherEClasses(@RequestParam long id){
+        return electricDefinedCoursesService.getDCByTeacherId(id);
+    }
+    @GetMapping("/TeacherPanel/TeacherListOfStudents/GetTeacherMClasses")
+    @ResponseBody
+    public List<MechanicDefinedCourses> GetTeacherMClasses(@RequestParam long id){
+        return mechanicDefinedCoursesService.getDCByTeacherId(id);
+    }
 }

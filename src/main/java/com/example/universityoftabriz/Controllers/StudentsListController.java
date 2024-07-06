@@ -10,9 +10,7 @@ import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -49,6 +47,21 @@ public class StudentsListController {
         logger.info("A list of all students has been sent to the front-end.");
         MDC.clear();
         return studentService.getStudent();
+    }
+
+    @PostMapping("/EmployeePanel/StudentsList/manageStudent")
+    @ResponseBody
+    public void manageStudent(@RequestParam long id){
+        Optional<Student> student = studentService.getStudentById(id);
+        Student student1 = student.get();
+
+        if (student1.isAccess()){
+            student1.setAccess(false);
+        }else {
+            student1.setAccess(true);
+        }
+
+        studentService.updateStudent(student1);
     }
 
 }

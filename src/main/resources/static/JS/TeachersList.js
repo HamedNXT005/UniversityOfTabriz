@@ -63,6 +63,59 @@ function LogOut(){
     });
 }
 
+function ShowTeachers() {
+    var radif = 0;
+    $.ajax({
+        type: 'GET',
+        url: '/EmployeePanel/TeachersList/getTeachers',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success:function (result){
+            console.log(result)
+            result.forEach(function (item){
+                radif += 1;
+                console.log(item);
+                var ID = item.id;
+                var tr = $('<tr>');
+                tr.append('<td>' + radif + '</td>');
+                tr.append('<td>' + item.nameF + " " + item.nameL + '</td>');
+                tr.append('<td>' + item.faculty + '</td>');
+                tr.append('<td>' + item.status + '</td>');
+                tr.append('<td>' + item.nationalCode + '</td>');
+                tr.append('<td>' + item.phoneN + '</td>');
+
+                var button = $('<button>').text('').click(function() {
+                    ManageTeacher(ID);
+                }).addClass('button');
+                if (item.access === true){
+                    button.text("Inactivate");
+                    button.css("background-color" , "#ff0000");
+                }else {
+                    button.text("Activate");
+                    button.css("background-color" , "#074172");
+                }
+                var tdWithButton = $('<td>').append(button);
+                tr.append(tdWithButton);
+                $('#myTable').append(tr);
+            });
+        }
+    });
+}
+
+function ManageTeacher(ID){
+    $.ajax({
+        type: "Post",
+        url: "/EmployeePanel/TeachersList/manageTeacher?id=" + ID ,
+        contentType: "application/json; charset=utf-8",
+        success: function (res){
+            console.log("Successful");
+        },error(){
+            console.log("error");
+        }
+    });
+    location.reload();
+}
+
 $(document).ready(function (){
     var dep = "";
     var role = "";
@@ -164,4 +217,6 @@ $(document).ready(function (){
             console.log("error");
         }
     });
+
+    ShowTeachers();
 })

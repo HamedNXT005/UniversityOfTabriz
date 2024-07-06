@@ -63,6 +63,35 @@ function LogOut(){
     });
 }
 
+function insertTeacher(){
+    const teacher = {
+        id : 12 ,
+        userName : $("#username").val(),
+        password : $("#password").val(),
+        faculty : $("#faculty").val(),
+        nameF : $("#firstName").val(),
+        nameL : $("#lastName").val(),
+        nationalCode : $("#nCode").val(),
+        phoneN : $("#pNumber").val(),
+        status : "sc",
+        photo : $("#pPath").val(),
+        access : true
+    }
+
+    let st = $("#tStatus").val();
+    $.ajax({
+        type: "POST",
+        url: "/EmployeePanel/AddTeacher/insertTeacher?st=" + st,
+        contentType: "application/json; charset=utf-8",
+        data : JSON.stringify(teacher),
+        success: function (result){
+            console.log("Successful");
+        },error(){
+            console.log("error");
+        }
+    });
+}
+
 $(document).ready(function (){
     var dep = "";
     var role = "";

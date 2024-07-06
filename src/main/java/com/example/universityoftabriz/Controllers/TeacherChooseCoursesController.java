@@ -8,12 +8,10 @@ import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
@@ -69,7 +67,7 @@ public class TeacherChooseCoursesController {
         return computerPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
 
-    @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedComputer")
+    @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedComputer")
     @ResponseBody
     public void submitToDefinedComputer(@RequestParam Teacher teacher,@RequestParam List<ComputerPreCoursesPlan> list){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -99,7 +97,7 @@ public class TeacherChooseCoursesController {
     }
 
 
-    @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedChemistry")
+    @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedChemistry")
     @ResponseBody
     public void submitToDefinedChemistry(@RequestParam Teacher teacher,@RequestParam List<ChemistryPreCoursesPlan> list){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -129,7 +127,7 @@ public class TeacherChooseCoursesController {
         return civilPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
 
-    @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedCivil")
+    @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedCivil")
     @ResponseBody
     public void submitToDefinedCivil(@RequestParam Teacher teacher,@RequestParam List<CivilPreCoursesPlan> list){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -159,7 +157,7 @@ public class TeacherChooseCoursesController {
         return electricPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
 
-    @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedElectric")
+    @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedElectric")
     @ResponseBody
     public void submitToDefinedElectric(@RequestParam Teacher teacher,@RequestParam List<ElectricPreCoursesPlan> list){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -189,7 +187,7 @@ public class TeacherChooseCoursesController {
         return mechanicPreCoursesPlanService.getPrePlanByTeacherIdAndStatus(teacher.getId(),true);
     }
 
-    @GetMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedMechanic")
+    @PostMapping("/TeacherPanel/TeacherChooseCourses/submitToDefinedMechanic")
     @ResponseBody
     public void submitToDefinedMechanic(@RequestParam Teacher teacher,@RequestParam List<MechanicPreCoursesPlan> list){
         MDC.put("uid",String.valueOf(LoginController.uid));
@@ -213,6 +211,50 @@ public class TeacherChooseCoursesController {
         MDC.clear();
     }
 
-
+    @GetMapping("/TeacherPanel/TeacherChooseCourses/getCompCourse")
+    @ResponseBody
+    public List<ComputerPreCoursesPlan> getCompCourse(@RequestBody ArrayList<Long> Ids){
+        ArrayList<ComputerPreCoursesPlan> computerPreCoursesPlans = new ArrayList<>();
+        for (Long id: Ids) {
+            computerPreCoursesPlans.add(computerPreCoursesPlanService.getPreCourse(id));
+        }
+        return computerPreCoursesPlans;
+    }
+    @GetMapping("/TeacherPanel/TeacherChooseCourses/getCivilCourse")
+    @ResponseBody
+    public List<CivilPreCoursesPlan> getCivilCourse(@RequestBody ArrayList<Long> Ids){
+        ArrayList<CivilPreCoursesPlan> civilPreCoursesPlans = new ArrayList<>();
+        for (Long id: Ids) {
+            civilPreCoursesPlans.add(civilPreCoursesPlanService.getCourse(id));
+        }
+        return civilPreCoursesPlans;
+    }
+    @GetMapping("/TeacherPanel/TeacherChooseCourses/getCHCourse")
+    @ResponseBody
+    public List<ChemistryPreCoursesPlan> getCHCourse(@RequestBody ArrayList<Long> Ids){
+        ArrayList<ChemistryPreCoursesPlan> chemistryPreCoursesPlans = new ArrayList<>();
+        for (Long id: Ids) {
+            chemistryPreCoursesPlans.add(chemistryPreCoursesPlanService.getCourse(id));
+        }
+        return chemistryPreCoursesPlans;
+    }
+    @GetMapping("/TeacherPanel/TeacherChooseCourses/getELCourse")
+    @ResponseBody
+    public List<ElectricPreCoursesPlan> getELCourse(@RequestBody ArrayList<Long> Ids){
+        ArrayList<ElectricPreCoursesPlan> electricPreCoursesPlans = new ArrayList<>();
+        for (Long id: Ids) {
+            electricPreCoursesPlans.add(electricPreCoursesPlanService.getCourse(id));
+        }
+        return electricPreCoursesPlans;
+    }
+    @GetMapping("/TeacherPanel/TeacherChooseCourses/getMCourse")
+    @ResponseBody
+    public List<MechanicPreCoursesPlan> getMCourse(@RequestBody ArrayList<Long> Ids){
+        ArrayList<MechanicPreCoursesPlan> mechanicPreCoursesPlans = new ArrayList<>();
+        for (Long id: Ids) {
+            mechanicPreCoursesPlans.add(mechanicPreCoursesPlanService.getCourse(id));
+        }
+        return mechanicPreCoursesPlans;
+    }
 
 }

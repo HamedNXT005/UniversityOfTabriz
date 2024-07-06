@@ -37,4 +37,8 @@ public class ChemistryDefinedCoursesService implements DefinedCourses<ChemistryD
     public ChemistryDefinedCourses findLastRecord() {
         return chemistryDefinedCoursesRepository.findLastRecord();
     }
+
+    public Optional<ChemistryDefinedCourses> getDCourse(Long id){
+        return chemistryDefinedCoursesRepository.findById(id);
+    }
 }

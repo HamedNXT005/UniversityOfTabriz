@@ -2,7 +2,6 @@ package com.example.universityoftabriz.Services;
 
 import com.example.universityoftabriz.Objects.ChemistryPreCoursesPlan;
 import com.example.universityoftabriz.Repository.ChemistryPreCoursesPlanRepository;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +33,9 @@ public class ChemistryPreCoursesPlanService implements PreCoursesPlan<ChemistryP
 
     public List<ChemistryPreCoursesPlan> getAll(){
         return chemistryPreCoursesPlanRepository.findAll();
+    }
+
+    public ChemistryPreCoursesPlan getCourse(long id){
+        return chemistryPreCoursesPlanRepository.findById(id);
     }
 }

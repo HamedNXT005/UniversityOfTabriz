@@ -90,6 +90,34 @@
     #salaryBtn,#PsalaryPBtn,#budgetBtn,#meBtn,#seeTList,#ATeacher,#seeSList,#AStudent,#academicMEBtn,#seeSListF,#DeterminationTheCourses,#ManageTheDefinedCourses{
       display: none;
     }
+    table {
+      width: 96%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #074173;
+      padding: 8px;
+      text-align: left;
+      color: #FFC700;
+      font-weight: bold;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-size: x-large;
+    }
+    .button{
+      background-color: #074173;
+      color: #FFC700;
+      width: 90%;
+      font-weight: bold;
+      font-size: large;
+    }
+    .head{
+      font-size: xx-large;
+      font-weight: bold;
+      color: #FFC700;
+      background-color: #074173;
+    }
   </style>
 </head>
 <body>
@@ -134,38 +162,61 @@
 </div>
 
 <div class="main-content" id="main-content">
+  <table id="myTable">
+    <thead>
+    <tr>
+      <th colspan="12" class="head" ><cite id="head"></cite></th>
+    </tr>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Student Number</th>
+      <th>Faculty</th>
+      <th>Major</th>
+      <th>National Code</th>
+      <th>Phone Number</th>
+      <th>Semesters Passed</th>
+      <th>Units Passed</th>
+      <th>Gpa Total</th>
+      <th>Gpa Semester</th>
+      <th>Accessible</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 </div>
-<table>
-  <tr>
-    <th colspan="20"><cite>Students Of Faculty</cite></th>
-  </tr>
-  <tr style="background-color: #f2f2f2">
-    <td style="font-weight: bold;">Student Number</td>
-    <td id="CourseName"></td>
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th colspan="20"><cite>Students Of Faculty</cite></th>-->
+<!--  </tr>-->
+<!--  <tr style="background-color: #f2f2f2">-->
+<!--    <td style="font-weight: bold;">Student Number</td>-->
+<!--    <td id="CourseName"></td>-->
 
-    <td style="font-weight: bold;"> First Name</td>
-    <td id="PDay"></td>
+<!--    <td style="font-weight: bold;"> First Name</td>-->
+<!--    <td id="PDay"></td>-->
 
-    <td style="font-weight: bold;"> Last Name</td>
-    <td id="TPday"></td>
+<!--    <td style="font-weight: bold;"> Last Name</td>-->
+<!--    <td id="TPday"></td>-->
 
-    <td style="font-weight: bold;">National Number</td>
-    <td id="SDay"></td>
+<!--    <td style="font-weight: bold;">National Number</td>-->
+<!--    <td id="SDay"></td>-->
 
 
-    <td style="font-weight: bold;">Phone Number</td>
-    <td id="TSDay"></td>
+<!--    <td style="font-weight: bold;">Phone Number</td>-->
+<!--    <td id="TSDay"></td>-->
 
-    <td style="font-weight: bold;">Faculty</td>
-    <td id="ClassN"></td>
+<!--    <td style="font-weight: bold;">Faculty</td>-->
+<!--    <td id="ClassN"></td>-->
 
-    <td style="font-weight: bold;">Major</td>
-    <td id="Exam"></td>
-    <td style="font-weight: bold;"> Units Passed</td>
-    <td style="font-weight: bold;">Semester Passed</td>
-    <td style="font-weight: bold;">Semester GPA</td>
-    <td style="font-weight: bold;">Total GPA</td>
-  </tr>
-</table>
+<!--    <td style="font-weight: bold;">Major</td>-->
+<!--    <td id="Exam"></td>-->
+<!--    <td style="font-weight: bold;"> Units Passed</td>-->
+<!--    <td style="font-weight: bold;">Semester Passed</td>-->
+<!--    <td style="font-weight: bold;">Semester GPA</td>-->
+<!--    <td style="font-weight: bold;">Total GPA</td>-->
+<!--  </tr>-->
+<!--</table>-->
 </body>
 </html>

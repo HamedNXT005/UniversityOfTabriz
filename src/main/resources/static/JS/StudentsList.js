@@ -74,7 +74,6 @@ function ShowEmployees() {
             console.log(result)
             result.forEach(function (item){
                 radif += 1;
-                console.log(item);
                 var ID = item.id;
                 var tr = $('<tr>');
                 tr.append('<td>' + radif + '</td>');
@@ -88,10 +87,37 @@ function ShowEmployees() {
                 tr.append('<td>' + item.unitsPassed + '</td>');
                 tr.append('<td>' + item.gpaTotal + '</td>');
                 tr.append('<td>' + item.gpaSemester + '</td>');
+
+                var button = $('<button>').text('').click(function() {
+                    ManageStudent(ID);
+                }).addClass('button');
+                if (item.access === true){
+                    button.text("Inactivate");
+                    button.css("background-color" , "#ff0000");
+                }else {
+                    button.text("Activate");
+                    button.css("background-color" , "#074172");
+                }
+                var tdWithButton = $('<td>').append(button);
+                tr.append(tdWithButton);
+
                 $('#myTable').append(tr);
             });
         }
     });
+}
+function ManageStudent(ID){
+    $.ajax({
+        type: "Post",
+        url: "/EmployeePanel/StudentsList/manageStudent?id=" + ID ,
+        contentType: "application/json; charset=utf-8",
+        success: function (res){
+            console.log("Successful");
+        },error(){
+            console.log("error");
+        }
+    });
+    location.reload();
 }
 
 $(document).ready(function (){

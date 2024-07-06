@@ -63,6 +63,295 @@ function LogOut(){
     });
 }
 
+function ShowDeterminationCourses(Role){
+    if (Role === "computer"){
+        var radif = 0;
+        $.ajax({
+            type: 'GET',
+            url: '/EmployeePanel/DeterminationTheCourses/getComputerCourses',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success:function (result){
+                result.forEach(function (item){
+                    var ID = item.id;
+                    var CID = item.courseId;
+                    var TID = item.teacherId;
+                    $.ajax({
+                        type: 'GET',
+                        url: '/EmployeePanel/DeterminationTheCourses/getCourseInfo?id='+CID,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success:function (result1){
+                            console.log(result1);
+                            $.ajax({
+                                type: 'GET',
+                                url: '/EmployeePanel/DeterminationTheCourses/getTInfo?id=' + TID,
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success:function (result2){
+                                    console.log(result2);
+                                    radif += 1;
+                                    var tr = $('<tr>');
+                                    tr.append('<td>' + radif + '</td>');
+                                    tr.append('<td>' + item.id + '</td>');
+                                    tr.append('<td>' + result1.name + '</td>');
+                                    tr.append('<td>' + result2.nameF + " " + result2.nameL + '</td>');
+                                    tr.append('<td>' + item.classN + '</td>');
+                                    tr.append('<td>' + item.examDate + '</td>');
+                                    var button = $('<button>').text('').click(function() {
+                                        ManageCourses(CID , ID);
+                                    }).addClass('button');
+                                    if (item.status === true){
+                                        button.text("Selected");
+                                        button.css("background-color" , "#074172");
+                                    }else {
+                                        button.text("Not selected");
+                                        button.css("background-color" , "#ff0000");
+                                    }
+                                    var tdWithButton = $('<td>').append(button);
+                                    tr.append(tdWithButton);
+                                    $('#myTable').append(tr);
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    }else if (Role === "civil"){
+        var radif = 0;
+        $.ajax({
+            type: 'GET',
+            url: '/EmployeePanel/DeterminationTheCourses/getCivilCourses',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success:function (result){
+                result.forEach(function (item){
+                    var ID = item.id;
+                    var CID = item.courseId;
+                    var TID = item.teacherId;
+                    $.ajax({
+                        type: 'GET',
+                        url: '/EmployeePanel/DeterminationTheCourses/getCourseInfo?id='+CID,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success:function (result1){
+                            console.log(result1);
+                            $.ajax({
+                                type: 'GET',
+                                url: '/EmployeePanel/DeterminationTheCourses/getTInfo?id=' + TID,
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success:function (result2){
+                                    console.log(result2);
+                                    radif += 1;
+                                    var tr = $('<tr>');
+                                    tr.append('<td>' + radif + '</td>');
+                                    tr.append('<td>' + item.id + '</td>');
+                                    tr.append('<td>' + result1.name + '</td>');
+                                    tr.append('<td>' + result2.nameF + " " + result2.nameL + '</td>');
+                                    tr.append('<td>' + item.classN + '</td>');
+                                    tr.append('<td>' + item.examDate + '</td>');
+                                    var button = $('<button>').text('').click(function() {
+                                        ManageCourses(CID , ID);
+                                    }).addClass('button');
+                                    if (item.status === true){
+                                        button.text("Selected");
+                                        button.css("background-color" , "#074172");
+                                    }else {
+                                        button.text("Not selected");
+                                        button.css("background-color" , "#ff0000");
+                                    }
+                                    var tdWithButton = $('<td>').append(button);
+                                    tr.append(tdWithButton);
+                                    $('#myTable').append(tr);
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    }else if (Role === "chemistry"){
+        var radif = 0;
+        $.ajax({
+            type: 'GET',
+            url: '/EmployeePanel/DeterminationTheCourses/getCHCourses',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success:function (result){
+                result.forEach(function (item){
+                    var ID = item.id;
+                    var CID = item.courseId;
+                    var TID = item.teacherId;
+                    $.ajax({
+                        type: 'GET',
+                        url: '/EmployeePanel/DeterminationTheCourses/getCourseInfo?id='+CID,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success:function (result1){
+                            console.log(result1);
+                            $.ajax({
+                                type: 'GET',
+                                url: '/EmployeePanel/DeterminationTheCourses/getTInfo?id=' + TID,
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success:function (result2){
+                                    console.log(result2);
+                                    radif += 1;
+                                    var tr = $('<tr>');
+                                    tr.append('<td>' + radif + '</td>');
+                                    tr.append('<td>' + item.id + '</td>');
+                                    tr.append('<td>' + result1.name + '</td>');
+                                    tr.append('<td>' + result2.nameF + " " + result2.nameL + '</td>');
+                                    tr.append('<td>' + item.classN + '</td>');
+                                    tr.append('<td>' + item.examDate + '</td>');
+                                    var button = $('<button>').text('').click(function() {
+                                        ManageCourses(CID , ID);
+                                    }).addClass('button');
+                                    if (item.status === true){
+                                        button.text("Selected");
+                                        button.css("background-color" , "#074172");
+                                    }else {
+                                        button.text("Not selected");
+                                        button.css("background-color" , "#ff0000");
+                                    }
+                                    var tdWithButton = $('<td>').append(button);
+                                    tr.append(tdWithButton);
+                                    $('#myTable').append(tr);
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    }else if (Role === "electric"){
+        var radif = 0;
+        $.ajax({
+            type: 'GET',
+            url: '/EmployeePanel/DeterminationTheCourses/getECourses',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success:function (result){
+                result.forEach(function (item){
+                    var ID = item.id;
+                    var CID = item.courseId;
+                    var TID = item.teacherId;
+                    $.ajax({
+                        type: 'GET',
+                        url: '/EmployeePanel/DeterminationTheCourses/getCourseInfo?id='+CID,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success:function (result1){
+                            console.log(result1);
+                            $.ajax({
+                                type: 'GET',
+                                url: '/EmployeePanel/DeterminationTheCourses/getTInfo?id=' + TID,
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success:function (result2){
+                                    console.log(result2);
+                                    radif += 1;
+                                    var tr = $('<tr>');
+                                    tr.append('<td>' + radif + '</td>');
+                                    tr.append('<td>' + item.id + '</td>');
+                                    tr.append('<td>' + result1.name + '</td>');
+                                    tr.append('<td>' + result2.nameF + " " + result2.nameL + '</td>');
+                                    tr.append('<td>' + item.classN + '</td>');
+                                    tr.append('<td>' + item.examDate + '</td>');
+                                    var button = $('<button>').text('').click(function() {
+                                        ManageCourses(CID , ID);
+                                    }).addClass('button');
+                                    if (item.status === true){
+                                        button.text("Selected");
+                                        button.css("background-color" , "#074172");
+                                    }else {
+                                        button.text("Not selected");
+                                        button.css("background-color" , "#ff0000");
+                                    }
+                                    var tdWithButton = $('<td>').append(button);
+                                    tr.append(tdWithButton);
+                                    $('#myTable').append(tr);
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    }else if (Role === "mechanic"){
+        var radif = 0;
+        $.ajax({
+            type: 'GET',
+            url: '/EmployeePanel/DeterminationTheCourses/getMCourses',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success:function (result){
+                result.forEach(function (item){
+                    var ID = item.id;
+                    var CID = item.courseId;
+                    var TID = item.teacherId;
+                    $.ajax({
+                        type: 'GET',
+                        url: '/EmployeePanel/DeterminationTheCourses/getCourseInfo?id='+CID,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success:function (result1){
+                            console.log(result1);
+                            $.ajax({
+                                type: 'GET',
+                                url: '/EmployeePanel/DeterminationTheCourses/getTInfo?id=' + TID,
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success:function (result2){
+                                    console.log(result2);
+                                    radif += 1;
+                                    var tr = $('<tr>');
+                                    tr.append('<td>' + radif + '</td>');
+                                    tr.append('<td>' + item.id + '</td>');
+                                    tr.append('<td>' + result1.name + '</td>');
+                                    tr.append('<td>' + result2.nameF + " " + result2.nameL + '</td>');
+                                    tr.append('<td>' + item.classN + '</td>');
+                                    tr.append('<td>' + item.examDate + '</td>');
+                                    var button = $('<button>').text('').click(function() {
+                                        ManageCourses(CID , ID);
+                                    }).addClass('button');
+                                    if (item.status === true){
+                                        button.text("Selected");
+                                        button.css("background-color" , "#074172");
+                                    }else {
+                                        button.text("Not selected");
+                                        button.css("background-color" , "#ff0000");
+                                    }
+                                    var tdWithButton = $('<td>').append(button);
+                                    tr.append(tdWithButton);
+                                    $('#myTable').append(tr);
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    }
+}
+
+function ManageCourses(CID , ID) {
+    $.ajax({
+        type: "Post",
+        url: "/EmployeePanel/DeterminationTheCourses/UpdateStatus?Cid=" + CID + "&id=" + ID ,
+        contentType: "application/json; charset=utf-8",
+        success: function (res){
+            console.log("Successful");
+        },error(){
+            console.log("error");
+        }
+    });
+    location.reload();
+}
+
+
 $(document).ready(function (){
     var dep = "";
     var role = "";
@@ -77,6 +366,7 @@ $(document).ready(function (){
             $("#role").text(result.role);
             dep = $("#department").text();
             role = $("#role").text();
+            ShowDeterminationCourses(role);
         },error(){
             console.log("error");
         }

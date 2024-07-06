@@ -37,4 +37,8 @@ public class ComputerDefinedCoursesService implements DefinedCourses<ComputerDef
     public ComputerDefinedCourses findLastRecord() {
         return computerDefinedCoursesRepository.findLastRecord();
     }
+
+    public Optional<ComputerDefinedCourses> getDCourse(Long id){
+        return computerDefinedCoursesRepository.findById(id);
+    }
 }
