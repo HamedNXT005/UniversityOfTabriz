@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{/JS/jquery-3.7.1.min.js}"></script>
+    <script th:src="@{/JS/MainPage.js}"></script>
     <title>University Website</title>
     <style>
         body {
@@ -115,7 +117,7 @@
         <b>
         <li><a href="#">Contact Us</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">Sign In</a></li>
+        <li><a onclick="switchToLogin()">Sign In</a></li>
 </b>
     </ul>
 </nav>
@@ -131,7 +133,7 @@
 </h2>
 <div style="display: flex;">
 <img th:src="@{/Img/638060062491543029.jpg}" style="width:500px;height:400px; padding-left: 10px;">
-    <img th: src="@/Img/638060062455449786.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th:src="@{/Img/638060062455449786.jpg}" style="width:500px;height:400px; padding-left: 10px;">
     <video width="500" height="400" autoplay muted style="padding-left: 10px;">
         <source src="../static/Img/export.mp4" type="video/mp4">
 
@@ -145,7 +147,8 @@
 <!--    </video>-->
 <!--</div>-->
 <h4 id="underline">
-____________________________________________________________________________________________________________________________________________
+__________________________________________________________________
+    __________________________________________________________________________
 </h4>
 <h5 id="Faculty">
     Faculty of Civil:
@@ -165,8 +168,8 @@ ________________________________________________________________________________
 
 <div style="display: flex;">
 
-    <img th: src="@{/Img/1539754267-.jpg}" style="width:500px;height:400px; padding-left: 10px;">
-    <img th: src="@{/Img/389788_580.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th:src="@{/Img/1539754267-.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th:src="@{/Img/389788_580.jpg}" style="width:500px;height:400px; padding-left: 10px;">
     <img  th:src="@{/Img/2011-08-14_08.49.15_10.jpg}" style="width:500px;height:400px; padding-left: 10px;">
 
 </div>
@@ -177,7 +180,7 @@ ________________________________________________________________________________
 
 <div style="display: flex;">
 
-    <img th: src="@{/Img/Portal_of_University_of_Tabriz_1.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th:src="@{/Img/Portal_of_University_of_Tabriz_1.jpg}" style="width:500px;height:400px; padding-left: 10px;">
     <img  th:src="@{/Img/64628ba0648f8-back-faculty.jpg}" style="width:500px;height:400px; padding-left: 10px;">
     <img  th:src="@{/Img/background.jpg}" style="width:500px;height:400px; padding-left: 10px;">
 
@@ -188,9 +191,9 @@ ________________________________________________________________________________
 </h2>
 <div style="display: flex;">
 
-    <img th: src="@{/Img/65e23aea4c69a-02.png}" style="width:500px;height:400px; padding-left: 10px;">
-    <img th: src="@{/Img/1624871880-8w5s2-3e2a2118.jpg}" style="width:500px;height:400px; padding-left: 10px;">
-    <img th: src="@{/Img/844350_3005557--دانشکده-ساخت-و-تولید-دانشگاه-تبریز.png}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th:src="@{/Img/65e23aea4c69a-02.png}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th:src="@{/Img/1624871880-8w5s2-3e2a2118.jpg}" style="width:500px;height:400px; padding-left: 10px;">
+    <img th:src="@{/Img/844350_3005557--دانشکده-ساخت-و-تولید-دانشگاه-تبریز.png}" style="width:500px;height:400px; padding-left: 10px;">
 
 </div>
 <h3> <br>

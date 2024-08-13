@@ -49,6 +49,8 @@ function login(){
                     }
                 }
             });
+        } else if (userName === "admin" && password=== "admin"){
+            window.location.href = "/AdminPanel";
         }
     }else if (userName.length == 0){
         alert("Please enter your Username");

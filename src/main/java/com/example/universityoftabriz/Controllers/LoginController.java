@@ -121,25 +121,5 @@ public class LoginController {
         return access;
     }
 
-    @GetMapping("/Login/exportPdf")
-    @ResponseBody
-    public ResponseEntity<InputStreamResource> exportPDF(@RequestParam long tId, @RequestParam long hId){
-        try {
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            Teacher teacher = teacherService.getTeacherByID(tId).get();
-            HistorySalary report = historySalaryService.getHistorySById(hId).get();
-            historySalaryService.exportSalary(report,teacher,outputStream);
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
-            HttpHeaders headers = new HttpHeaders();
-            headers.add("Content-Disposition", "inline; filename=Salary_Report_"+report.getUserId()+"_"+report.getPayment_date()+".pdf");
-            logger.info("Salary report file exported successfully.");
-            return ResponseEntity.ok()
-                    .headers(headers)
-                    .contentType(MediaType.APPLICATION_PDF)
-                    .body(new InputStreamResource(inputStream));
-        } catch (DocumentException | IOException e){
-            logger.error("Couldn't export the salary report file.  Exception:\n"+e);
-            return ResponseEntity.status(500).body(null);
-        }
-    }
+
 }

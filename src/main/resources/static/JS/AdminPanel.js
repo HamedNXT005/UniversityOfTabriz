@@ -22,6 +22,8 @@ function switchManageTeachers(){
 function switchManageEmployees(){
     window.location.href = "/AdminPanel/AdminManageEmployees";
 }
+
+
 function LogOut(){
     $.ajax({
         type: "GET",

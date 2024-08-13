@@ -93,6 +93,35 @@
             background-color: #074173;
             color: #FFC700;
         }
+        table {
+            width: 96%;
+            border-collapse: collapse;
+            margin-bottom: 35px;
+        }
+        th, td {
+            border: 1px solid #074173;
+            padding: 8px;
+            text-align: left;
+            color: #FFC700;
+            font-weight: bold;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-size: x-large;
+        }
+        .button{
+            background-color: #074173;
+            color: #FFC700;
+            width: 90%;
+            font-weight: bold;
+            font-size: large;
+        }
+        .head{
+            font-size: xx-large;
+            font-weight: bold;
+            color: #FFC700;
+            background-color: #074173;
+        }
 
     </style>
 </head>
@@ -129,40 +158,59 @@
 </div>
 
 <div class="main-content" id="main-content">
-
+    <table id="myTable">
+        <thead>
+        <tr>
+            <th colspan="9" class="head"><cite>Courses List</cite></th>
+        </tr>
+        <tr>
+            <th>#</th>
+            <th>Course Number</th>
+            <th>Primary Day</th>
+            <th>Primary Day Time</th>
+            <th>Secondary Day</th>
+            <th>Secondary Day Time</th>
+            <th>Class Number</th>
+            <th>Exam Date</th>
+            <th>Select</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </div>
-<table>
-    <tr>
-        <th colspan="20"><cite>Defined Courses</cite></th>
-    </tr>
-    <tr style="background-color: #f2f2f2">
-        <td style="font-weight: bold;">Course Name</td>
-        <td id="CourseName"></td>
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th colspan="20"><cite>Defined Courses</cite></th>-->
+<!--    </tr>-->
+<!--    <tr style="background-color: #f2f2f2">-->
+<!--        <td style="font-weight: bold;">Course Name</td>-->
+<!--        <td id="CourseName"></td>-->
 
-        <td style="font-weight: bold;">Teacher First Name</td>
-        <td id="PDay"></td>
+<!--        <td style="font-weight: bold;">Teacher First Name</td>-->
+<!--        <td id="PDay"></td>-->
 
-        <td style="font-weight: bold;">Teacher Last Name</td>
-        <td id="TPday"></td>
+<!--        <td style="font-weight: bold;">Teacher Last Name</td>-->
+<!--        <td id="TPday"></td>-->
 
-        <td style="font-weight: bold;">Course Name</td>
-        <td id="SDay"></td>
+<!--        <td style="font-weight: bold;">Course Name</td>-->
+<!--        <td id="SDay"></td>-->
 
 
-        <td style="font-weight: bold;">Primary Day</td>
-        <td id="TSDay"></td>
+<!--        <td style="font-weight: bold;">Primary Day</td>-->
+<!--        <td id="TSDay"></td>-->
 
-        <td style="font-weight: bold;">Time Of Primary Day</td>
-        <td id="ClassN"></td>
+<!--        <td style="font-weight: bold;">Time Of Primary Day</td>-->
+<!--        <td id="ClassN"></td>-->
 
-        <td style="font-weight: bold;">Secondary Day</td>
-        <td id="Exam"></td>
-        <td style="font-weight: bold;"> Time Of Secondary Day</td>
-        <td style="font-weight: bold;">Class Number</td>
-        <td style="font-weight: bold;">Date Of Exam</td>
-        <td style="font-weight: bold;">Capacity</td>
-        <td style="font-weight: bold;"><button id="button"> Submit</button></td>
-    </tr>
-</table>
+<!--        <td style="font-weight: bold;">Secondary Day</td>-->
+<!--        <td id="Exam"></td>-->
+<!--        <td style="font-weight: bold;"> Time Of Secondary Day</td>-->
+<!--        <td style="font-weight: bold;">Class Number</td>-->
+<!--        <td style="font-weight: bold;">Date Of Exam</td>-->
+<!--        <td style="font-weight: bold;">Capacity</td>-->
+<!--        <td style="font-weight: bold;"><button id="button"> Submit</button></td>-->
+<!--    </tr>-->
+<!--</table>-->
 </body>
 </html>
